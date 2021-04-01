@@ -1,1 +1,0 @@
-#OpenCovid2
