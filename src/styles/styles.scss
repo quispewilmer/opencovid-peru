@@ -1,0 +1,16 @@
+
+// Define a color palette
+$colors: (
+    red: #FD0600,
+    op-gray: #3A3838,
+    dark-green: #0A544F,
+    light-green: #00BFA6,
+    dark-red: #E93E3A,
+    orange: #FA6142 
+);
+
+@import 'base/base';
+@import 'theme/theme';
+@import 'layout/layout';
+@import 'state/state';
+@import 'modules/modules';
