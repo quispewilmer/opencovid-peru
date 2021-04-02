@@ -1,6 +1,6 @@
 import React from 'react';
 import opencovid from '../../img/opencovid-logo.svg';
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {Navbar,Nav} from 'react-bootstrap';
 const Header = () => {
     return (
