@@ -17,6 +17,7 @@ const Home = () => {
     return (
         <>
             <Banner />
+            {/* Situación a nivel nacional */}
             <section className="national-situation">
                 <h1 className="national-situation__title text-center">Situación a nivel nacional</h1>
                 <hr className="title-rule text-center w-25"/>
@@ -28,6 +29,7 @@ const Home = () => {
                     
                 </div>
             </section>
+            {/* Sección que vas a encontrar */}
             <section className="what-find">
                 <h1 className="what-find__title text-center">¿Qué vas a encontrar?</h1>
                 <hr className="title-rule text-center w-25"/>
@@ -35,43 +37,48 @@ const Home = () => {
                     <article className="what-find__article emergency-map col-lg-6">
                         <div className="emergency-map__image">
                             <picture>
-                                <source srcset={emergencydesktop}/>
-                                <img src={emergencymobile} alt=""/>
+                                {/* <source srcset={emergencydesktop}/> */}
+                                <img src={emergencydesktop} alt="" className="d-block w-100" height="450px"/>
                             </picture>
-                        </div>
-                        <div className="emergency-map__content">
-                            <h2>Mapa de emergencia</h2>
-                            <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
-                            <ul>
-                                <li>Camas UCI</li>
-                                <li>Camas COVID</li>
-                                <li>Puntos de recarga de oxígeno</li>
-                            </ul>
-                            <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
-                            <Button text="Emergencia" theme="red" link="/mapa-recursos"/>
-                        </div>
+                        </div>                        
                     </article>
-                    <article className="what-find__article graphic-information col-lg-5">
-                        <div className="graphic-information__content">
-                            <h2>Información en gráficos</h2>
-                            <span>¿Cómo está afectando la pandemia al Perú?</span>
-                            <span>Verás un análisis a partir de los siguientes datos:</span>
-                            <ul>
-                                <li>Casos totales</li>
-                                <li>Contagios nuevos</li>
-                                <li>Fallecidos</li>
-                                <li>Capacidad hospitalaria</li>
-                                <li>Capacidad UCI y más</li>
-                            </ul>
-                            <Button text="Infórmate" theme="white-green" link="/estado-pandemia"/>
+                    <article className="col-lg-6">
+                        <div className="emergency-map__content">
+                                <h2>Mapa de emergencia</h2>
+                                <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
+                                <ul>
+                                    <li>Camas UCI</li>
+                                    <li>Camas COVID</li>
+                                    <li>Puntos de recarga de oxígeno</li>
+                                </ul>
+                                <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
+                                <Button text="Emergencia" theme="red" link="/mapa-recursos"/>
+                            </div>
+                    </article>
+                </div>
+            </section>
+            {/* Sección información en graficos */}
+            <section>
+                <article className="what-find__article graphic-information col-lg-5">
+                    <div className="graphic-information__content">
+                        <h2>Información en gráficos</h2>
+                        <span>¿Cómo está afectando la pandemia al Perú?</span>
+                        <span>Verás un análisis a partir de los siguientes datos:</span>
+                        <ul>
+                            <li>Casos totales</li>
+                            <li>Contagios nuevos</li>
+                            <li>Fallecidos</li>
+                            <li>Capacidad hospitalaria</li>
+                            <li>Capacidad UCI y más</li>
+                        </ul>
+                        <Button text="Infórmate" theme="white-green" link="/estado-pandemia"/>
                         </div>
                         <div className="graphic-information__image">
                             <picture>
                                 <img src={graphicinformation} alt=""/>
                             </picture>
                         </div>
-                    </article>
-                </div>
+                </article>
             </section>
             <section className="about-covid">
                 <h1 className="about-covid__title">¿Qué vas a encontrar?</h1>
