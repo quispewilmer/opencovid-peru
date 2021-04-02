@@ -5,9 +5,31 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+span {
+  display: block;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
+}
+
+.rrss {
+  display: flex;
+  justify-content: space-around;
+}
+.rrss a {
+  padding: 0px 3px;
 }
 
 .button {
@@ -20,6 +42,7 @@ a {
   border-radius: 6px;
   font-size: 14px;
   text-align: center;
+  line-height: 1.2em;
 }
 .button:hover {
   text-decoration: none;
@@ -42,29 +65,60 @@ a {
 .national-situation h1 {
   color: #E93E3A;
 }
+.national-situation__articles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 14px;
+}
 
 .what-find .graphic-information {
   background-color: rgba(0, 191, 166, 0.1);
 }
-
-.emergency-map h2 {
+.what-find h2 {
   font-size: 20px;
   font-weight: 800;
 }
-.emergency-map span {
+.what-find span {
   font-size: 14px;
   font-weight: 800;
-  color: #FA6142;
 }
-.emergency-map ul {
+.what-find ul {
   list-style: none;
   padding-left: 0px;
 }
-.emergency-map li::before {
+.what-find li::before {
   content: "•";
   padding-right: 5px;
   font-size: 20px;
+}
+
+.emergency-map span {
   color: #FA6142;
+}
+.emergency-map li::before {
+  color: #FA6142;
+}
+
+.graphic-information span {
+  color: #0A544F;
+}
+.graphic-information h3 {
+  color: #000000;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 45px;
+}
+.graphic-information ul {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 0px;
+  column-count: 2;
+  column-gap: 0px;
+}
+.graphic-information__image {
+  margin-top: -50px;
 }
 
 .main-title {
@@ -83,6 +137,45 @@ a {
 .quantity-card {
   background-color: #fff;
   border-radius: 12px;
+  padding: 10px 8px;
+}
+.quantity-card__image {
+  width: 35px;
+}
+.quantity-card__title {
+  font-size: 12px;
+  line-height: 1em;
+}
+.quantity-card__number {
+  font-size: 20px;
+}
+.quantity-card p {
+  margin-bottom: 0px;
+}
+
+.aboutcovid-card {
+  background-color: #FA6142;
+  border-radius: 16px;
+}
+.aboutcovid-card__title {
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.aboutcovid-card__link {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.membership-form input {
+  border: none;
+}
+.membership-form__input {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.membership-form__submit {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .button--red {
@@ -121,12 +214,12 @@ a {
 .button--white-green {
   border-color: #0A544F;
   background-color: #FFFFFF;
-  color: #0A544F;
+  color: #000000;
 }
 .button--white-green:hover {
   border-color: #0A544F;
   background-color: #FFFFFF;
-  color: #0A544F;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -153,6 +246,21 @@ a {
     background-image: url("/src/img/banner/banner-dek.svg");
     height: 660px;
   }
+}
+
+.footer {
+  background-color: #00BFA6;
+  color: #FFFFFF;
+}
+.footer p {
+  font-size: 14px;
+}
+.footer input:not([type=submit]) {
+  background-color: #DEE9FF;
+}
+.footer input[type=submit] {
+  background-color: #0A544F;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

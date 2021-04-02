@@ -1,19 +1,17 @@
 import React from 'react';
 
-const QuantityCard = ({title, image, number, type,cardMedidPerson}) => {
+const QuantityCard = ({title, image, number, type, cardMedidPerson}) => {
     return (
-        <article className={`${cardMedidPerson} p-2`}>
-            <div className="quantity-card card-body ">
-                <div className="row">
-                    <div className="quantity-card__image col-md-3 text-center">
+        <article className={`quantity-card ${cardMedidPerson} d-flex align-items-center`}>
+                <div className="d-flex align-items-center px-0 w-100">
+                    <div className="quantity-card__image px-0 col-3">
                         <img src={image} alt={title}/>
                     </div>
-                    <div className="quantity-card__content col-md-9 text-center">
+                    <div className="quantity-card__content px-1 text-center col-9">
                         <p className={`quantity-card__title quantity-${type} mb-0`}>{title}</p>
                         <p className="quantity-card__number text-danger mt-0 font-weight-bold">{number}</p>
                     </div>
                 </div>
-            </div>
         </article>
     )
 }

@@ -12,6 +12,6 @@
     }
     
     &--white-green {
-        @include button(oc-white, oc-dark-green, oc-dark-green);
+        @include button(oc-white, oc-dark-green, oc-black);
     }
 }
