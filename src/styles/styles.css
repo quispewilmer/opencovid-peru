@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url(../fonts/AvenirLTProMedium.otf) format("opentype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
 *,
 *::before,
 *::after {
@@ -22,6 +28,10 @@ span {
 a {
   display: inline-block;
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, div {
+  font-family: MyFont;
 }
 
 .rrss {
