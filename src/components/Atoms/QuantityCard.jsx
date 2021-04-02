@@ -2,8 +2,8 @@ import React from 'react';
 
 const QuantityCard = ({title, image, number, type,cardMedidPerson}) => {
     return (
-        <article className={`quantity-card ${cardMedidPerson} card-body`}>
-            <div className="rounded p-2">
+        <article className={`${cardMedidPerson} p-2`}>
+            <div className="quantity-card card-body ">
                 <div className="row">
                     <div className="quantity-card__image col-md-3 text-center">
                         <img src={image} alt={title}/>
