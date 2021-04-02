@@ -29,13 +29,13 @@ const Home = () => {
                 </div>
             </section>
             <section className="what-find">
-                <h1 className="what-find__title">¿Qué vas a encontrar?</h1>
-                <hr className="title-rule"/>
-                <div className="what-find__articles">
-                    <article className="what-find__article emergency-map">
+                <h1 className="what-find__title text-center">¿Qué vas a encontrar?</h1>
+                <hr className="title-rule text-center w-25"/>
+                <div className="what-find__articles container-fluid row">
+                    <article className="what-find__article emergency-map col-lg-6">
                         <div className="emergency-map__image">
                             <picture>
-                                <source srcset={emergencydesktop} media="(min-width: 768px)"/>
+                                <source srcset={emergencydesktop}/>
                                 <img src={emergencymobile} alt=""/>
                             </picture>
                         </div>
@@ -51,7 +51,7 @@ const Home = () => {
                             <Button text="Emergencia" theme="red" link="/mapa-recursos"/>
                         </div>
                     </article>
-                    <article className="what-find__article graphic-information">
+                    <article className="what-find__article graphic-information col-lg-5">
                         <div className="graphic-information__content">
                             <h2>Información en gráficos</h2>
                             <span>¿Cómo está afectando la pandemia al Perú?</span>

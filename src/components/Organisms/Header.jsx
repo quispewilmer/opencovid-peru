@@ -18,6 +18,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav className="ml-auto">
                     <Nav.Link 
+                        as={Link}
                         to="/mapa-recursos" 
                         className="text-dark"
                         exact
@@ -25,13 +26,15 @@ const Header = () => {
                         Mapa de recursos
                     </Nav.Link>
                     <Nav.Link 
+                        as={Link}
                         to="/" 
                         className="text-dark"
                         exact
                     >
                         Estado de pandemia
                     </Nav.Link>
-                    <Nav.Link 
+                    <Nav.Link
+                        as={Link} 
                         to="/sobre-covid" 
                         className="text-dark"
                         exact
@@ -39,6 +42,7 @@ const Header = () => {
                         Sobre COVID
                     </Nav.Link>
                     <Nav.Link 
+                        as={Link} 
                         to="/nosotros" 
                         className="text-dark"
                         exact
