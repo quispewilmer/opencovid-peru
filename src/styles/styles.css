@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir"), url(../fonts/AvenirLTProMedium.otf) format("opentype");
+}
+@font-face {
+  font-family: "AvenirBlack";
+  src: local("AvenirBlack"), url(../fonts/AvenirLTProBlack.otf) format("opentype");
+}
+@font-face {
+  font-family: "AvenirHeavy";
+  src: local("AvenirHeavy"), url(../fonts/AvenirLTProBlack.otf) format("opentype");
+}
 *,
 *::before,
 *::after {
@@ -22,6 +34,10 @@ span {
 a {
   display: inline-block;
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, div {
+  font-family: Avenir;
 }
 
 .rrss {
@@ -81,6 +97,7 @@ a {
   background-color: rgba(253, 6, 0, 0.1);
 }
 .national-situation h1 {
+  font-family: "AvenirBlack";
   color: #E93E3A;
 }
 .national-situation__articles {
@@ -89,12 +106,16 @@ a {
   grid-gap: 14px;
 }
 
+.what-find h1 {
+  font-family: "AvenirBlack";
+}
 .what-find .graphic-information {
   background-color: rgba(0, 191, 166, 0.1);
 }
 .what-find h2 {
   font-size: 20px;
   font-weight: 800;
+  font-family: "AvenirBlack";
 }
 .what-find span {
   font-size: 14px;
@@ -166,6 +187,7 @@ a {
 }
 .quantity-card__number {
   font-size: 20px;
+  font-family: "AvenirBlack";
 }
 .quantity-card p {
   margin-bottom: 0px;
@@ -250,6 +272,7 @@ a {
 }
 .banner h1 {
   font-size: 30px;
+  font-family: "AvenirBlack";
 }
 @media (min-width: 768px) {
   .banner {
