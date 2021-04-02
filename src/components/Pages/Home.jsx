@@ -33,7 +33,7 @@ const Home = () => {
             <section className="what-find">
                 <h1 className="what-find__title text-center">¿Qué vas a encontrar?</h1>
                 <hr className="title-rule text-center w-25"/>
-                <div className="what-find__articles container-fluid row">
+                <div className="what-find__articles container-fluid mx-auto row">
                     <article className="what-find__article emergency-map col-lg-6">
                         <div className="emergency-map__image">
                             <picture>
@@ -59,8 +59,8 @@ const Home = () => {
             </section>
             {/* Sección información en graficos */}
             <section>
-                <article className="what-find__article graphic-information col-lg-5">
-                    <div className="graphic-information__content">
+                <article className="what-find__article graphic-information mx-auto row">
+                    <div className="graphic-information__content col-lg-5">
                         <h2>Información en gráficos</h2>
                         <span>¿Cómo está afectando la pandemia al Perú?</span>
                         <span>Verás un análisis a partir de los siguientes datos:</span>
@@ -72,18 +72,18 @@ const Home = () => {
                             <li>Capacidad UCI y más</li>
                         </ul>
                         <Button text="Infórmate" theme="white-green" link="/estado-pandemia"/>
-                        </div>
-                        <div className="graphic-information__image">
-                            <picture>
-                                <img src={graphicinformation} alt=""/>
-                            </picture>
-                        </div>
+                    </div>
+                    <div className="graphic-information__image">
+                        <picture>
+                            <img src={graphicinformation} alt=""/>
+                        </picture>
+                    </div>
                 </article>
             </section>
             <section className="about-covid">
-                <h1 className="about-covid__title">¿Qué vas a encontrar?</h1>
-                <hr className="title-rule"/>
-                <div className="about-covid__articles">
+                <h1 className="about-covid__title text-center mb-0">Sobre COVID-19</h1>
+                <hr className="title-rule w-25 text-center"/>
+                <div className="about-covid__articles container-fluid row">
                     <AboutCovidCard title="¿Cuáles son los síntomas del COVID 19?" link="/" image={headache}/>
                     <AboutCovidCard title="¿Qué prueba debo hacerme para saber si tengo COVID-19?" link="/" image={swabbing}/>
                 </div>
