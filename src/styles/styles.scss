@@ -20,6 +20,9 @@ $colors: (
 // themes
 @import 'theme/button';
 @import 'theme/header';
+@import 'theme/sections';
+@import 'theme/components';
+@import 'theme/quantitycard';
 
 // layout
 @import 'layout/layout';

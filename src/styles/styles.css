@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -10,23 +11,78 @@ a {
 }
 
 .button {
+  width: 130px;
+  height: 44px;
   border: 3px solid;
   color: white;
   box-sizing: border-box;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  padding: 0.4em 0.8em;
+  border-radius: 6px;
   font-size: 14px;
   text-align: center;
-  line-height: 1em;
-  max-width: 10em;
 }
 .button:hover {
   text-decoration: none;
 }
+@media (min-width: 768px) {
+  .button {
+    width: 220px;
+    height: 74px;
+    font-size: 20px;
+  }
+}
 
 .main-header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.national-situation {
+  background-color: rgba(253, 6, 0, 0.1);
+}
+.national-situation h1 {
+  color: #E93E3A;
+}
+
+.what-find .graphic-information {
+  background-color: rgba(0, 191, 166, 0.1);
+}
+
+.emergency-map h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+.emergency-map span {
+  font-size: 14px;
+  font-weight: 800;
+  color: #FA6142;
+}
+.emergency-map ul {
+  list-style: none;
+  padding-left: 0px;
+}
+.emergency-map li::before {
+  content: "•";
+  padding-right: 5px;
+  font-size: 20px;
+  color: #FA6142;
+}
+
+.main-title {
+  font-size: 24px;
+}
+
+.high-rule {
+  width: 80px;
+  height: 5px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #FA6142 50%, #00BFA6 50%);
+}
+
+.quantity-card {
+  background-color: #fff;
+  border-radius: 12px;
 }
 
 .button--red {
@@ -83,6 +139,20 @@ a {
 }
 .banner h1 {
   font-size: 30px;
+}
+@media (min-width: 768px) {
+  .banner {
+    height: 500px;
+  }
+  .banner h1 {
+    font-size: 56px;
+  }
+}
+@media (min-width: 1080px) {
+  .banner {
+    background-image: url("/src/img/banner/banner-dek.svg");
+    height: 660px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

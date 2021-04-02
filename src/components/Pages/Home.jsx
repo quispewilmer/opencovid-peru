@@ -10,6 +10,7 @@ import infected from '../../img/home/infected.svg';
 import uci from '../../img/home/uci.svg';
 import vaccine from '../../img/home/vaccine.svg';
 import AboutCovidCard from '../Atoms/AboutCovidCard';
+import HighRule from '../Atoms/HighRule'; 
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
 
@@ -17,25 +18,25 @@ const Home = () => {
     return (
         <>
             <Banner />
-            <section className="national-situation">
-                <h1 className="national-situation__title text-center">Situación a nivel nacional</h1>
-                <hr className="title-rule text-center w-25"/>
+            <section className="national-situation container-fluid py-4">
+                <h1 className="national-situation__title text-center font-weight-bold main-title">Situación a nivel nacional</h1>
+                <HighRule />
                 <div className="national-situation__articles container-fluid row">
                     <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad" cardMedidPerson="col-lg-3 col-md-6"/>
                     <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad" cardMedidPerson="col-lg-3 col-md-6"/>
                     <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good" cardMedidPerson="col-lg-3 col-md-6"/>
-                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good"cardMedidPerson="col-lg-3 col-md-6" />
+                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good"cardMedidPerson="col-lg-3 col-md-6"/>
                     
                 </div>
             </section>
-            <section className="what-find">
-                <h1 className="what-find__title">¿Qué vas a encontrar?</h1>
-                <hr className="title-rule"/>
+            <section className="what-find py-4">
+                <h1 className="what-find__title font-weight-bold text-center main-title">¿Qué vas a encontrar?</h1>
+                <HighRule />
                 <div className="what-find__articles">
-                    <article className="what-find__article emergency-map">
+                    <article className="what-find__article emergency-map container-fluid pt-4">
                         <div className="emergency-map__image">
                             <picture>
-                                <source srcset={emergencydesktop} media="(min-width: 768px)"/>
+                                <source srcSet={emergencydesktop} media="(min-width: 768px)"/>
                                 <img src={emergencymobile} alt=""/>
                             </picture>
                         </div>
@@ -51,7 +52,7 @@ const Home = () => {
                             <Button text="Emergencia" theme="button--red" link="/mapa-recursos"/>
                         </div>
                     </article>
-                    <article className="what-find__article graphic-information">
+                    <article className="what-find__article graphic-information container-fluid pt-4">
                         <div className="graphic-information__content">
                             <h2>Información en gráficos</h2>
                             <span>¿Cómo está afectando la pandemia al Perú?</span>
@@ -73,9 +74,9 @@ const Home = () => {
                     </article>
                 </div>
             </section>
-            <section className="about-covid">
-                <h1 className="about-covid__title">¿Qué vas a encontrar?</h1>
-                <hr className="title-rule"/>
+            <section className="about-covid py-4 container-fluid">
+                <h1 className="about-covid__title font-weight-bold text-center main-title">About COVID-19</h1>
+                <HighRule />
                 <div className="about-covid__articles">
                     <AboutCovidCard title="¿Cuáles son los síntomas del COVID 19?" link="/" image={headache}/>
                     <AboutCovidCard title="¿Qué prueba debo hacerme para saber si tengo COVID-19?" link="/" image={swabbing}/>

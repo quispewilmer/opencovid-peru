@@ -4,7 +4,7 @@ import RRSS from '../Molecules/RRSS';
 
 const Footer = () => {
     return (
-        <footer class="footer">
+        <footer class="footer container-fluid">
             <div>
                 <MembershipForm />
                 <p>&copy; OpenCovid-Peru.com 2021</p>

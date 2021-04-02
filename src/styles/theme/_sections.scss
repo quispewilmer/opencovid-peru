@@ -1,0 +1,39 @@
+.national-situation {
+    background-color: rgba(map-get($map: $colors, $key: oc-red), .1);
+
+    h1 {
+        color: map-get($map: $colors, $key: oc-dark-red);
+    }
+}
+
+.what-find {
+
+    .graphic-information {
+        background-color: rgba(map-get($map: $colors, $key: oc-light-green), .1);
+    }
+}
+
+.emergency-map {
+    h2 {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    span {
+        font-size: 14px;
+        font-weight: 800;
+        color: map-get($map: $colors, $key: oc-orange);
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    li::before {
+        content: "•";
+        padding-right: 5px;
+        font-size: 20px;
+        color: map-get($map: $colors, $key: oc-orange);
+    }
+}
