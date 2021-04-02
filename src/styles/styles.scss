@@ -11,11 +11,12 @@ $colors: (
     oc-black: #000000
 );
 
+// base
+@import 'base/fonts';
+@import 'base/base';
+
 // mixins
 @import 'mixins/button';
-
-// base
-@import 'base/base';
 
 // themes
 @import 'theme/rrss';
