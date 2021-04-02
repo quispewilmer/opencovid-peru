@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import opencovid from '../../img/opencovid-logo.svg';
 import {Link} from 'react-router-dom';
 import {Navbar,Nav} from 'react-bootstrap';
+
 const Header = () => {
-    return (
+    
+    const [isActive, setActive] = useState("false");
+
+    const handleToggle = () => {
+        setActive(!isActive);
+    };
+
+    return (        
         <Navbar bg="white" expand="lg" className="main-header">
                 <Navbar.Brand
                     as={Link}
@@ -15,8 +23,13 @@ const Header = () => {
                         className="header__logo-img" 
                         height="50"
                     />
+                    
                 </Navbar.Brand>
-                <Nav className="ml-auto">
+                <Navbar.Toggle onClick={() => {
+                    handleToggle();          
+                    }
+                } />
+                <Nav className={`ml-auto ${isActive ? null : "active"}`} id="sidebar">
                     <Nav.Link 
                         as={Link}
                         to="/mapa-recursos" 
