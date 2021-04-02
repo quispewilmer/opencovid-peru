@@ -21,7 +21,7 @@ const Header = () => {
                         as={Link}
                         to="/mapa-recursos" 
                         className="text-dark"
-                        exact
+                        exact="true"
                     >
                         Mapa de recursos
                     </Nav.Link>
@@ -29,7 +29,7 @@ const Header = () => {
                         as={Link}
                         to="/" 
                         className="text-dark"
-                        exact
+                        exact="true"
                     >
                         Estado de pandemia
                     </Nav.Link>
@@ -37,7 +37,7 @@ const Header = () => {
                         as={Link} 
                         to="/sobre-covid" 
                         className="text-dark"
-                        exact
+                        exact="true"
                     >
                         Sobre COVID
                     </Nav.Link>
@@ -45,7 +45,7 @@ const Header = () => {
                         as={Link} 
                         to="/nosotros" 
                         className="text-dark"
-                        exact
+                        exact="true"
                     >
                         Nosotros
                     </Nav.Link>
