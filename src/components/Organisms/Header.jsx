@@ -9,7 +9,12 @@ const Header = () => {
                     as={Link}
                     to="/"
                 >
-                    <img src={opencovid} alt="Logo de Open Covid Perú" className="header__logo-img" />
+                    <img 
+                        src={opencovid} 
+                        alt="Logo de Open Covid Perú" 
+                        className="header__logo-img" 
+                        height="50"
+                    />
                 </Navbar.Brand>
                 <Nav className="ml-auto">
                     <Nav.Link 
@@ -41,22 +46,6 @@ const Header = () => {
                         Nosotros
                     </Nav.Link>
                 </Nav>
-                
-                {/* <header className="header">
-            <div className="header__logo">
-                <Link to='/' exact><img src={opencovid} alt="Logo de Open Covid Perú" className="header__logo-img" /></Link>
-            </div>
-            <nav className="header__menu menu">
-                <ul className="menu__list">
-                    <li className="menu__item">
-                        <NavLink to="/mapa-recursos" exact>Mapa de recursos</NavLink>
-                        </li>
-                    <li className="menu__item"><NavLink to="/estado-pandemia" exact>Estado de pandemia</NavLink></li>
-                    <li className="menu__item"><NavLink to="/sobre-covid" exact>Sobre COVID</NavLink></li>
-                    <li className="menu__item"><NavLink to="/nosotros" exact>Nosotros</NavLink></li>
-                </ul>
-            </nav>
-        </header> */}
             </Navbar>
             
     )

@@ -18,13 +18,14 @@ const Home = () => {
         <>
             <Banner />
             <section className="national-situation">
-                <h1 className="national-situation__title">Situación a nivel nacional</h1>
-                <hr className="title-rule"/>
-                <div className="national-situation__articles">
-                    <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad" />
-                    <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad" />
-                    <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good" />
-                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good" />
+                <h1 className="national-situation__title text-center">Situación a nivel nacional</h1>
+                <hr className="title-rule text-center w-25"/>
+                <div className="national-situation__articles container-fluid row">
+                    <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad" cardMedidPerson="col-lg-3 col-md-6"/>
+                    <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad" cardMedidPerson="col-lg-3 col-md-6"/>
+                    <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good" cardMedidPerson="col-lg-3 col-md-6"/>
+                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good"cardMedidPerson="col-lg-3 col-md-6" />
+                    
                 </div>
             </section>
             <section className="what-find">
