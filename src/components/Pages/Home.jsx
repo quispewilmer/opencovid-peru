@@ -76,7 +76,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="about-covid py-4 container-fluid">
-                <h1 className="about-covid__title font-weight-bold text-center main-title">About COVID-19</h1>
+                <h1 className="about-covid__title font-weight-bold text-center main-title">Sobre COVID-19</h1>
                 <HighRule />
                 <div className="about-covid__articles mx-0 row">
                     <AboutCovidCard theme="col-12 col-md-6" title="¿Cuáles son los síntomas del COVID 19?" link="/" image={headache}/>
