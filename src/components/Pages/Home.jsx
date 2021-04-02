@@ -48,7 +48,7 @@ const Home = () => {
                                 <li>Puntos de recarga de oxígeno</li>
                             </ul>
                             <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
-                            <Button text="Emergencia" theme="red" link="/mapa-recursos"/>
+                            <Button text="Emergencia" theme="button--red" link="/mapa-recursos"/>
                         </div>
                     </article>
                     <article className="what-find__article graphic-information">
@@ -63,7 +63,7 @@ const Home = () => {
                                 <li>Capacidad hospitalaria</li>
                                 <li>Capacidad UCI y más</li>
                             </ul>
-                            <Button text="Infórmate" theme="white-green" link="/estado-pandemia"/>
+                            <Button text="Infórmate" theme="button--white-green" link="/estado-pandemia"/>
                         </div>
                         <div className="graphic-information__image">
                             <picture>

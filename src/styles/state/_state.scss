@@ -1,0 +1,17 @@
+.button {
+    &--red {
+        @include button(oc-red, oc-red, oc-white);
+    }
+    
+    &--white-red {
+        @include button(oc-white, oc-red, oc-black);
+    }
+    
+    &--green {
+        @include button(oc-dark-green, oc-dark-green, oc-white);
+    }
+    
+    &--white-green {
+        @include button(oc-white, oc-dark-green, oc-dark-green);
+    }
+}

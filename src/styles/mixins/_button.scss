@@ -1,0 +1,12 @@
+@mixin button($background, $border-color, $color) {
+    border-color: map-get($map: $colors, $key: $border-color);
+    background-color: map-get($map: $colors, $key: $background);
+    color: map-get($map: $colors, $key: $color);
+
+    &:hover {
+        border-color: map-get($map: $colors, $key: $border-color);
+        background-color: map-get($map: $colors, $key: $background);
+        color: map-get($map: $colors, $key: $color);
+        text-decoration: none;
+    }
+}

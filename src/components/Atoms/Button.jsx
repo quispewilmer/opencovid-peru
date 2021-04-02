@@ -16,7 +16,7 @@ const Button = ({text, theme, link}) => {
     return (
         <NavLink
             to={link}
-            className={`${theme} button`}>
+            className={`${theme} button mr-3`}>
             {text}
         </NavLink>
     );
