@@ -1,7 +1,7 @@
 import React from 'react';
 import opencovid from '../../img/opencovid-logo.svg';
 import {Link, NavLink} from 'react-router-dom';
-import {Navbar,Nav,NavDropdown} from 'react-bootstrap';
+import {Navbar,Nav} from 'react-bootstrap';
 const Header = () => {
     return (
         <Navbar bg="white" expand="lg" className="shadow">
