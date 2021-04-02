@@ -5,6 +5,10 @@ import emergencymobile from '../../img/home/emergency-mob.svg';
 import graphicinformation from '../../img/home/graphic-information.svg';
 import headache from '../../img/home/headache.svg';
 import swabbing from '../../img/home/swabbing.svg';
+import dead from '../../img/home/dead.svg';
+import infected from '../../img/home/infected.svg';
+import uci from '../../img/home/uci.svg';
+import vaccine from '../../img/home/vaccine.svg';
 import AboutCovidCard from '../Atoms/AboutCovidCard';
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
@@ -17,10 +21,10 @@ const Home = () => {
                 <h1 className="national-situation__title">Situación a nivel nacional</h1>
                 <hr className="title-rule"/>
                 <div className="national-situation__articles">
-                    <QuantityCard title="Nuevos infectados" image="" number="3000" type="bad" />
-                    <QuantityCard title="Nuevas muertes" image="" number="1000" type="bad" />
-                    <QuantityCard title="Camas UCI disponibles" image="" number="1000" type="good" />
-                    <QuantityCard title="Personas vacunadas" image="" number="1000" type="good" />
+                    <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad" />
+                    <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad" />
+                    <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good" />
+                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good" />
                 </div>
             </section>
             <section className="what-find">
