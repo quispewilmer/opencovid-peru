@@ -10,7 +10,7 @@ const QuantityCard = ({title, image, number, type,cardMedidPerson}) => {
                     </div>
                     <div className="quantity-card__content col-md-9 text-center">
                         <p className={`quantity-card__title quantity-${type} mb-0`}>{title}</p>
-                        <p className="quantity-card__number text-danger mt-0">{number}</p>
+                        <p className="quantity-card__number text-danger mt-0 font-weight-bold">{number}</p>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import {Link, NavLink} from 'react-router-dom';
 import {Navbar,Nav} from 'react-bootstrap';
 const Header = () => {
     return (
-        <Navbar bg="white" expand="lg" className="shadow">
+        <Navbar bg="white" expand="lg" className="main-header">
                 <Navbar.Brand
                     as={Link}
                     to="/"

@@ -1,0 +1,24 @@
+.banner {
+    background-image: url('/src/img/banner/banner-mob.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    height: 420px;
+
+    h1 {
+        font-size: 30px;
+    }
+
+    @media (min-width: 768px) {
+        height: 500px;
+
+        h1 {
+            font-size: 56px;
+        }
+    }
+
+    @media (min-width: 1080px) {
+        background-image: url('/src/img/banner/banner-dek.svg');
+        height: 660px;
+    }
+}

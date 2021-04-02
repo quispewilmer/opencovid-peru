@@ -1,16 +1,34 @@
 
 // Define a color palette
 $colors: (
-    red: #FD0600,
-    op-gray: #3A3838,
-    dark-green: #0A544F,
-    light-green: #00BFA6,
-    dark-red: #E93E3A,
-    orange: #FA6142 
+    oc-red: #FD0600,
+    oc-gray: #3A3838,
+    oc-dark-green: #0A544F,
+    oc-light-green: #00BFA6,
+    oc-dark-red: #E93E3A,
+    oc-orange: #FA6142,
+    oc-white: #FFFFFF,
+    oc-black: #000000
 );
 
+// mixins
+@import 'mixins/button';
+
+// base
 @import 'base/base';
-@import 'theme/theme';
+
+// themes
+@import 'theme/button';
+@import 'theme/header';
+@import 'theme/sections';
+@import 'theme/components';
+@import 'theme/quantitycard';
+
+// layout
 @import 'layout/layout';
+
+// state
 @import 'state/state';
-@import 'modules/modules';
+
+// modules
+@import 'modules/banner';

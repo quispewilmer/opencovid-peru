@@ -1,0 +1,12 @@
+.main-title {
+    font-size: 24px;
+}
+
+.high-rule {
+    width: 80px;
+    height: 5px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, map-get($colors, oc-orange) 50%, map-get($colors, oc-light-green) 50%);
+}
