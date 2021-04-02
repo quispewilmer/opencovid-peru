@@ -4,14 +4,14 @@ import RRSS from '../Molecules/RRSS';
 
 const Footer = () => {
     return (
-        <footer class="footer mx-auto container-fluid row">
-            <div className="col-lg-6">
-                <MembershipForm />
-                <p>&copy; OpenCovid-Peru.com 2021</p>
-            </div>
-            <div className="rrss col-lg-6">
-                <p className="rrss__text">Síguenos en nuestras redes:</p>
-                <RRSS />
+        <footer class="footer mx-auto container-fluid py-4">
+            <div className="row align-items-end">
+                <MembershipForm theme="col-12"/>
+                <p className="col-7 mb-0 pr-0">&copy; OpenCovid-Peru.com 2021</p>
+                <div className="rrss row px-0 col-5 d-flex flex-column align-items-center pt-3">
+                    <p className="rrss__text mb-1">Síguenos</p>
+                    <RRSS theme=""/>
+                </div>
             </div>
         </footer>
     )

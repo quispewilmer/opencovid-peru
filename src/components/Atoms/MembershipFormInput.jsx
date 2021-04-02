@@ -15,8 +15,8 @@ const Input = (props) => {
             type={props.typeOf}
             id={props.idCustomed}
             name={props.idCustomed}
-            placeholder={props.placeholderCustomed}
-            className={`${props.classCustomed} input input--${props.typeOf}`}
+            placeholder={"   " + props.placeholderCustomed}
+            className={`${props.theme} input input--${props.typeOf}`}
         />
         :
         <input
@@ -24,7 +24,7 @@ const Input = (props) => {
             id={props.idCustomed}
             name={props.idCustomed}
             value={props.text}
-            className={`${props.classCustomed} input input--submit`}
+            className={`${props.theme} input input--submit`}
         />
     );
 }

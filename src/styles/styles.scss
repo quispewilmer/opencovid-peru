@@ -18,11 +18,14 @@ $colors: (
 @import 'base/base';
 
 // themes
+@import 'theme/rrss';
 @import 'theme/button';
 @import 'theme/header';
 @import 'theme/sections';
 @import 'theme/components';
 @import 'theme/quantitycard';
+@import 'theme/aboutcovidcard';
+@import 'theme/membershipform';
 
 // layout
 @import 'layout/layout';
@@ -32,3 +35,4 @@ $colors: (
 
 // modules
 @import 'modules/banner';
+@import 'modules/footer';

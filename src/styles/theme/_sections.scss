@@ -4,6 +4,12 @@
     h1 {
         color: map-get($map: $colors, $key: oc-dark-red);
     }
+
+    &__articles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr );
+        grid-gap: 14px;
+    }
 }
 
 .what-find {
@@ -11,9 +17,7 @@
     .graphic-information {
         background-color: rgba(map-get($map: $colors, $key: oc-light-green), .1);
     }
-}
 
-.emergency-map {
     h2 {
         font-size: 20px;
         font-weight: 800;
@@ -22,7 +26,6 @@
     span {
         font-size: 14px;
         font-weight: 800;
-        color: map-get($map: $colors, $key: oc-orange);
     }
 
     ul {
@@ -34,6 +37,46 @@
         content: "•";
         padding-right: 5px;
         font-size: 20px;
+    }
+}
+
+.emergency-map {
+    span {
         color: map-get($map: $colors, $key: oc-orange);
+    }
+    
+    li::before {
+        color: map-get($map: $colors, $key: oc-orange);
+    }
+}
+
+.graphic-information {
+    span {
+        color: map-get($map: $colors, $key: oc-dark-green);
+    }
+
+    h3 {
+        color: map-get($map: $colors, $key: oc-black);
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 45px;
+    }
+
+    ul {
+        -moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 0px;
+        column-count: 2;
+        column-gap: 0px;
+    }
+    
+    li::before {
+        color: map-get($map: $colors, $key: oc-drak-green);
+    }
+
+    &__image {
+        margin-top: -50px;
     }
 }

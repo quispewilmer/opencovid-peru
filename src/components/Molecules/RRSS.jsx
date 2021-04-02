@@ -1,12 +1,12 @@
-import Reat from 'react';
+import React from 'react';
 import facebook from '../../img/rrss/facebook-icon.svg';
 import twitter from '../../img/rrss/twitter-icon.svg';
 import linkedin from '../../img/rrss/linkedin-icon.svg';
 import instagram from '../../img/rrss/instagram-icon.svg';
 
-const RRSS = () => {
+const RRSS = ({theme}) => {
     return (
-        <div class="footer-rrss__rrss">
+        <div className={`rrss ${theme}`}>
             <a href="https://www.facebook.com/OpenCovidPeru/">
                 <img src={facebook} alt="open-covid-facebook"/>
             </a>

@@ -21,41 +21,42 @@ const Home = () => {
             <section className="national-situation container-fluid py-4">
                 <h1 className="national-situation__title text-center font-weight-bold main-title">Situación a nivel nacional</h1>
                 <HighRule />
-                <div className="national-situation__articles container-fluid row">
-                    <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad" cardMedidPerson="col-lg-3 col-md-6"/>
-                    <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad" cardMedidPerson="col-lg-3 col-md-6"/>
-                    <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good" cardMedidPerson="col-lg-3 col-md-6"/>
-                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good"cardMedidPerson="col-lg-3 col-md-6"/>
-                    
+                <div className="national-situation__articles mx-0">
+                    <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad"/>
+                    <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad"/>
+                    <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good"/>
+                    <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good"/>
                 </div>
             </section>
             <section className="what-find py-4">
                 <h1 className="what-find__title font-weight-bold text-center main-title">¿Qué vas a encontrar?</h1>
                 <HighRule />
                 <div className="what-find__articles">
-                    <article className="what-find__article emergency-map container-fluid pt-4">
-                        <div className="emergency-map__image">
-                            <picture>
-                                <source srcSet={emergencydesktop} media="(min-width: 768px)"/>
-                                <img src={emergencymobile} alt=""/>
-                            </picture>
-                        </div>
-                        <div className="emergency-map__content">
-                            <h2>Mapa de emergencia</h2>
-                            <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
-                            <ul>
-                                <li>Camas UCI</li>
-                                <li>Camas COVID</li>
-                                <li>Puntos de recarga de oxígeno</li>
-                            </ul>
-                            <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
-                            <Button text="Emergencia" theme="button--red" link="/mapa-recursos"/>
-                        </div>
+                    <article className="what-find__article emergency-map pt-4 container-fluid">
+                        <div className="row">
+                            <div className="emergency-map__image col-5 pl-3 pr-0 d-flex align-items-end">
+                                <picture>
+                                    <source srcSet={emergencydesktop} media="(min-width: 768px)" />
+                                    <img src={emergencymobile} alt=""/>
+                                </picture>
+                            </div>
+                            <div className="emergency-map__content col-7 px-1 d-flex flex-column">
+                                <h2>Mapa de emergencia</h2>
+                                <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
+                                <ul>
+                                    <li>Camas UCI</li>
+                                    <li>Camas COVID</li>
+                                    <li>Puntos de recarga de oxígeno</li>
+                                </ul>
+                                <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
+                                <Button text="Emergencia" theme="button--red align-self-center mb-4" link="/mapa-recursos"/>
+                            </div>
+                        </div>           
                     </article>
                     <article className="what-find__article graphic-information container-fluid pt-4">
                         <div className="graphic-information__content">
                             <h2>Información en gráficos</h2>
-                            <span>¿Cómo está afectando la pandemia al Perú?</span>
+                            <h3>¿Cómo está afectando la pandemia al Perú?</h3>
                             <span>Verás un análisis a partir de los siguientes datos:</span>
                             <ul>
                                 <li>Casos totales</li>
@@ -66,7 +67,7 @@ const Home = () => {
                             </ul>
                             <Button text="Infórmate" theme="button--white-green" link="/estado-pandemia"/>
                         </div>
-                        <div className="graphic-information__image">
+                        <div className="graphic-information__image d-flex justify-content-end">
                             <picture>
                                 <img src={graphicinformation} alt=""/>
                             </picture>
@@ -77,9 +78,9 @@ const Home = () => {
             <section className="about-covid py-4 container-fluid">
                 <h1 className="about-covid__title font-weight-bold text-center main-title">About COVID-19</h1>
                 <HighRule />
-                <div className="about-covid__articles">
-                    <AboutCovidCard title="¿Cuáles son los síntomas del COVID 19?" link="/" image={headache}/>
-                    <AboutCovidCard title="¿Qué prueba debo hacerme para saber si tengo COVID-19?" link="/" image={swabbing}/>
+                <div className="about-covid__articles mx-0 row">
+                    <AboutCovidCard theme="col-12 col-md-6" title="¿Cuáles son los síntomas del COVID 19?" link="/" image={headache}/>
+                    <AboutCovidCard theme="col-12 col-md-6" title="¿Qué prueba debo hacerme para saber si tengo COVID-19?" link="/" image={swabbing}/>
                 </div>
             </section>
         </>
