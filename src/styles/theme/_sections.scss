@@ -11,6 +11,18 @@
         grid-template-columns: repeat(2, 1fr );
         grid-gap: 14px;
     }
+
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 36px;
+        }
+    }
+
+    @media (min-width: 1080px) {
+        &__articles {
+            grid-template-columns: repeat(4, 1fr );
+        }
+    }
 }
 
 .what-find {
@@ -18,17 +30,13 @@
     h1 {
         font-family: 'AvenirBlack';
     }
-
-    .graphic-information {
-        background-color: rgba(map-get($map: $colors, $key: oc-light-green), .1);
-    }
-
+    
     h2 {
         font-size: 20px;
         font-weight: 800;
         font-family: 'AvenirBlack';
     }
-
+    
     span {
         font-size: 14px;
         font-weight: 800;
@@ -38,15 +46,34 @@
         list-style: none;
         padding-left: 0px;
     }
-
+    
     li::before {
         content: "•";
         padding-right: 5px;
         font-size: 20px;
     }
+
+    img, picture {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+    }
 }
 
 .emergency-map {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr );
+        grid-gap: 10px;
+
     span {
         color: map-get($map: $colors, $key: oc-orange);
     }
@@ -54,9 +81,15 @@
     li::before {
         color: map-get($map: $colors, $key: oc-orange);
     }
+
+    @media (min-width: 768px) {
+        grid-gap: 50px;
+    }
 }
 
 .graphic-information {
+    background-color: rgba(map-get($map: $colors, $key: oc-light-green), .1);
+
     span {
         color: map-get($map: $colors, $key: oc-dark-green);
     }
@@ -84,5 +117,57 @@
 
     &__image {
         margin-top: -50px;
+        width: 100%;
+    }
+
+    picture {
+        width: 70%;
+    }
+
+    @media (min-width: 768px) {
+
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr );
+
+        }
+
+        ul {
+            column-count: 1;
+            column-gap: 0px;
+        }
+
+        picture {
+            width: 100%;
+        }
+
+        &__image {
+            margin-top: 0;
+            width: 100%;
+        }
+        h3 {
+            font-size: 22px;
+        }
+    }
+}
+
+.about-covid {
+    &__articles {
+        display: grid;
+    }
+
+    h1 {
+        font-family: 'AvenirBlack';
+    }
+    
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 36px;
+        }
+
+        &__articles {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+        }
     }
 }

@@ -1,6 +1,9 @@
+$button-width: 130px;
+$button-height: 44px;
+
 .button {
-    width: 130px;
-    height: 44px;
+    width: $button-width;
+    height: $button-height;
     border: 3px solid;
     color: white;
     box-sizing: border-box;
@@ -15,8 +18,14 @@
     }
 
     @media (min-width: 768px) {
-        width: 220px;
-        height: 74px;
+        width: $button-width * 1.2;
+        height: $button-height * 1.2;
+        font-size: 16px;
+    }
+
+    @media (min-width: 1080px) {
+        width: $button-width * 1.6;
+        height: $button-height * 1.6;
         font-size: 20px;
     }
 }
