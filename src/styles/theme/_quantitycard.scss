@@ -17,6 +17,12 @@
         font-family: 'AvenirBlack';
     }
 
+    &__update {
+        font-size: 12px;
+        color: darken($color: map-get($colors, oc-white), $amount: 50);
+        line-height: 1em;
+    }
+
     p {
         margin-bottom: 0px;
     }
