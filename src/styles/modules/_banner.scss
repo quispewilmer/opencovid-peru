@@ -4,6 +4,8 @@
     background-size: contain;
     background-position: right bottom;
     height: 420px;
+    position: relative;
+    z-index: 10;
 
     h1 {
         font-size: 30px;

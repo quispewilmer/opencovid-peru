@@ -1,12 +1,12 @@
 import React from 'react';
 import Dashboard from '../Templates/Dashboard';
 
-const ResourcesMap = () => {
+const InformYourself = () => {
     return (
         <Dashboard 
-            
+            type="for-graphics"
         />
     )
 }
 
-export default ResourcesMap;
+export default InformYourself;

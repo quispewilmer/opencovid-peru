@@ -11,6 +11,10 @@
   font-family: "AvenirHeavy";
   src: local("AvenirHeavy"), url(../fonts/AvenirLTProBlack.otf) format("opentype");
 }
+@font-face {
+  font-family: "AvenirLight";
+  src: local("AvenirLight"), url(../fonts/AvenirLTProLight.otf) format("opentype");
+}
 *,
 *::before,
 *::after {
@@ -38,6 +42,16 @@ a {
 
 h1, h2, h3, h4, h5, h6, p, span, a, div {
   font-family: Avenir;
+}
+
+nav, ul, li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0px;
+}
+
+li {
+  list-style: none;
 }
 
 .rrss {
@@ -318,6 +332,26 @@ h1, h2, h3, h4, h5, h6, p, span, a, div {
   margin: auto;
 }
 
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.dashboard__sidebar {
+  display: block;
+}
+.dashboard__content {
+  display: grid;
+}
+.dashboard__maps {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.dashboard--for-graphics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+}
+
 .button--red {
   border-color: #FD0600;
   background-color: #FD0600;
@@ -369,6 +403,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, div {
   background-size: contain;
   background-position: right bottom;
   height: 420px;
+  position: relative;
+  z-index: 10;
 }
 .banner h1 {
   font-size: 30px;
@@ -387,6 +423,44 @@ h1, h2, h3, h4, h5, h6, p, span, a, div {
     background-image: url("/src/img/banner/banner-dek.svg");
     height: 660px;
   }
+}
+
+.dashboard {
+  height: 100vh;
+}
+.dashboard__sidebar {
+  z-index: 1;
+  box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.25);
+  background-color: #FFFFFF;
+}
+.dashboard__content {
+  background-color: #F9F5F4;
+  padding: 30px;
+}
+
+.dashboard-sidebar__item {
+  padding: 12px 34px;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid #ecebeb;
+  cursor: pointer;
+}
+.dashboard-sidebar__link {
+  font-family: AvenirLight;
+  font-size: 18px;
+  font-weight: normal;
+  color: #3A3838;
+}
+.dashboard-sidebar__link:hover {
+  text-decoration: none;
+  color: #000000;
+}
+.dashboard-sidebar__list {
+  margin-bottom: 0px;
+}
+.dashboard-sidebar__subitem:hover {
+  background-color: #ffeeee;
+  box-shadow: 5px 0px #FD0600 inset;
 }
 
 .footer {
