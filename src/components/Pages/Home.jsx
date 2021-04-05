@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import QuantityCard from '../Atoms/QuantityCard';
 import emergencydesktop from '../../img/home/emergency-desk.svg';
 import emergencymobile from '../../img/home/emergency-mob.svg';
@@ -15,6 +16,22 @@ import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
 
 const Home = () => {
+
+    let information;
+    let url = "https://open-covid-2-api-szz4htueua-uk.a.run.app/api/resume/last";
+
+    let [state, setState] = useState({
+        information: "",
+        date: "",
+    })
+
+    useEffect(async () => {
+        setState({
+            information: await axios.get(url),
+            date: state.information.data.fechaCreacion.split(" ")[0],
+        })
+    });
+
     return (
         <>
             <Banner />
@@ -24,10 +41,10 @@ const Home = () => {
                         <h1 className="national-situation__title text-center font-weight-bold main-title">Situación a nivel nacional</h1>
                         <HighRule />
                         <div className="national-situation__articles mx-0">
-                            <QuantityCard title="Nuevos infectados" image={infected} number="3000" type="bad" update="02/04/2021"/>
-                            <QuantityCard title="Nuevas muertes" image={dead} number="1000" type="bad" update="02/04/2021"/>
-                            <QuantityCard title="Camas UCI disponibles" image={uci} number="1000" type="good" update="02/04/2021"/>
-                            <QuantityCard title="Personas vacunadas" image={vaccine} number="1000" type="good" update="02/04/2021"/>
+                            <QuantityCard title="Nuevos infectados" image={infected} number={state.information ? parseInt(state.information.data.activeCases, 10) : ""} type="bad" update={state.date}/>
+                            <QuantityCard title="Nuevas muertes" image={dead} number={state.information ? parseInt(state.information.data.fallecidosSinadef, 10) : ""} type="bad" update={state.date}/>
+                            <QuantityCard title="Camas UCI disponibles" image={uci} number={state.information ? parseInt(state.information.data.camasUciDisp, 10) : ""} type="good" update={state.date}/>
+                            <QuantityCard title="Personas vacunadas" image={vaccine} number={state.information ? parseInt(state.information.data.vacunados, 10) : ""} type="good" update={state.date}/>
                         </div>
                     </div>
                 </section>
