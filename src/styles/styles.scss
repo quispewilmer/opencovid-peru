@@ -7,6 +7,7 @@ $colors: (
     oc-light-green: #00BFA6,
     oc-dark-red: #E93E3A,
     oc-orange: #FA6142,
+    oc-pale-pink: #F9F5F4,
     oc-white: #FFFFFF,
     oc-black: #000000
 );
@@ -29,11 +30,13 @@ $colors: (
 @import 'theme/membershipform';
 
 // layout
-@import 'layout/layout';
+@import 'layout/container';
+@import 'layout/dashboard';
 
 // state
 @import 'state/state';
 
 // modules
 @import 'modules/banner';
+@import 'modules/dashboard';
 @import 'modules/footer';

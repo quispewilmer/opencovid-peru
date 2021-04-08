@@ -4,7 +4,7 @@ import RRSS from '../Molecules/RRSS';
 
 const Footer = () => {
     return (
-        <footer class="footer mx-auto container-fluid py-4">
+        <footer className="footer mx-auto container-fluid py-4">
             <div className="main-container">
                 <div className="row align-items-end main-container mx-0">
                     <MembershipForm theme="col-12"/>
