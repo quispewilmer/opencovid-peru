@@ -1,6 +1,28 @@
 .dashboard {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+
+    &--for-graphics {
+        display: grid;
+        grid-gap: 25px;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        
+        &__maps {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+    
+        &__graphics {
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+        
+        &--for-graphics {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
 
     &__sidebar {
         display: block;
@@ -10,18 +32,4 @@
         display: grid;
     }
     
-    &__maps {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-
-    &__graphics {
-        
-    }
-    
-    &--for-graphics {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 25px;
-    }
 }

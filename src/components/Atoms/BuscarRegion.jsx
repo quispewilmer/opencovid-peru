@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react'
-import Lupa from '../../img/pandemiaState/lupa.svg'
+import Glass from '../../img/pandemiaState/glass.svg'
 const BuscarRegion = () =>{
     return(
-          <Fragment>
-               <div className="buscar">
-                   <img src={Lupa} alt=""/>
-                    <input type="text" placeholder="Busca tu región"/>
-                </div>
-          </Fragment>
+        <div className="buscar">
+            <img src={Glass} alt=""/>
+            <input type="text" placeholder="Busca tu región"/>
+        </div>
     )
 }
 export default BuscarRegion

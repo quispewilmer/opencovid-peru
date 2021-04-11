@@ -1,4 +1,9 @@
 import React, {useState} from 'react';
+import BuscarRegion from '../Atoms/BuscarRegion'
+import Region from '../Organisms/Region'
+import PuestoRegional from '../Molecules/PuestoRegion'
+import RankingRegional from '../Molecules/RankingRegion'
+import SearchRegion from '../Molecules/SearchRegion';
 
 const Dashboard = ({ type }) => {
 
@@ -29,12 +34,10 @@ const Dashboard = ({ type }) => {
                     </div>
                 </section>
                 <section className="dashboard__content dashboard--for-graphics">
-                    <section className="dashboard__map">
-
-                    </section>
-                    <section className="dashboard__graphics">
-
-                    </section>
+                        <SearchRegion />
+                        <Region />
+                        <PuestoRegional />
+                        <RankingRegional />
                 </section>
             </main>
             :
@@ -48,5 +51,12 @@ const Dashboard = ({ type }) => {
             </main>
     );
 }
+/*
+                    <section className="dashboard__map">
 
+                    </section>
+                    <section className="dashboard__graphics">
+
+                    </section>
+*/
 export default Dashboard;

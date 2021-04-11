@@ -14,7 +14,7 @@ import AboutCovidCard from '../Atoms/AboutCovidCard';
 import HighRule from '../Atoms/HighRule'; 
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
-import Lupa from '../../img/pandemiaState/lupa.svg';
+import Glass from '../../img/pandemiaState/glass.svg';
 
 const Home = () => {
 

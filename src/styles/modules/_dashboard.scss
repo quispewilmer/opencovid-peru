@@ -1,5 +1,4 @@
 .dashboard {
-    height: 100vh;
 
     &__sidebar {
         z-index: 1;
@@ -9,9 +8,14 @@
 
     &__content {
         background-color: map-get($map: $colors, $key: oc-pale-pink);
-        padding: 30px;
+        padding: 21px;
     }
 
+    @media screen and (min-width: 768px) {
+        &__content {
+            padding: 30px;
+        }
+    }
 }
 
 .dashboard-sidebar {
