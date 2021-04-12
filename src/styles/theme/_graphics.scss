@@ -5,9 +5,11 @@
 }
 
 .graphic {
+    height: 100%;
+
     &__title {
         font-family: AvenirHeavy;
-        font-size: 24px;
+        font-size: 22px;
     }
 
     &__date {
@@ -66,17 +68,17 @@
         background-color: #aecabc;
         transition: .4s;
             
-            &:before {
-                position: absolute;
-                content: "";
-                height: 30px;
-                width: 30px;
-                left: 0px;
-                bottom: -4px;
-                background: linear-gradient(180deg, #00BFA6 71.18%, #46BC75 100%);;
-                transition: .4s;
-                border-radius: 50%;
-            }
+        &:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 0px;
+            bottom: -4px;
+            background: linear-gradient(180deg, #00BFA6 71.18%, #46BC75 100%);;
+            transition: .4s;
+            border-radius: 50%;
+        }
     }
 
     &__checkbox:checked + &__switch-c {
@@ -100,6 +102,18 @@
     display: flex;
     justify-content: center;
     margin-top: 34px;
+    
+    &__image {
+        width: 60%;
+    }
+
+    @media screen and (min-width: 1080px) {
+        margin-top: 0px;
+
+        &__image {
+            width: 65%;
+        }
+    }
 }
 
 .legend {
@@ -163,29 +177,40 @@
     margin-bottom: 10%;
     position: relative;
 
-
     &__title {
         font-family: AvenirLight;
     }
 }
 
 .ranking-region-list{
-
+    
     &__list {
-        overflow: scroll;
+        overflow-y: scroll;
         padding-left: 26px;
         max-height: 500px;
     }
-
+    
     &__item{
         display: flex;
         padding: 5px 0;
         align-items: center;
     }
-
+    
     &__dot{
         margin: 0px 10px;
         border-radius: 50%;
         @include legend(map-get($colors, oc-red), 46px);
+    }
+    
+    @media screen and (min-width: 1080px) {
+        
+        &__list {
+            max-height: 260px;
+            margin-bottom: 0;
+        }
+
+        &__dot{
+            @include legend(map-get($colors, oc-red), 40px);
+        }
     }
 }   

@@ -943,9 +943,12 @@ $bajo:#00BF46;
   padding: 18px 20px;
 }
 
+.graphic {
+  height: 100%;
+}
 .graphic__title {
   font-family: AvenirHeavy;
-  font-size: 24px;
+  font-size: 22px;
 }
 .graphic__date {
   display: flex;
@@ -1023,6 +1026,17 @@ $bajo:#00BF46;
   justify-content: center;
   margin-top: 34px;
 }
+.map__image {
+  width: 60%;
+}
+@media screen and (min-width: 1080px) {
+  .map {
+    margin-top: 0px;
+  }
+  .map__image {
+    width: 65%;
+  }
+}
 
 .legend {
   max-width: 180px;
@@ -1090,7 +1104,7 @@ $bajo:#00BF46;
 }
 
 .ranking-region-list__list {
-  overflow: scroll;
+  overflow-y: scroll;
   padding-left: 26px;
   max-height: 500px;
 }
@@ -1106,6 +1120,18 @@ $bajo:#00BF46;
   width: 46px;
   height: 46px;
   margin-right: 10px;
+}
+@media screen and (min-width: 1080px) {
+  .ranking-region-list__list {
+    max-height: 260px;
+    margin-bottom: 0;
+  }
+  .ranking-region-list__dot {
+    background-color: #FD0600;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
 }
 
 .searchregion-form {
@@ -1130,21 +1156,20 @@ $bajo:#00BF46;
   display: grid;
   grid-gap: 25px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
   .dashboard {
     display: grid;
     grid-template-columns: 1fr 4fr;
   }
-  .dashboard__maps {
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
-  .dashboard__graphics {
-    grid-column-start: 4;
-    grid-column-end: 5;
-  }
   .dashboard--for-graphics {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+  .dashboard .map-graphic {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
   }
 }
 .dashboard__sidebar {
@@ -1152,6 +1177,46 @@ $bajo:#00BF46;
 }
 .dashboard__content {
   display: grid;
+}
+
+@media screen and (min-width: 1080px) {
+  .graphic__date {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .graphic__region-selection {
+    margin-top: 0;
+    align-items: start;
+    justify-content: end;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .graphic__map {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .graphic__legend {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: max-content;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .map-graphic {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
+  }
 }
 
 .button--red {

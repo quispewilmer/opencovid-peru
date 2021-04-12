@@ -8,7 +8,7 @@ const Region = () => {
                 <h1 className="graphic__title">Situación regional</h1>
                 <section className="graphic__date date-for-graphic">
                     <div className="date-for-graphic__calendar calendar">
-                        <img src={Calendar} alt="Calendario" className="calendar__image"/>
+                        <img src={Calendar} alt="Calendario" className="calendar__image" />
                     </div>
                     <div className="date-for-graphic__update date-update">
                         <span className="date-update__description">Fecha de actualización:</span>
@@ -25,7 +25,7 @@ const Region = () => {
                     <p className="region-selection__all-regions">Todas las regiones</p>
                 </section>
                 <section className="graphic__map map">
-                    <img src={Mapa} alt="Mapa del Perú" className="map__image"/>
+                    <img src={Mapa} alt="Mapa del Perú" className="map__image" />
                 </section>
                 <section className="graphic__legend legend">
                     <h2 className="legend__title">Leyenda</h2>
