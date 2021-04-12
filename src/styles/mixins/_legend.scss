@@ -1,0 +1,6 @@
+@mixin legend($color, $size) {
+    background-color: $color;
+    width: $size;
+    height: $size;
+    margin-right:10px ;
+}

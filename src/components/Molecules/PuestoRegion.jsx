@@ -1,19 +1,18 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+import Lima from '../../img/pandemiaState/lima.svg';
 
-const PuestoRegional = () =>{
-    return(
-          <Fragment>
-              <div className="puesto">
-                    <div className="puesto-c">
-                        <h2>Puesto de la región:</h2>
-                        <div className="departamento">
-                            <p>Lima Metropolitana</p>
-                            <img src="" alt=""/>
-                            <p>puesto 1 de 21</p>
-                        </div>
-                    </div>
+const PuestoRegional = () => {
+    return (
+        <>
+            <div className="place-graphic graphic-container graphic">
+                <h1 className="graphic__title">Puesto de la región:</h1>
+                <div className="graphic__region-information region-information">
+                    <h2 className="region-information__title text-center">Lima Metropolitana</h2>
+                    <img src={Lima} alt="" className="region-information__image" />
+                    <p className="region-information__place text-center">puesto 1 de 21</p>
                 </div>
-          </Fragment>
+            </div>
+        </>
     )
 }
 export default PuestoRegional
