@@ -1,0 +1,22 @@
+@mixin leyenda($color,$width,$height){
+    background-color: $color;
+    width: $width;
+    height: $height;
+    margin-right:10px ;
+}
+@mixin hijos() {
+    width: 96%;
+    background-color:rgb(250, 250, 250);
+    margin:6% auto;
+    border-radius: 10px;
+}
+
+//Variables
+$separador: 20px;
+$extremo:#FD0600;
+$alto:#F38620;
+$moderado: #FFE604;
+$bajo:#00BF46;
+$danger:$extremo;
+$primary:  #5362E8 ;
+

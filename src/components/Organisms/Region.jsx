@@ -1,6 +1,8 @@
 import React from 'react';
 import Mapa from '../../img/pandemiaState/mapa.svg';
 import Calendar from '../../img/pandemiaState/calender.svg';
+import LegendGraphic from '../Molecules/LegendGraphic';
+
 const Region = () => {
     return (
         <>
@@ -27,15 +29,7 @@ const Region = () => {
                 <section className="graphic__map map">
                     <img src={Mapa} alt="Mapa del Perú" className="map__image" />
                 </section>
-                <section className="graphic__legend legend">
-                    <h2 className="legend__title">Leyenda</h2>
-                    <ul className="legend__list">
-                        <li className="legend__item"><span className="extreme legend__level"></span>Riesgo Extremo</li>
-                        <li className="legend__item"><span className="high legend__level"></span>Riesgo Alto</li>
-                        <li className="legend__item"><span className="moderated legend__level"></span>Riesgo Moderado</li>
-                        <li className="legend__item"><span className="low legend__level"></span>Riesgo Bajo</li>
-                    </ul>
-                </section>
+                <LegendGraphic />
             </div>
         </>
     )

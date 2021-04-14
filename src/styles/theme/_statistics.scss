@@ -1,0 +1,52 @@
+.region-statistics {
+    display: grid;
+    grid-gap: 25px;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: map-get($map: $colors, $key: oc-dark-green);
+    }
+
+    &__place-icon {
+        margin-right: 30px;
+    }
+}
+
+.statistic-container {
+    &__options {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    &__graphics-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        grid-gap: 20px;
+    }
+}
+
+.statistic-graphics-container {
+    margin-top: 10px;
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    
+    &__week {
+        margin: 8px 0;
+        font-family: AvenirHeavy;
+    }
+
+    &__date {
+        margin-bottom: 0;
+    }
+}

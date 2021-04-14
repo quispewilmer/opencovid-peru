@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+import PuestoRegional from './PuestoRegion';
 
-const RankingRegional = () => {
+const RankingRegional = ({ type }) => {
     return (
         <>
-            <div className="graphic-container graphic ranking-graphic">
+            <section className={`graphic-container graphic ranking-graphic ranking-graphic--${type}`}>
                 <h1 className="graphic__title ranking-graphic__title">Ranking de impacto del COVID 19 por regiones</h1>
-                <div className="ranking-region-list">
+                <div className={`ranking-region-list ranking-region-list--${type}`}>
                     <ul className="ranking-region-list__list">
                         <li className="ranking-region-list__item">1. <span className="ranking-region-list__dot"></span> Lima Región</li>
                         <li className="ranking-region-list__item">2. <span className="ranking-region-list__dot"></span> Arequipa</li>
@@ -23,12 +24,9 @@ const RankingRegional = () => {
                         <li className="ranking-region-list__item">7. <span className="ranking-region-list__dot"></span> Ucayali</li>
                     </ul>
                 </div>
-            </div>
+            </section>
         </>
     )
 }
 
-/*
-
-*/
 export default RankingRegional
