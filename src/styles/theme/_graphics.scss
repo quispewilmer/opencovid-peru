@@ -136,6 +136,7 @@
     &__item {
         display: flex;
         margin-bottom: 14px;
+        font-size: 12px;
 
         &:last-child {
             margin-bottom: 0;
@@ -174,7 +175,6 @@
 }
 
 .ranking-graphic {
-    margin-bottom: 10%;
     position: relative;
 
     &__title {
@@ -182,7 +182,21 @@
     }
 }
 
-.ranking-region-list{
+.ranking-graphic--horizontal {
+    display: grid;
+}
+
+.ranking-region-list--horizontal {
+    @media screen and (min-width: 1080px) {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-height: 150px;
+        }
+    }
+}
+
+.ranking-region-list {
     
     &__list {
         overflow-y: scroll;
@@ -213,4 +227,4 @@
             @include legend(map-get($colors, oc-red), 40px);
         }
     }
-}   
+}

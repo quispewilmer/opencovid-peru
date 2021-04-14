@@ -1056,6 +1056,7 @@ $bajo:#00BF46;
 .legend__item {
   display: flex;
   margin-bottom: 14px;
+  font-size: 12px;
 }
 .legend__item:last-child {
   margin-bottom: 0;
@@ -1096,11 +1097,22 @@ $bajo:#00BF46;
 }
 
 .ranking-graphic {
-  margin-bottom: 10%;
   position: relative;
 }
 .ranking-graphic__title {
   font-family: AvenirLight;
+}
+
+.ranking-graphic--horizontal {
+  display: grid;
+}
+
+@media screen and (min-width: 1080px) {
+  .ranking-region-list--horizontal ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 150px;
+  }
 }
 
 .ranking-region-list__list {
@@ -1147,6 +1159,50 @@ $bajo:#00BF46;
   background-color: #00BFA6;
 }
 
+.region-statistics {
+  display: grid;
+  grid-gap: 25px;
+}
+.region-statistics__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0A544F;
+}
+.region-statistics__place-icon {
+  margin-right: 30px;
+}
+
+.statistic-container__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.statistic-container__graphics-area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.statistic-graphics-container {
+  margin-top: 10px;
+}
+.statistic-graphics-container__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+}
+.statistic-graphics-container__week {
+  margin: 8px 0;
+  font-family: AvenirHeavy;
+}
+.statistic-graphics-container__date {
+  margin-bottom: 0;
+}
+
 .main-container {
   max-width: 1010px;
   margin: auto;
@@ -1169,6 +1225,18 @@ $bajo:#00BF46;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
+    grid-row-end: 4;
+  }
+  .dashboard .ranking-graphic--horizontal {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  .dashboard .region-statistics {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
     grid-row-end: 4;
   }
 }
