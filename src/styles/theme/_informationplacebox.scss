@@ -1,0 +1,26 @@
+.information-place-box {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+
+    &__section {
+        padding: 12px 18px;
+    }
+}
+
+.information-place-header {
+    background-color: rgba(map-get($colors, oc-light-green), 20%);
+
+    &__title {
+        color: map-get($map: $colors, $key: oc-dark-green);
+    }
+
+    input {
+        width: 100%;
+    }
+    
+}
+
+.information-place-content {
+
+}

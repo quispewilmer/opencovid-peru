@@ -30,17 +30,19 @@ $colors: (
 @import 'theme/quantitycard';
 @import 'theme/aboutcovidcard';
 @import 'theme/membershipform';
-@import 'theme/PandemicState';
 @import 'theme/graphics';
 @import 'theme/searchregionform';
 @import 'theme/statistics';
-
-// @import 'theme/pandemia_filtro';
+@import 'theme/selectpointonmapbox';
+@import 'theme/informationplacebox';
 
 // layout
 @import 'layout/container';
 @import 'layout/dashboard';
 @import 'layout/mapgraphic';
+@import 'layout/selectpointonmapbox';
+@import 'layout/emergencymap';
+@import 'layout/informationplacebox';
 
 // state
 @import 'state/state';

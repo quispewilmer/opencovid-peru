@@ -1,5 +1,7 @@
 .searchregion-form {
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: max-content;
 
     &__submit {
         background-image: url(../img/pandemiaState/glass.svg);

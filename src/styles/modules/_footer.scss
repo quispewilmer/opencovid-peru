@@ -5,4 +5,10 @@
     p {
         font-size: 14px;
     }
+
+    @media screen and (min-width: 768px) {
+        .membership-form {
+            margin-bottom: -30px!important;
+        }
+    }
 }

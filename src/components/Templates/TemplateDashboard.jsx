@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Dashboard = ({ type, children }) => {
+const TemplateDashboard = ({ type, children }) => {
 
     return (
         type == "for-graphics" ?
@@ -44,4 +44,4 @@ const Dashboard = ({ type, children }) => {
     );
 }
 
-export default Dashboard;
+export default TemplateDashboard;

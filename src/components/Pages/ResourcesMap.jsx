@@ -1,9 +1,9 @@
 import React from 'react';
-import Dashboard from '../Templates/Dashboard';
+import TemplateDashboard from '../Templates/TemplateDashboard';
 
 const ResourcesMap = () => {
     return (
-        <Dashboard 
+        <TemplateDashboard
             type="for-graphics"
         />
     )

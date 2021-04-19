@@ -1,0 +1,10 @@
+.information-place-box {
+    min-width: 333px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    z-index: 3;
+}
