@@ -135,12 +135,12 @@ a:hover {
   color: #343a40 !important;
 }
 
-.navTrigger {
+.navtoggle {
   display: none;
 }
 
 @media only screen and (max-width: 990px) {
-  .navTrigger {
+  .navtoggle {
     display: block;
   }
 
@@ -148,7 +148,7 @@ a:hover {
     display: none;
   }
 }
-.navTrigger {
+.navtoggle {
   cursor: pointer;
   width: 30px;
   height: 25px;
@@ -159,7 +159,7 @@ a:hover {
   bottom: 0;
 }
 
-.navTrigger i {
+.navtoggle i {
   background-color: #555;
   border-radius: 2px;
   content: "";
@@ -168,14 +168,14 @@ a:hover {
   height: 4px;
 }
 
-.navTrigger i:nth-child(1) {
+.navtoggle i:nth-child(1) {
   -webkit-animation: outT 0.8s backwards;
   animation: outT 0.8s backwards;
   -webkit-animation-direction: reverse;
   animation-direction: reverse;
 }
 
-.navTrigger i:nth-child(2) {
+.navtoggle i:nth-child(2) {
   margin: 5px 0;
   -webkit-animation: outM 0.8s backwards;
   animation: outM 0.8s backwards;
@@ -183,24 +183,24 @@ a:hover {
   animation-direction: reverse;
 }
 
-.navTrigger i:nth-child(3) {
+.navtoggle i:nth-child(3) {
   -webkit-animation: outBtm 0.8s backwards;
   animation: outBtm 0.8s backwards;
   -webkit-animation-direction: reverse;
   animation-direction: reverse;
 }
 
-.navTrigger.active i:nth-child(1) {
+.navtoggle.active i:nth-child(1) {
   -webkit-animation: inT 0.8s forwards;
   animation: inT 0.8s forwards;
 }
 
-.navTrigger.active i:nth-child(2) {
+.navtoggle.active i:nth-child(2) {
   -webkit-animation: inM 0.8s forwards;
   animation: inM 0.8s forwards;
 }
 
-.navTrigger.active i:nth-child(3) {
+.navtoggle.active i:nth-child(3) {
   -webkit-animation: inBtm 0.8s forwards;
   animation: inBtm 0.8s forwards;
 }

@@ -30,7 +30,7 @@ const Header = () => {
                     />
                     
                 </Navbar.Brand>
-                <span className={`navTrigger ${isActive ? null : "active"}`}
+                <span className={`navtoggle ${isActive ? null : "active"}`}
                     onClick={() => {
                         handleToggle();          
                         }
