@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Dashboard = ({ type }) => {
+const Dashboard = ({ type, children }) => {
 
     return (
         type == "for-graphics" ?
@@ -29,12 +29,7 @@ const Dashboard = ({ type }) => {
                     </div>
                 </section>
                 <section className="dashboard__content dashboard--for-graphics">
-                    <section className="dashboard__map">
-
-                    </section>
-                    <section className="dashboard__graphics">
-
-                    </section>
+                    {children}
                 </section>
             </main>
             :

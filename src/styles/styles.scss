@@ -9,7 +9,8 @@ $colors: (
     oc-orange: #FA6142,
     oc-pale-pink: #F9F5F4,
     oc-white: #FFFFFF,
-    oc-black: #000000
+    oc-black: #000000,
+    oc-yellow: #FFE604
 );
 
 // base
@@ -18,6 +19,7 @@ $colors: (
 
 // mixins
 @import 'mixins/button';
+@import 'mixins/legend';
 
 // themes
 @import 'theme/rrss';
@@ -28,10 +30,17 @@ $colors: (
 @import 'theme/quantitycard';
 @import 'theme/aboutcovidcard';
 @import 'theme/membershipform';
+@import 'theme/PandemicState';
+@import 'theme/graphics';
+@import 'theme/searchregionform';
+@import 'theme/statistics';
+
+// @import 'theme/pandemia_filtro';
 
 // layout
 @import 'layout/container';
 @import 'layout/dashboard';
+@import 'layout/mapgraphic';
 
 // state
 @import 'state/state';

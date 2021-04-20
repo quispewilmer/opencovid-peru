@@ -1,0 +1,14 @@
+.searchregion-form {
+    margin: auto;
+
+    &__submit {
+        background-image: url(../img/pandemiaState/glass.svg);
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    
+    input[type="submit"] {
+        background-color: map-get($map: $colors, $key: oc-light-green);
+    }
+}

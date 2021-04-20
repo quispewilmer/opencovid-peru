@@ -1,0 +1,230 @@
+.graphic-container {
+    background-color: map-get($map: $colors, $key: oc-white);
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+
+.graphic {
+    height: 100%;
+
+    &__title {
+        font-family: AvenirHeavy;
+        font-size: 22px;
+    }
+
+    &__date {
+        display: flex;
+    }
+}
+    
+.calendar {
+    margin-right: 16px;
+
+    &__image {
+        height: 40px;
+    }
+}
+
+.date-update {
+
+    span {
+        margin-bottom: 0;
+    }
+
+    &__description {
+        font-family: AvenirHeavy;
+    }
+}
+
+.region-selection{
+    display: flex;
+    align-items: center;
+    color: #0A544F;
+    margin-top: 20px;
+
+    p {
+        margin-bottom: 0;
+    }
+    
+    &__switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+        margin: 0 5px;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+    
+    &__switch-c {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #aecabc;
+        transition: .4s;
+            
+        &:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 0px;
+            bottom: -4px;
+            background: linear-gradient(180deg, #00BFA6 71.18%, #46BC75 100%);;
+            transition: .4s;
+            border-radius: 50%;
+        }
+    }
+
+    &__checkbox:checked + &__switch-c {
+        background-color: #8ab49f;
+    }
+
+    &__checkbox:checked + &__switch-c:before {
+        transform: translateX(22px);
+    }
+
+    &__switch-c.round {
+        border-radius: 70px;   
+    }
+
+    &__all-regions {
+        font-family: AvenirHeavy;
+    }
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    margin-top: 34px;
+    
+    &__image {
+        width: 60%;
+    }
+
+    @media screen and (min-width: 1080px) {
+        margin-top: 0px;
+
+        &__image {
+            width: 65%;
+        }
+    }
+}
+
+.legend {
+    max-width: 180px;
+    padding: 14px;
+    border: 2px solid map-get($map: $colors, $key: oc-light-green);
+    border-radius: 12px;
+
+    &__title {
+        font-family: AvenirHeavy;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    &__list {
+        margin-bottom: 0PX;
+        font-size: 12px;
+    }
+
+    &__item {
+        display: flex;
+        margin-bottom: 14px;
+        font-size: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .extreme {
+        @include legend(map-get($colors, oc-red), 20px);
+    }
+    
+    .high {
+        @include legend(map-get($colors, oc-orange), 20px);
+    }
+    
+    .moderated {
+        @include legend(map-get($colors, oc-yellow), 20px);
+    }
+
+    .low {
+        @include legend(map-get($colors, oc-light-green), 20px);
+    }
+}
+
+.region-information {
+    &__title {
+        font-size: 22px;
+    }
+
+    &__image {
+        margin: auto;
+    }
+
+    &__place {
+        margin-top: 14px;
+    }
+}
+
+.ranking-graphic {
+    position: relative;
+
+    &__title {
+        font-family: AvenirLight;
+    }
+}
+
+.ranking-graphic--horizontal {
+    display: grid;
+}
+
+.ranking-region-list--horizontal {
+    @media screen and (min-width: 1080px) {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-height: 150px;
+        }
+    }
+}
+
+.ranking-region-list {
+    
+    &__list {
+        overflow-y: scroll;
+        padding-left: 26px;
+        max-height: 500px;
+    }
+    
+    &__item{
+        display: flex;
+        padding: 5px 0;
+        align-items: center;
+    }
+    
+    &__dot{
+        margin: 0px 10px;
+        border-radius: 50%;
+        @include legend(map-get($colors, oc-red), 46px);
+    }
+    
+    @media screen and (min-width: 1080px) {
+        
+        &__list {
+            max-height: 260px;
+            margin-bottom: 0;
+        }
+
+        &__dot{
+            @include legend(map-get($colors, oc-red), 40px);
+        }
+    }
+}

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import opencovid from '../../img/opencovid-logo.svg';
+import camascovid from '../../img/header/camas-covid.svg';
+import camasuci from '../../img/header/camas-uci.svg';
+import contagiodistrital from '../../img/header/contagio-distrital.svg';
+import peru from '../../img/header/peru.svg';
+import puntosoxigeno from '../../img/header/puntos-oxigeno.svg';
 import {Link} from 'react-router-dom';
-import {Navbar,Nav} from 'react-bootstrap';
+import {Navbar,Nav,NavDropdown} from 'react-bootstrap';
 
 const Header = () => {
     
@@ -25,31 +30,67 @@ const Header = () => {
                     />
                     
                 </Navbar.Brand>
-                <Navbar.Toggle onClick={() => {
-                    handleToggle();          
+                <span className={`navtoggle ${isActive ? null : "active"}`}
+                    onClick={() => {
+                        handleToggle();          
+                        }
                     }
-                } />
-                <Nav className={`ml-auto ${isActive ? null : "active"}`} id="sidebar">
-                    <Nav.Link 
-                        as={Link}
-                        to="/mapa-recursos" 
-                        className="text-dark"
-                        exact="true"
+                >
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+                <Nav className={`ml-auto ${isActive ? null : "active"}`} id="sidebar">                    
+                    <NavDropdown                         
+                        title="Mapa de recursos" 
                     >
-                        Mapa de recursos
-                    </Nav.Link>
-                    <Nav.Link 
-                        as={Link}
-                        to="/" 
-                        className="text-dark"
-                        exact="true"
+                        <div className="container-fluid mx-auto text-center  row">
+                            <div className="col">
+                                <img 
+                                    src={camasuci} 
+                                    alt=""
+                                />
+                                Camas UCI
+                            </div>
+                            <div className="col">
+                                <img 
+                                    src={camascovid} 
+                                    alt=""
+                                />
+                                Camas COVID</div>
+                            <div className="col">
+                                <img 
+                                    src={puntosoxigeno} 
+                                    alt=""
+                                />
+                                Puntos de Oxígeno
+                            </div>
+                        </div> 
+                    </NavDropdown>
+                    <NavDropdown                         
+                        title="Estado de pandemia" 
                     >
-                        Estado de pandemia
-                    </Nav.Link>
+                        <div className="triangulo-equilatero-bottom"></div>
+                        <div className="container-fluid mx-auto text-center  row">
+                            <div className="col">
+                                <img 
+                                    src={peru} 
+                                    alt=""
+                                />
+                                Situacion regional
+                            </div>
+                            <div className="col">
+                                <img 
+                                    src={contagiodistrital} 
+                                    alt=""
+                                />
+                                Contagios distritales
+                            </div>
+                        </div> 
+                    </NavDropdown>
                     <Nav.Link
                         as={Link} 
                         to="/sobre-covid" 
-                        className="text-dark"
                         exact="true"
                     >
                         Sobre COVID
@@ -57,7 +98,6 @@ const Header = () => {
                     <Nav.Link 
                         as={Link} 
                         to="/nosotros" 
-                        className="text-dark"
                         exact="true"
                     >
                         Nosotros
