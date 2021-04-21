@@ -15,7 +15,7 @@ const Banner = () => {
                         <Button
                             text="Tengo una emergencia"
                             theme="button--red"
-                            link="/mapa-recursos"/>
+                            link="/mapa-emergencia"/>
                     </div>
                 </div>
             </div>
