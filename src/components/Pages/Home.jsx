@@ -69,7 +69,7 @@ const Home = () => {
                                         <li>Puntos de recarga de oxígeno</li>
                                     </ul>
                                     <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
-                                    <Button text="Emergencia" theme="button--red align-self-center mb-4" link="/mapa-recursos"/>
+                                    <Button text="Emergencia" theme="button--white-orange align-self-center mb-4" link="/mapa-emergencia"/>
                                 </div>       
                         </article>
                         <article className="what-find__article graphic-information container-fluid pt-4">

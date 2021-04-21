@@ -3,17 +3,17 @@ import Region from '../Organisms/Region';
 import PuestoRegional from '../Molecules/PuestoRegion';
 import RankingRegional from '../Molecules/RankingRegion';
 import SearchRegion from '../Molecules/SearchRegion';
-import Dashboard from '../Templates/Dashboard';
+import TemplateDashboard from '../Templates/TemplateDashboard';
 
 
 const PandemicState = () => {
     return (
-        <Dashboard type="for-graphics">
-            <SearchRegion />
+        <TemplateDashboard type="for-graphics">
+            <SearchRegion text="Busca tu región"/>
             <Region />
             <PuestoRegional />
             <RankingRegional type="vertical"/>
-        </Dashboard>
+        </TemplateDashboard>
     )
 }
 

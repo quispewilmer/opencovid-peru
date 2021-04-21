@@ -1,13 +1,14 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './components/Pages/Home';
-import InformYourself from './components/Pages/InformYourself';
-import ResourcesMap from './components/Pages/ResourcesMap';
-import PandemicState from './components/Pages/PandemicState';
-import AboutCovid from './components/Pages/AboutCovid';
-import AboutUs from './components/Pages/AboutUs';
 import PandemicStateFilter from './components/Pages/PandemicStateFilter';
+import InformYourself from './components/Pages/InformYourself';
+import PandemicState from './components/Pages/PandemicState';
+import ResourcesMap from './components/Pages/ResourcesMap';
+import EmergencyMap from './components/Pages/EmergencyMap';
+import AboutCovid from './components/Pages/AboutCovid';
 import Header from './components/Organisms/Header';
 import Footer from './components/Organisms/Footer';
+import AboutUs from './components/Pages/AboutUs';
+import Home from './components/Pages/Home';
 import './styles/styles.css';
 
 // Se definen las rutas
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/mapa-emergencia" component={EmergencyMap} />
         <Route path="/mapa-recursos" component={ResourcesMap} />
         <Route path="/estado-pandemia" component={PandemicState} />
         <Route path="/sobre-covid" component={AboutCovid} />
