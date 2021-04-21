@@ -1,13 +1,34 @@
 .select-point-on-map-box {
     background-color: map-get($map: $colors, $key: oc-white);
-    padding: 30px 8px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     box-shadow: 4px 0.5px 4px 0.5px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    // transform: translateY(100%);
     
     &__title {
         font-size: 18px;
-        margin-bottom: 20px;
+        margin: 20px 10px;
+    }
+
+    &__updown {
+        background-color: map-get($map: $colors, $key: oc-dark-green);
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__updownicon {
+        transition: all .6s;
+    }
+
+    &__updowntext {
+        color: map-get($map: $colors, $key: oc-white);
+        margin-right: 20px;
+    }
+
+    &__grid {
+        padding: 0px 8px;
     }
 }
 

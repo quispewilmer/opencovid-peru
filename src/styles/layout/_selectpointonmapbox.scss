@@ -2,14 +2,16 @@
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 2;
     z-index: 1;
     grid-gap: 10px;
     height: max-content;
     align-self: flex-end;
+    overflow: hidden;
+    transition: all .4s;
     
     &__grid {
         display: grid;
