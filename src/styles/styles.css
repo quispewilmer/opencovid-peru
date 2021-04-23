@@ -1248,6 +1248,10 @@ a:hover {
   text-decoration: none;
 }
 
+.select-point-on-map-box--close {
+  transform: translateY(calc(100% - 24px));
+}
+
 .banner {
   background-image: url("/src/img/banner/banner-mob.svg");
   background-repeat: no-repeat;
