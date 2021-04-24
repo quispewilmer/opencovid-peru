@@ -17,22 +17,24 @@ import Banner from '../Organisms/Banner';
 import Glass from '../../img/pandemiaState/glass.svg';
 
 const Home = () => {
-
-    let information;
-    let url = "https://open-covid-2-api-szz4htueua-uk.a.run.app/api/resume/last";
-
-    let [state, setState] = useState({
-        information: "",
-        date: "",
+    const url = "https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/resume/last";
+    let dateC = ""
+    const [state, setState] = useState({
+        information: {
+            data: [],
+        }
     })
 
     useEffect(async () => {
-        setState({
-            information: await axios.get(url),
-            date: state.information.data.fechaCreacion.split(" ")[0],
-        })
-    });
-
+        fetch(url)
+        .then(response => response.json())
+        .then(response => setState({
+            information: {
+                data: response,
+            }
+        }))
+    }, [])
+    
     return (
         <>
             <Banner />
@@ -42,10 +44,10 @@ const Home = () => {
                         <h1 className="national-situation__title text-center font-weight-bold main-title">Situación a nivel nacional</h1>
                         <HighRule />
                         <div className="national-situation__articles mx-0">
-                            <QuantityCard title="Nuevos infectados" image={infected} number={state.information ? parseInt(state.information.data.activeCases, 10) : ""} type="bad" update={state.date}/>
-                            <QuantityCard title="Nuevas muertes" image={dead} number={state.information ? parseInt(state.information.data.fallecidosSinadef, 10) : ""} type="bad" update={state.date}/>
-                            <QuantityCard title="Camas UCI disponibles" image={uci} number={state.information ? parseInt(state.information.data.camasUciDisp, 10) : ""} type="good" update={state.date}/>
-                            <QuantityCard title="Personas vacunadas" image={vaccine} number={state.information ? parseInt(state.information.data.vacunados, 10) : ""} type="good" update={state.date}/>
+                            <QuantityCard title="Nuevos infectados" image={infected} number={Math.round(state.information.data.activeCases)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
+                            <QuantityCard title="Nuevas muertes" image={dead} number={Math.round(state.information.data.fallecidosMinsa + state.information.data.fallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
+                            <QuantityCard title="Camas UCI disponibles" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
+                            <QuantityCard title="Personas vacunadas" image={vaccine} number={Math.round(state.information.data.vacunados)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
                         </div>
                     </div>
                 </section>
