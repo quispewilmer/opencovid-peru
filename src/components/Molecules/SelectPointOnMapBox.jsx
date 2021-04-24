@@ -10,30 +10,16 @@ import privatehealthcenter from '../../img/emergencymap/privatehealthcenter.svg'
 import ucibed from '../../img/emergencymap/ucibed.svg';
 import arrowup from '../../img/icons/arrowup.svg';
 
-const SelectPointOnMapBox = ({theme}) => {
+const SelectPointOnMapBox = ({theme, visualizeData}) => {
     const selectPointOnMapBox = useRef(null);
 
     const [state, setState] = useState({
         mapBoxGridIsDown: false,
     });
 
-    const [api, setApi] = useState({
-        api: []
-    });
-
     const getDownTheArea = () => {
         setState({
             mapBoxGridIsDown: !state.mapBoxGridIsDown
-        })
-    }
-
-    const visualizeData = (url) => {
-        fetch(url)
-        .then(response => response.json())
-        .then(response => {
-            setApi({
-                api: response
-            })
         })
     }
 
@@ -50,7 +36,7 @@ const SelectPointOnMapBox = ({theme}) => {
             </div>
             <h2 className="select-point-on-map-box__title graphic__title text-center">Selecciona la opción que necesites</h2>
             <div className="select-point-on-map-box__grid">
-                <SelectPointOnMap image={ucibed} title="Camas UCI" visualizeData={visualizeData.bind(this, 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/uci')}/>
+                <SelectPointOnMap image={ucibed} title="Camas UCI" />
                 <SelectPointOnMap image={covidbed} title="Camas COVID" />
                 <SelectPointOnMap image={oxigencharge} title="Balones de oxígeno" />
                 <SelectPointOnMap image={pharmacy} title="Farmacias" />
