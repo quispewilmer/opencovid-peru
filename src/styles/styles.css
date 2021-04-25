@@ -1481,3 +1481,13 @@ a:hover {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root .emergency-map-container {
+  flex: 1
+}

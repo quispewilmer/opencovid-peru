@@ -10,7 +10,7 @@ import privatehealthcenter from '../../img/emergencymap/privatehealthcenter.svg'
 import ucibed from '../../img/emergencymap/ucibed.svg';
 import arrowup from '../../img/icons/arrowup.svg';
 
-const SelectPointOnMapBox = ({theme, visualizeData, hello}) => {
+const SelectPointOnMapBox = ({theme, visualizeData, changeOption}) => {
     const selectPointOnMapBox = useRef(null);
 
     const [state, setState] = useState({
@@ -36,14 +36,14 @@ const SelectPointOnMapBox = ({theme, visualizeData, hello}) => {
             </div>
             <h2 className="select-point-on-map-box__title graphic__title text-center">Selecciona la opción que necesites</h2>
             <div className="select-point-on-map-box__grid">
-                <SelectPointOnMap image={ucibed} title="Camas UCI" />
-                <SelectPointOnMap image={covidbed} title="Camas COVID" />
-                <SelectPointOnMap image={oxigencharge} title="Balones de oxígeno" />
-                <SelectPointOnMap image={pharmacy} title="Farmacias" />
-                <SelectPointOnMap image={minsahealthcenter} title="Centros de salud MINSA" />
-                <SelectPointOnMap image={essaludhealthcenter} title="Centros de salud Essalud" />
-                <SelectPointOnMap image={privatehealthcenter} title="Centros de salud privados" />
-                <SelectPointOnMap image={ffaapnphealthcenter} title="Centros de salud FF.AA. y la PNP" />
+                <SelectPointOnMap image={ucibed} title="Camas UCI" url="api/uci" changeOption={changeOption} />
+                <SelectPointOnMap image={covidbed} title="Camas COVID" url="api/cama" changeOption={changeOption} />
+                <SelectPointOnMap image={oxigencharge} title="Balones de oxígeno" url="api/cama" changeOption={changeOption} />
+                <SelectPointOnMap image={pharmacy} title="Farmacias" url="api/cama" changeOption={changeOption} />
+                <SelectPointOnMap image={minsahealthcenter} title="Centros de salud MINSA" url="api/cama" changeOption={changeOption} />
+                <SelectPointOnMap image={essaludhealthcenter} title="Centros de salud Essalud" url="api/cama" changeOption={changeOption} />
+                <SelectPointOnMap image={privatehealthcenter} title="Centros de salud privados" url="api/cama" changeOption={changeOption} />
+                <SelectPointOnMap image={ffaapnphealthcenter} title="Centros de salud FF.AA. y la PNP" url="api/cama" changeOption={changeOption} />
             </div>
         </section>
     );
