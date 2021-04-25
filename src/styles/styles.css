@@ -518,11 +518,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.membership-form {
-  /*input:not([type="submit"]) {
-      background-color: #DEE9FF;
-  }*/
-}
 .membership-form input {
   border: none;
 }
@@ -659,6 +654,8 @@ a:hover {
   padding: 14px;
   border: 2px solid #00BFA6;
   border-radius: 12px;
+  background-color: #FFFFFF;
+  z-index: 1;
 }
 .legend__title {
   font-family: AvenirHeavy;
@@ -1094,28 +1091,25 @@ a:hover {
   margin: auto;
 }
 
-.dashboard--for-graphics {
-  display: grid;
-  grid-gap: 25px;
-}
 @media screen and (min-width: 1080px) {
   .dashboard {
     display: grid;
-    grid-template-columns: 1fr 4fr;
   }
   .dashboard--for-graphics {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
   }
   .dashboard .map-graphic {
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-row-end: 4;
   }
   .dashboard .ranking-graphic--horizontal {
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
     grid-row-start: 4;
     grid-row-end: 5;
   }
@@ -1124,6 +1118,34 @@ a:hover {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 4;
+  }
+  .dashboard .covid-beds-graphic {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  .dashboard .jafeth-filters {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+  }
+  .dashboard .positivity-rate-graphic {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .dashboard .mortality-rate-graphic {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
   }
 }
 .dashboard__sidebar {
@@ -1137,7 +1159,7 @@ a:hover {
   .graphic__date {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 2;
+    grid-row-start: 1;
     grid-row-end: 3;
   }
   .graphic__region-selection {
@@ -1416,6 +1438,38 @@ a:hover {
   .footer .membership-form {
     margin-bottom: -30px !important;
   }
+}
+
+.jafeth-filters__title {
+  width: 100%;
+}
+.jafeth-filters .membership-form {
+  margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  max-width: 100%;
+}
+.jafeth-filters .searchregion-form {
+  margin-right: 0;
+  margin-left: 0;
+  max-width: 100%;
+}
+.jafeth-filters .searchregion-form__input {
+  width: calc(100% - 50px);
+}
+.jafeth-filters .SelectedWeekExample {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.jafeth-filters .DayPickerInput, .jafeth-filters .DayPickerInput input {
+  width: 100%;
+}
+.jafeth-filters .pandemicstate-input {
+  height: 40px;
 }
 
 .pandemicstate-input {

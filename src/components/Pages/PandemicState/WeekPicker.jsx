@@ -71,7 +71,7 @@ export default class WeekPicker extends React.Component {
     };
 
     return (
-      <div className="SelectedWeekExample">
+      <div className="SelectedWeekExample searchregion-form">
         <DayPickerInput
           value={selectedDays.length === 7 ? `${moment(selectedDays[0]).format('MM-DD-YYYY')} - ${moment(selectedDays[6]).format('MM-DD-YYYY')}` : ''}
           component={props => <input className="pandemicstate-input" {...props} />}

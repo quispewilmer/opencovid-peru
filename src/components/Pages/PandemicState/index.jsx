@@ -49,13 +49,43 @@ const PandemicState = () => {
                     setFilters(currentValue => ({ ...currentValue, state }))
                     setRisk(RISKS[Math.floor(Math.random() * RISKS.length)])
                     }} />
+                <div className="graphic-container graphic" style={{
+                    gridColumnStart:'3',
+                    gridColumnEnd:'5',
+                    gridRowStart:'1',
+                    gridRowEnd:'3'
+                }}>{"Este es un componente de prueba"}</div>
+                <div className="graphic-container graphic" style={{
+                    gridColumnStart:'2',
+                    gridColumnEnd:'3',
+                    gridRowStart:'4',
+                    gridRowEnd:'5'
+                }}>{"Este es un componente de prueba"}</div>
+                <div className="graphic-container graphic" style={{
+                    gridColumnStart:'3',
+                    gridColumnEnd:'4',
+                    gridRowStart:'4',
+                    gridRowEnd:'5'
+                }}>{"Este es un componente de prueba"}</div>
+                <div className="graphic-container graphic" style={{
+                    gridColumnStart:'4',
+                    gridColumnEnd:'5',
+                    gridRowStart:'4',
+                    gridRowEnd:'5'
+                }}>{"Este es un componente de prueba"}</div>
                 <CovidBeds risk={risk} />
-                <Statistics title="Lima Región" />
-                <PositivityRate risk={risk} />
                 <MortalityRate risk={risk} />
+                <PositivityRate risk={risk} />
             </TemplateDashboard>
         </div>
     )
+
+    /**
+     
+    
+    */
+    
+    // <Statistics title="Lima Región" />
 }
 
 export default PandemicState;

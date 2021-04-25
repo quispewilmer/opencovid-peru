@@ -9,7 +9,6 @@ const Region = ({ onSwitchClick, onStateClick }) => {
     return (
         <>
             <div className="map-graphic graphic-container graphic">
-                <h1 className="graphic__title">Situación regional</h1>
                 <section className="graphic__date date-for-graphic">
                     <div className="date-for-graphic__calendar calendar">
                         <img src={Calendar} alt="Calendario" className="calendar__image" />
