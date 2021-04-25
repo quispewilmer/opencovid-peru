@@ -10,6 +10,7 @@ import Footer from './components/Organisms/Footer';
 import AboutUs from './components/Pages/AboutUs';
 import Home from './components/Pages/Home';
 import './styles/styles.css';
+import Vaccination from './components/Pages/Vaccination';
 
 // Se definen las rutas
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/nosotros" component={AboutUs} />
         <Route path="/pandemia-filtro" component={PandemicStateFilter} />
         <Route path="/informate" component={InformYourself} />
+        <Route path="/vacunacion"component={Vaccination}/>
         <Route component={
           () => (
             <h1>Error 404</h1>
