@@ -4,6 +4,17 @@ import InformationPlaceContentItem from '../Molecules/InformationPlaceContentIte
 import arrowleft from '../../img/icons/arrowleft.svg';
 import arrowright from '../../img/icons/arrowright.svg';
 
+const icons = {
+    "Camas UCI": ucibed,
+    "Camas COVID": ucibed,
+    "Balones de oxígeno": ucibed,
+    "Farmacias": ucibed,
+    "Centros de salud MINSA": ucibed,
+    "Centros de salud Essalud": ucibed,
+    "Centros de salud privados": ucibed,
+    "Centros de salud FF.AA. y la PNP": ucibed,
+}
+
 const InformationPlaceContent = ({ title, data }) => {
     const informationPlaceContentList = useRef(null);
     
@@ -46,7 +57,7 @@ const InformationPlaceContent = ({ title, data }) => {
                     data.slice(state.actualPage * 5 - 5, state.actualPage * 5).map(item => (
                         <li className="information-place-content__item" key={item.id}>
                             <span>Item {item.id}</span>
-                            <span><img src={ucibed} alt='icon'/>{item.serv_uci_left}</span>
+                            <span><img src={icons[title]} alt='icon'/>{title.includes('Camas') ? item.serv_uci_left : '2 km' }</span>
                         </li>
                     ))
                 }
