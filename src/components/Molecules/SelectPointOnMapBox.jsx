@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import SelectPointOnMap from '../Atoms/SelectPointOnMap';
 import covidbed from '../../img/emergencymap/covidbed.svg';
 import essaludhealthcenter from '../../img/emergencymap/essaludhealthcenter.svg';
@@ -10,50 +10,29 @@ import privatehealthcenter from '../../img/emergencymap/privatehealthcenter.svg'
 import ucibed from '../../img/emergencymap/ucibed.svg';
 import arrowup from '../../img/icons/arrowup.svg';
 
-const SelectPointOnMapBox = ({theme}) => {
-    let updownButton, mapBoxGrid, mapBox, arrowIcon;
+const SelectPointOnMapBox = ({theme, visualizeData}) => {
+    const selectPointOnMapBox = useRef(null);
 
-    let [state, setState] = useState({
-        mapBoxGridIsDown: true,
-        mapBoxTitle: "Ocultar"
+    const [state, setState] = useState({
+        mapBoxGridIsDown: false,
     });
 
-    useEffect(() => {
-        updownButton = document.querySelector(".select-point-on-map-box__updown");
-        mapBoxGrid = document.querySelector(".select-point-on-map-box__grid");
-        mapBox = document.querySelector(".select-point-on-map-box");
-        arrowIcon = document.querySelector(".select-point-on-map-box__updownicon");
-    })
-
     const getDownTheArea = () => {
-
         setState({
-            mapBoxGridIsDown: state.mapBoxGridIsDown ? false : true,
-            mapBoxTitle: state.mapBoxTitle == "Ocultar" ? 'Ver más' : "Ocultar"
+            mapBoxGridIsDown: !state.mapBoxGridIsDown
         })
-        
-        moveTheElement();
-    }
-    
-    const moveTheElement = () => {
-        if(state.mapBoxGridIsDown) {
-            let bottomUpdownButton = updownButton.getBoundingClientRect().bottom;
-            let bottomMapBoxGrid = mapBoxGrid.getBoundingClientRect().bottom;
-            let difference = bottomMapBoxGrid - bottomUpdownButton;
-            
-            mapBox.style.transform = `translateY(${difference}px)`;
-            arrowIcon.style.transform = `rotate(180deg)`;
-        } else {
-            mapBox.style.transform = `translateY(0px)`;
-            arrowIcon.style.transform = `rotate(0deg)`;
-        }    
     }
 
     return (
-        <section className="select-point-on-map-box graphic">
-            <div className="select-point-on-map-box__updown" onClick={getDownTheArea.bind(this)}>
-                <span className="select-point-on-map-box__updowntext">{state.mapBoxTitle}</span>
-                <img src={arrowup} alt="" className="select-point-on-map-box__updownicon"/>
+        <section className={`select-point-on-map-box ${state.mapBoxGridIsDown ? "select-point-on-map-box--close" : ""}`} ref={selectPointOnMapBox}>
+            <div className="select-point-on-map-box__updown" onClick={getDownTheArea.bind()}>
+                <span className="select-point-on-map-box__updowntext">{state.mapBoxGridIsDown ? "Ver más" : "Ocultar"}</span>
+                <img src={arrowup} alt="" className="select-point-on-map-box__updownicon" style={
+                    state.mapBoxGridIsDown ? {
+                        transform: 'rotate(180deg)'
+                    } : {
+                        transform: 'rotate(0deg)'
+                    }}/>
             </div>
             <h2 className="select-point-on-map-box__title graphic__title text-center">Selecciona la opción que necesites</h2>
             <div className="select-point-on-map-box__grid">

@@ -20,6 +20,12 @@
     }
 
     &--white-orange {
-        @include button(oc-white, oc-orange, oc-black)
+        @include button(oc-white, oc-orange, oc-black);
+    }
+}
+
+.select-point-on-map-box {
+    &--close {
+        transform: translateY(calc(100% - 24px));
     }
 }

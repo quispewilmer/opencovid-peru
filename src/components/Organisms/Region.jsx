@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Mapa from '../../img/pandemiaState/mapa.svg';
 import Calendar from '../../img/pandemiaState/calender.svg';
 import LegendGraphic from '../Molecules/LegendGraphic';
+import Map from '../Pages/PandemicState/Map'
 
-const Region = () => {
+const Region = ({ onSwitchClick, onStateClick }) => {
+    const [checked, setChecked] = useState(false)
     return (
         <>
             <div className="map-graphic graphic-container graphic">
@@ -19,15 +21,19 @@ const Region = () => {
                 </section>
                 <section className="graphic__region-selection region-selection">
                     <p className="region-selection__one-region">Una región</p>
-                    <label className="region-selection__switch">
-                        <input type="checkbox" className="region-selection__checkbox" />
+                    <label className="region-selection__switch" >
+                        <input type="checkbox" className="region-selection__checkbox" checked={checked} onChange={() => {
+                            setChecked(!checked)
+                            onSwitchClick(!checked)
+                        }} />
                         <div className="region-selection__switch-c round">
                         </div>
                     </label>
                     <p className="region-selection__all-regions">Todas las regiones</p>
                 </section>
                 <section className="graphic__map map">
-                    <img src={Mapa} alt="Mapa del Perú" className="map__image" />
+                    <Map onStateClick={onStateClick} />
+                    {/* <img src={Mapa} alt="Mapa del Perú" className="map__image" /> */}
                 </section>
                 <LegendGraphic />
             </div>
