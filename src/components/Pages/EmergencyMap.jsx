@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 import SelectPointOnMapBox from '../Molecules/SelectPointOnMapBox';
 import SearchRegion from '../Molecules/SearchRegion';
 import InformationPlaceBox from '../Templates/InformationPlaceBox';

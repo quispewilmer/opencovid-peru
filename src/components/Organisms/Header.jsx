@@ -88,6 +88,13 @@ const Header = () => {
                             </div>
                         </div> 
                     </NavDropdown>
+                    <Nav.Link 
+                        as={Link} 
+                        to="/vacunacion" 
+                        exact="true"
+                    >
+                        Vacunación
+                    </Nav.Link>
                     <Nav.Link
                         as={Link} 
                         to="/sobre-covid" 
