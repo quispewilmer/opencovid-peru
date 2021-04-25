@@ -77,10 +77,10 @@ const MortalityRate = ({ risk = 'extreme', data = TEST_DATA }) => {
   }, [risk])
 
   return (
-    <section className="place-graphic graphic-container graphic">
+    <section className="mortality-rate-graphic graphic-container graphic">
       <h1 className="graphic__title">Tasa de Mortalidad</h1>
       <div className="graphic__region-information region-information">
-        <canvas ref={chartRef} width="400" height="400"></canvas>
+        <canvas ref={chartRef} width='100%' height='110px'></canvas>
       </div>
       <div>Actualizado: 18 de abril del 2021</div>
     </section>

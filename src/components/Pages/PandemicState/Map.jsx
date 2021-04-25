@@ -16,7 +16,7 @@ const Map = ({ onStateClick }) => {
 
   return (
     <>
-      <div id="map" style={{marginTop: 150}}></div>
+      <div id="map" style={{marginTop: 50}}></div>
     </>
   )
 }

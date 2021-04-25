@@ -10,7 +10,7 @@ import privatehealthcenter from '../../img/emergencymap/privatehealthcenter.svg'
 import ucibed from '../../img/emergencymap/ucibed.svg';
 import arrowup from '../../img/icons/arrowup.svg';
 
-const SelectPointOnMapBox = ({theme, visualizeData}) => {
+const SelectPointOnMapBox = ({theme, visualizeData, hello}) => {
     const selectPointOnMapBox = useRef(null);
 
     const [state, setState] = useState({

@@ -121,6 +121,8 @@
     padding: 14px;
     border: 2px solid map-get($map: $colors, $key: oc-light-green);
     border-radius: 12px;
+    background-color: map-get($map: $colors, $key: oc-white);
+    z-index: 1;
 
     &__title {
         font-family: AvenirHeavy;
