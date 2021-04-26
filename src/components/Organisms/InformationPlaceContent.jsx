@@ -56,7 +56,7 @@ const InformationPlaceContent = ({ title, data }) => {
                 {
                     data.slice(state.actualPage * 5 - 5, state.actualPage * 5).map(item => (
                         <li className="information-place-content__item" key={item.id}>
-                            <span>Item {item.id}</span>
+                            <span>{item.name}</span>
                             <span><img src={icons[title]} alt='icon'/>{title.includes('Camas') ? item.serv_uci_left : '2 km' }</span>
                         </li>
                     ))
