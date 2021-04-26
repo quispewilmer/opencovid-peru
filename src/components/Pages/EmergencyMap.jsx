@@ -1,50 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import SelectPointOnMapBox from '../Molecules/SelectPointOnMapBox';
-import SearchRegion from '../Molecules/SearchRegion';
-import InformationPlaceBox from '../Templates/InformationPlaceBox';
+import React, { useEffect, useState } from "react";
+import SelectPointOnMapBox from "../Molecules/SelectPointOnMapBox";
+import SearchRegion from "../Molecules/SearchRegion";
+import InformationPlaceBox from "../Templates/InformationPlaceBox";
+import useMapboxMap from "../../hooks/useMapboxMap";
+import "mapbox-gl/dist/mapbox-gl.css";
+import useFetch from "../../hooks/useFetch";
 
-class EmergencyMap extends React.Component {
-    static defaultProps = {
-        center: {
-          lat: 59.95,
-          lng: 30.33
-        },
-        zoom: 11
-    };
-    
-    render() {
-        
-        const Map = ReactMapboxGl({
-            accessToken:
-                'pk.eyJ1IjoicXVpc3Bld2lsbWVyIiwiYSI6ImNrbm8weG1sNzEzZ3cydm1vcWluczVoZHMifQ.51O5VoB0t1sOhThd743wZw'
-        });
+const EmergencyMap = () => {
+	const [isMapBoxClicked, setMapBoxClicked] = useState(false);
+	const [mapBoxState, setMapBoxState] = useState({
+		endpoint: undefined,
+		name: undefined,
+	});
+	const { loading, data, error } = useFetch(mapBoxState.endpoint);
+	const mapRef = useMapboxMap(data, mapBoxState.name);
 
-        return (
-            <section className="emergency-map-container">
-                <Map
-                    style="mapbox://styles/mapbox/streets-v9"
-                    containerStyle={{
-                        height: '100%',
-                        width: '100%',
-                        position: 'relative',
-                        gridColumnStart: '1',
-                        gridColumnEnd: '2',
-                        gridRowStart: '1',
-                        gridRowEnd: '4'
-                    }}
-                    >
-                    <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                        <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-                    </Layer>
-                </Map>
-                <SearchRegion theme="emergency-map-container__search-region" text="Busca tu distrito"/>
-                <InformationPlaceBox title="Balones de oxígeno"/>
-                <SelectPointOnMapBox theme="emergency-map-container__select-point-on-map-box"/>
-            </section>
-        );
-    }
-}
+	const handlePointClicked = ({ endpoint, name }) => {
+		setMapBoxClicked(true);
+		setMapBoxState({ endpoint, name });
+	};
+
+	return (
+		<section className="emergency-map-container">
+			<div
+				ref={mapRef}
+				id="map"
+				className="emergency-map-container__map-container"
+			></div>
+			{isMapBoxClicked || (
+				<div className="emergency-map-container__map-block"></div>
+			)}
+			<SearchRegion
+				theme="emergency-map-container__search-region"
+				text="Busca tu distrito"
+			/>
+			{isMapBoxClicked && <InformationPlaceBox title="Balones de oxígeno" />}
+			<SelectPointOnMapBox
+				theme="emergency-map-container__select-point-on-map-box"
+				onPointClick={handlePointClicked}
+			/>
+		</section>
+	);
+};
 
 export default EmergencyMap;
