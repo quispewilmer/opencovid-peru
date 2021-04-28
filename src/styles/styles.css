@@ -1210,6 +1210,20 @@ a:hover {
   }
 }
 
+.map-marker-popup__h {
+  font-size: 12px;
+  font-weight: bold;
+}
+.map-marker-popup__p {
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+}
+.map-marker-popup__span {
+  font-size: 12px;
+  display: inline;
+  font-weight: bold;
+}
+
 .button--red {
   border-color: #fd0600;
   background-color: #fd0600;

@@ -36,28 +36,9 @@ const Header = () => {
 				<i></i>
 			</span>
 			<Nav className={`ml-auto ${isActive ? null : "active"}`} id="sidebar">
-				<NavDropdown title="Mapa de recursos">
-					<div className="container-fluid mx-auto text-center  row">
-						<div className="col">
-							<Nav.Link as={Link} to="/mapa-emergencia" exact="true">
-								<img src={camasuci} alt="" />
-								Camas UCI
-							</Nav.Link>
-						</div>
-						<div className="col">
-							<Nav.Link as={Link} to="/mapa-emergencia" exact="true">
-								<img src={camascovid} alt="" />
-								Camas COVID
-							</Nav.Link>
-						</div>
-						<div className="col">
-							<Nav.Link as={Link} to="/mapa-emergencia" exact="true">
-								<img src={puntosoxigeno} alt="" />
-								Puntos de Oxígeno
-							</Nav.Link>
-						</div>
-					</div>
-				</NavDropdown>
+				<Nav.Link as={Link} to="/mapa-emergencia" exact="true">
+					Mapa de recursos
+				</Nav.Link>
 				<NavDropdown title="Estado de pandemia">
 					<div className="triangulo-equilatero-bottom"></div>
 					<div className="container-fluid mx-auto text-center  row">

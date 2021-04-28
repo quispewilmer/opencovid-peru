@@ -85,14 +85,14 @@ const SelectPointOnMapBox = ({ theme, onPointClick }) => {
 					image={oxigencharge}
 					title="Balones de oxígeno"
 					name="oxigen"
-					endpoint="/api/uci"
+					endpoint="/api/o2"
 					onClick={onPointClick}
 				/>
 				<SelectPointOnMap
 					image={pharmacy}
 					title="Farmacias"
 					name="pharmacy"
-					endpoint="/api/uci"
+					endpoint="/api/farmacia"
 					onClick={onPointClick}
 				/>
 				<SelectPointOnMap
@@ -120,7 +120,7 @@ const SelectPointOnMapBox = ({ theme, onPointClick }) => {
 					image={ffaapnphealthcenter}
 					title="Centros de salud FF.AA. y la PNP"
 					name="ffaa"
-					endpoint="/api/uci"
+					endpoint="/api/institution?type=FUERZA_AEREA"
 					onClick={onPointClick}
 				/>
 			</div>

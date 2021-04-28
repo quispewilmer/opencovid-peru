@@ -1,0 +1,17 @@
+.map-marker-popup {
+	&__h {
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+	&__p {
+		font-size: 12px;
+		margin-bottom: 0.5rem;
+	}
+
+	&__span {
+		font-size: 12px;
+		display: inline;
+		font-weight: bold;
+	}
+}
