@@ -15,8 +15,11 @@ const EmergencyMap = () => {
     const changeOption = (option, url) => {
         setSelectedOption(option)
         axios.get(`https://open-covid-2-api-6b3whmne6q-uk.a.run.app/${url}`)
-            .then(data => {
-                setData(data.data)
+            .then(({ data }) => {
+                if (option.includes('Cama')) {
+                    data = data.filter(({serv_uci_left}) => serv_uci_left !== 0)
+                }
+                setData(data)
                 setSelectedOption(option)
             })
     }
