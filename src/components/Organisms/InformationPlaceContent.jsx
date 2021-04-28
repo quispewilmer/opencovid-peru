@@ -4,20 +4,35 @@ import InformationPlaceContentItem from '../Molecules/InformationPlaceContentIte
 import arrowleft from '../../img/icons/arrowleft.svg';
 import arrowright from '../../img/icons/arrowright.svg';
 
-const InformationPlaceContent = ({ title }) => {
+const icons = {
+    "Camas UCI": ucibed,
+    "Camas COVID": ucibed,
+    "Balones de oxígeno": ucibed,
+    "Farmacias": ucibed,
+    "Centros de salud MINSA": ucibed,
+    "Centros de salud Essalud": ucibed,
+    "Centros de salud privados": ucibed,
+    "Centros de salud FF.AA. y la PNP": ucibed,
+}
+
+const InformationPlaceContent = ({ title, data }) => {
     const informationPlaceContentList = useRef(null);
     
     const [state, setState] = useState({
         actualPage: 1,
-        totalPage: 1,
+        totalPage:  Math.ceil(data.length / 5),
     });
     
     useEffect(() => {
-    })
+        setState({
+            actualPage: 1,
+            totalPage: Math.ceil(data.length / 5)
+        })
+    }, [data])
 
     const slideToLeft = () => {
         setState({
-            actualPage: state.actualPage == 1 ?
+            actualPage: state.actualPage === 1 ?
                 state.actualPage = state.totalPage :
                 state.actualPage -= 1,
             totalPage: state.totalPage
@@ -36,52 +51,16 @@ const InformationPlaceContent = ({ title }) => {
     return (
         <main className="information-place-box__section information-place-content">
             <span className="information-place-content__title graphic__title">{title}</span>
-            <span className="information-place-content__available">Disponibilidad</span>
+            <span className="information-place-content__available">{title.includes('Camas') ? 'Disponibles' : 'Distancia' }</span>
             <ul className="information-place-content__list" ref={informationPlaceContentList}>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval1</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval2</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval3</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval4</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval5</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
-                <li className="information-place-content__item">
-                    <span>Hospital Naval</span>
-                    <span><img src={ucibed} />29</span>
-                </li>
+                {
+                    data.slice(state.actualPage * 5 - 5, state.actualPage * 5).map(item => (
+                        <li className="information-place-content__item" key={item.id}>
+                            <span>{item.name}</span>
+                            <span><img src={icons[title]} alt='icon'/>{title.includes('Camas') ? item.serv_uci_left : '2 km' }</span>
+                        </li>
+                    ))
+                }
 
             </ul>
             <div className="information-place-content__pagination-container">
