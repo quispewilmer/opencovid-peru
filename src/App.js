@@ -11,6 +11,7 @@ import AboutUs from './components/Pages/AboutUs';
 import Home from './components/Pages/Home';
 import './styles/styles.css';
 import Vaccination from './components/Pages/Vaccination';
+import DistricPandemicSituation from './components/Pages/DistrictPandemicSituation';
 
 // Se definen las rutas
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/pandemia-filtro" component={PandemicStateFilter} />
         <Route path="/informate" component={InformYourself} />
         <Route path="/vacunacion"component={Vaccination}/>
+        <Route path="/situacion-distrital-pandemia" component={DistricPandemicSituation} />
         <Route component={
           () => (
             <h1>Error 404</h1>
