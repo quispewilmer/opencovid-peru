@@ -1,11 +1,9 @@
 import React from 'react';
 import GaugueVaccination from './GaugueVaccination';
 import TextHighlights from './TextHighlightsVaccination';
-import pictureBlue from '../../img/vaccination/picture-blue.png';
-import pictureGradient from '../../img/vaccination/picture-blue.png';
-import picture from '../../img/vaccination/picture.png';
 import arrowLeft from '../../img/vaccination/arrow-left.png';
 import groupSociety from '../../img/vaccination/group-society.png';
+import SectionDoseVaccination from './SectionDoseVaccination';
 
 const CardBodyVaccination=()=>{
     return (
@@ -18,32 +16,7 @@ const CardBodyVaccination=()=>{
                         eText=" personas vacunadas*, ellos representan el 2% de la población total elegible para vacunarse"/>
                 </div>
                 <div className="col-lg-3">
-                    <div className="row">
-                        <div className="col-lg-2">
-                            <img src={picture} alt=""/>
-                        </div>
-                        <div className="col-lg-10">
-                            <p>Sin vacunar (%)</p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-2">
-                            <img src={pictureGradient} alt=""/>
-                        </div>
-                        <div className="col-lg-10">
-                            <p>Primera dosis (%)</p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-2">
-                            <img src={pictureBlue} alt=""/>
-                        </div>
-                        <div className="col-lg-10">
-                            <p>Segunda dosis (%)</p>
-                        </div>
-                    </div>
-                    
-                    
+                    <SectionDoseVaccination/>
                 </div>
                 <div className="col-lg-1">
                     <img src={arrowLeft} alt="" className="mt-5"/>
@@ -54,7 +27,7 @@ const CardBodyVaccination=()=>{
                             <button className="btn form-control btn-success btn-fase">Fase I
                             </button>
                             <img src={groupSociety} alt="" className="mx-auto mt-3"/>
-                            <h3 className="text-success">xx</h3>
+                            <h3 className="m-0 text-success">xx</h3>
                             <h3>vacunados*</h3>
                             <span>Personal de salud, policías, bomberos y personas mayores de 65 años</span>
                         </div>
@@ -62,24 +35,24 @@ const CardBodyVaccination=()=>{
                             <button className="btn form-control btn-success btn-fase">Fase II
                             </button>
                             <img src={groupSociety} alt="" className="mx-auto mt-3"/>
-                            <h3 className="text-success">xx</h3>
+                            <h3 className="text-success m-0">xx</h3>
                             <h3>vacunados*</h3>
-                            <span>Por determinar</span>
+                            <span>Por determinar*</span>
                         </div>
                         <div className="col-lg-4 text-center">
                             <button className="btn form-control btn-success btn-fase">Fase III
                             </button>
                             <img src={groupSociety} alt="" className="mx-auto mt-3"/>
-                            <h3 className="text-success">xx</h3>
+                            <h3 className="m-0 text-success">xx</h3>
                             <h3>vacunados*</h3>
-                            <span></span>
+                            <span>Por determinar</span>
                         </div>
                         <div className="col-lg-12 text-center mt-4">
                             <button className="btn bg-light btn-search vaccinate">
                                 ¿Cuando me toca vacunarme?
                             </button>
                         </div>
-                        <div className="col-lg-12 text-right">
+                        <div className="col-lg-12 mt-2 text-right">
                             <span>*Considerando solo la primera dosis</span>
                             <span>Fuente: MINSA 2021. Datos abiertos vacunación</span>
                         </div>
