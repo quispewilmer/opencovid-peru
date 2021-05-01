@@ -1,8 +1,8 @@
 import React from 'react';
-import mapaPeru from '../../img/vaccination/mapa-peru.svg';
-import primeraLinea from '../../img/vaccination/primera-linea.svg';
-import CardBodyVaccination from '../Atoms/CardBodyVaccination';
-import CardTop from '../Atoms/CardTopVaccination';
+import mapaPeru from '../../../img/vaccination/mapa-peru.svg';
+import primeraLinea from '../../../img/vaccination/primera-linea.svg';
+import CardTop from '../../Atoms/CardTopVaccination';
+import CardBodyVaccination from '../../Atoms/CardBodyVaccination';
 
 const Vaccination=()=>{
     return(

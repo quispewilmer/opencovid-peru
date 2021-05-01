@@ -29,6 +29,14 @@
             font-size: 0.93rem;
         }
     }
+
+    .searchregion-form__input {
+        width: 60% !important;
+    }
+
+    .btn-vaccinate-state{
+        background: #00B092;
+    }
 }
 
 @media only screen and (min-width: 250px) and (max-width: 715px){

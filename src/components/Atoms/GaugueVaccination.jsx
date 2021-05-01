@@ -3,11 +3,10 @@ import ReactSpeedometer from "react-d3-speedometer";
 
 const GaugueVaccination=()=>{
     return(
-        <div className="w-100">
+        <div className="w-100 text-center mt-3 mb-4">            
             <ReactSpeedometer
                 forceRender={true}
-                width={380}
-                height={250}
+                width={400}
                 value={4000}    
                 maxValue={100000}            
                 segments={2}
@@ -18,6 +17,7 @@ const GaugueVaccination=()=>{
                 maxSegmentLabels={0}
                 currentValueText="2%"
             />
+            <button className="btn btn-vaccinate-state text-white">% de la población vacunada</button>
         </div>
     )
 }
