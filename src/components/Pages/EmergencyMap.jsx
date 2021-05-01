@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import SelectPointOnMapBox from "../Molecules/SelectPointOnMapBox";
-import SearchRegion from "../Molecules/SearchRegion";
 import InformationPlaceBox from "../Templates/InformationPlaceBox";
 import useFetch from "../../hooks/useFetch";
 import useMapboxMap from "../../hooks/useMapboxMap";
+import SearchMapbox from "../Molecules/SearchMapbox";
 
 const EmergencyMap = () => {
 	const [isMapBoxClicked, setMapBoxClicked] = useState(false);
@@ -42,7 +42,7 @@ const EmergencyMap = () => {
 			{isMapBoxClicked || (
 				<div className="emergency-map-container__map-block"></div>
 			)}
-			<SearchRegion
+			<SearchMapbox
 				theme="emergency-map-container__search-region"
 				text="Busca tu distrito"
 				onSubmit={handleSubmit}

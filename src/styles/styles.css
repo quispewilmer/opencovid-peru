@@ -654,7 +654,7 @@ a:hover {
   padding: 14px;
   border: 2px solid #00bfa6;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: rgba(213, 229, 221, 0.21);
   z-index: 1;
 }
 .legend__title {
@@ -681,7 +681,7 @@ a:hover {
   margin-right: 10px;
 }
 .legend .high {
-  background-color: #fa6142;
+  background-color: #F38620;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -693,7 +693,7 @@ a:hover {
   margin-right: 10px;
 }
 .legend .low {
-  background-color: #00bfa6;
+  background-color: #00BF46;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -1124,12 +1124,6 @@ a:hover {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto auto auto;
   }
-  .dashboard .map-graphic {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 4;
-  }
   .dashboard .ranking-graphic--horizontal {
     grid-column-start: 3;
     grid-column-end: 5;
@@ -1148,15 +1142,11 @@ a:hover {
     grid-row-start: 4;
     grid-row-end: 5;
   }
-  .dashboard .jafeth-filters {
+  .dashboard .pandemic-state-filters {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 30px;
   }
   .dashboard .positivity-rate-graphic {
     grid-row-start: 3;
@@ -1187,8 +1177,7 @@ a:hover {
   }
   .graphic__region-selection {
     margin-top: 0;
-    align-items: start;
-    justify-content: end;
+    justify-content: flex-end;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -1483,44 +1472,182 @@ a:hover {
   }
 }
 
-.jafeth-filters__title {
+.pandemic-state-filters__title {
   width: 100%;
+  font-size: 32px;
 }
-.jafeth-filters .membership-form {
+.pandemic-state-filters .membership-form {
   margin: 0;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
   max-width: 100%;
 }
-.jafeth-filters .searchregion-form {
+.pandemic-state-filters .searchregion-form {
   margin-right: 0;
   margin-left: 0;
   max-width: 100%;
 }
-.jafeth-filters .searchregion-form__input {
+.pandemic-state-filters .searchregion-form__input {
   width: calc(100% - 50px);
 }
-.jafeth-filters .SelectedWeekExample {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-.jafeth-filters .DayPickerInput, .jafeth-filters .DayPickerInput input {
+.pandemic-state-filters .DayPickerInput {
   width: 100%;
 }
-.jafeth-filters .pandemicstate-input {
+.pandemic-state-filters .pandemicstate-input {
   height: 40px;
 }
 
-.pandemicstate-input {
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  width: 240px;
+  height: 30px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 45px;
+  margin-left: 53px;
+  width: 365px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.pandemicstate-filter {
+  position: relative;
+}
+
+.pandemicstate-filter__icon {
+  width: 53px;
+  height: 45px;
+  background-color: #00BFA6;
+  position: absolute;
+  border-radius: 20px 0px 0px 20px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pandemicstate-filter__icon--search {
+  background-image: url(../img/pandemiaState/glass.svg);
+}
+
+.pandemicstate-filter__icon--calendar {
+  background-image: url(../img/pandemiaState/white-calendar.svg);
+}
+
+.pandemicstate-filter__input {
   height: 45px;
   border-radius: 20px;
   border: none;
-  padding-left: 21px;
-  width: 250px;
+  padding-left: 70px;
+}
+
+.uci-beds .graphic__title {
+  position: relative;
+}
+
+.region-ranking {
+  padding: 1em;
+}
+.region-ranking .expand-info__legend {
+  width: 227px;
+}
+
+.region-ranking__title {
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--gray-dark);
+  margin-bottom: -0.4rem;
+}
+
+.region-ranking__list {
+  margin-top: 38px;
+  column-gap: 25px;
+  columns: 3;
+}
+
+.region-ranking__list__item {
+  margin-bottom: 23px;
+  padding-left: 38px;
+}
+
+.region-ranking__risk-icon {
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.region-ranking__list__group {
+  margin-bottom: 23px;
+}
+
+.pandemicstate-filter__input {
+  width: 100%;
+}
+
+.pandemic-state-filters__containers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pandemic-state-filters__item {
+  flex: 1;
+}
+.pandemic-state-filters__item:first-child {
+  margin-right: 20px;
+}
+
+.graphic__region-information {
+  padding: 25px;
+}
+
+#map_outer, #map_access {
+  display: none !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

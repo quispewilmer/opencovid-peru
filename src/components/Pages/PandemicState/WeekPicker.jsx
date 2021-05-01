@@ -3,8 +3,9 @@ import Helmet from 'react-helmet';
 import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import classNames from 'classnames'
 
-function getWeekDays(weekStart) {
+export function getWeekDays(weekStart) {
   const days = [weekStart];
   for (let i = 1; i < 7; i += 1) {
     days.push(
@@ -16,22 +17,34 @@ function getWeekDays(weekStart) {
   return days;
 }
 
-function getWeekRange(date) {
+export function getWeekRange(date) {
   return {
     from: moment(date)
-      .startOf('week')
+      .startOf('isoWeek')
       .toDate(),
     to: moment(date)
-      .endOf('week')
+      .endOf('isoWeek')
       .toDate(),
   };
 }
 
+const PickerInput = (props) => {
+  return (
+    <div className="pandemicstate-filter">
+      <div className="pandemicstate-filter__icon pandemicstate-filter__icon--calendar"></div>
+      <input className="pandemicstate-filter__input" {...props} />
+    </div>
+  )
+}
+
 export default class WeekPicker extends React.Component {
-  state = {
-    hoverRange: undefined,
-    selectedDays: [],
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      hoverRange: undefined,
+      selectedDays: getWeekDays(getWeekRange(props.initialDate || moment()).from),
+    }
+  }
 
   handleDayChange = date => {
     const selectedDays = getWeekDays(getWeekRange(date).from)
@@ -71,10 +84,10 @@ export default class WeekPicker extends React.Component {
     };
 
     return (
-      <div className="SelectedWeekExample searchregion-form">
+      <div className={classNames('SelectedWeekExample', this.props.className)}>
         <DayPickerInput
           value={selectedDays.length === 7 ? `${moment(selectedDays[0]).format('MM-DD-YYYY')} - ${moment(selectedDays[6]).format('MM-DD-YYYY')}` : ''}
-          component={props => <input className="pandemicstate-input" {...props} />}
+          component={PickerInput}
           dayPickerProps={{
             selectedDays: selectedDays,
             showWeekNumbers: false,
@@ -83,6 +96,8 @@ export default class WeekPicker extends React.Component {
             onDayClick: this.handleDayChange,
             onDayMouseEnter: this.handleDayEnter,
             onDayMouseLeave: this.handleDayLeave,
+            firstDayOfWeek: 1,
+            disabledDays: this.props.disabledDays
           }}
         />
 
@@ -127,6 +142,10 @@ export default class WeekPicker extends React.Component {
             }
             .SelectedWeekExample .DayPicker-Day--hoverRange:hover {
               border-radius: 0 !important;
+            }
+
+            .SelectedWeekExample .DayPickerInput-Overlay {
+              margin-left: 53px;
             }
           `}</style>
         </Helmet>
