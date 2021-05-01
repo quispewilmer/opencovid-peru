@@ -1,25 +1,22 @@
 .weekly-info-card-container{
 	font-family: Avenir;
-	margin: 2rem 0 0 2rem;
 	width: fit-content;
-	max-width: 480px;
 	padding: 1em;
 	border-radius: 4px;
-	box-shadow: 0 0 2px #000000;
 
 	@media (max-width: 576px) {
 		max-width: 90%;		
 	}
 
-	time{
+	.weekly-info-card__weekrange{
 		color: #6c757d;
-		line-height: 2;
-		font-size: 1.2rem;
+		font-size: 16px;
 	}
 
-	h3{
+	.weekly-info-card__title{
 		margin-bottom: 0;
-		font-size: 1.92rem;
+		font-size: 20px;
+		font-weight: bold;
 		color: var(--gray-dark);
 		margin-bottom: -0.4rem;
 	}
@@ -30,7 +27,7 @@
 		display: flex;
 		flex-direction: column;
 		color: #212529;
-		
+		margin-bottom: 0;
 	}
 }
 

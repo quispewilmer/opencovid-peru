@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import Chart from 'chart.js/auto';
+import ExpandInfo from '../../../Atoms/ExpandInfo'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const TEST_DATA = [5, 95];
 
@@ -22,8 +24,10 @@ const riskToColors = {
   },
 }
 
+const LABELS = ["Disponibles", "No disponibles"]
+
 const buildDataObject = ({ data, risk }) => ({
-  labels: ["Disponibles", "No disponibles"],
+  labels: LABELS,
   datasets: [
     {
       fill: true,
@@ -33,31 +37,58 @@ const buildDataObject = ({ data, risk }) => ({
   ]
 })
 
-const buildChartConfiguration = ({ data, risk }) => ({
+const buildChartConfiguration = ({ data, risk, totalBeds }) => ({
   type: 'pie',
   data: buildDataObject({ data, risk }),
-  options: {},
+  options: {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const roundedValue = Math.round(context.raw)
+            const count = (roundedValue / 100) * totalBeds
+            return ` ${LABELS[context.dataIndex]}: ${count}`
+          }
+        }
+      },
+      datalabels: {
+        color: function (context) {
+          const index = context.dataIndex;
+          return index === 0 ? '#3A3838' : '#FFFFFF'
+        },
+        font: {
+          size: '16px'
+        },
+        formatter: function (value, context) {
+          return `${Math.round(value)}%`
+        }
+      }
+    }
+  },
+  plugins: [ChartDataLabels]
 })
 
-const CovidBeds = ({ risk = 'extreme', data = TEST_DATA }) => {
+const CovidBeds = ({ risk = 'extreme', data = TEST_DATA, totalBeds }) => {
   const chartRef = useRef(null)
 
   useEffect(() => {
-    const chart = new Chart(chartRef.current.getContext("2d"), buildChartConfiguration({ risk, data }));
+    const chart = new Chart(chartRef.current.getContext("2d"), buildChartConfiguration({ risk, data, totalBeds }));
     return () => {
       chart.destroy()
     }
-  }, [risk])
-
-  console.log('risk inside covid beds', risk)
+  }, [risk, data])
 
   return (
     <section className="graphic-container graphic covid-beds-graphic">
-      <h1 className="graphic__title">Camas COVID</h1>
-      <div className="graphic__region-information region-information">
-        <canvas ref={chartRef} width='100%' height='80px'></canvas>
+      <div className="graphic-container graphic">
+        <h1 className="graphic__title">
+          Camas COVID
+          &nbsp;<ExpandInfo style={{float: 'right'}} text=" % de camas COVID hospitalarias ocupadas. Promedio semanal" />
+        </h1>
+        <div className="graphic__region-information region-information">
+          <canvas ref={chartRef} width='100%' height='80px'></canvas>
+        </div>
       </div>
-      <div className="pt-3">Actualizado: 18 de abril del 2021</div>
     </section>
   )
 }

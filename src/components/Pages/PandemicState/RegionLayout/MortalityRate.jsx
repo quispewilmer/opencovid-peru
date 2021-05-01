@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import Chart from 'chart.js/auto';
+import ExpandInfo from '../../../Atoms/ExpandInfo'
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const TEST_DATA = [
   {
@@ -36,12 +38,22 @@ const buildDataObject = ({ risk, data }) => ({
 
 const buildChartConfiguration = ({ risk, data }) => ({
   type: 'bar',
-  data: buildDataObject({risk, data}),
+  data: buildDataObject({ risk, data }),
+  plugins: [ChartDataLabels],
   options: {
     responsive: true,
     plugins: {
       legend: {
         display: false
+      },
+      datalabels: {
+        color: ['extreme', 'high'].includes(risk) ? '#FFFFFF' : '#3A3838',
+        font: {
+          size: '16px'
+        },
+        formatter: function (value, context) {
+          return Math.round(value)
+        }
       }
     },
     scales: {
@@ -49,6 +61,9 @@ const buildChartConfiguration = ({ risk, data }) => ({
         grid: {
           display: false,
           drawBorder: false
+        },
+        ticks: {
+          color: '#212529'
         }
       },
       y: {
@@ -74,15 +89,19 @@ const MortalityRate = ({ risk = 'extreme', data = TEST_DATA }) => {
     return () => {
       chart.destroy()
     }
-  }, [risk])
+  }, [risk, data])
 
   return (
     <section className="mortality-rate-graphic graphic-container graphic">
-      <h1 className="graphic__title">Tasa de Mortalidad</h1>
-      <div className="graphic__region-information region-information">
-        <canvas ref={chartRef} width='100%' height='110px'></canvas>
+      <div className="graphic-container graphic">
+        <h1 className="graphic__title">
+          Tasa de Mortalidad
+          &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de fallecidos por Covid-19 con respecto al total de la población" />
+        </h1>
+        <div className="graphic__region-information region-information">
+          <canvas ref={chartRef} width='100%' height='110px'></canvas>
+        </div>
       </div>
-      <div>Actualizado: 18 de abril del 2021</div>
     </section>
   )
 }

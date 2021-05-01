@@ -1,44 +1,45 @@
 import React from 'react';
+import moment from 'moment'
 import '../../styles/theme/_weeklyinfocard.scss'
 
+const dateToParam = date => moment(date).format('DD-MM-YYYY')
 
-/* Here is an example of how to call the component
-<WeeklyInfoCard 
-        date1={'12/04/2021'}
-        date2={'18/04/2021'}
-        color={'#ffc107'} 
-        l1Uci={'30%'} 
-        l1Hospital={'30%'}
-        l2Variation={'disminuyó'}
-        l3Consistency={'consistente'}
-        l3Variation={'ascenso'}
-        l4Variation={'disminuido'}
-        l4State={'frenado'}
-        />
-        */
+const WeeklyInfoCard = ({ risk, data, weekRange }) => {
+	
+	const style = {
+		color: '#00BFA6'
+	}
 
-const WeeklyInfoCard = ({date1, date2, color, l1Hospital, l1Uci, l2Variation, l3Consistency, l3Variation, l4Variation, l4State}) => {
- 	
- 	const style = {
- 		color: color
- 	}
+	const [weekStart, weekEnd] = weekRange
 
- 	let dateOne = date1.split('/').reverse().join('-')
- 	let dateTwo = date2.split('/').reverse().join('-')
+	const formattedWeek = `${dateToParam(weekStart)} - ${dateToParam(weekEnd)}`
+	
+	const cambioContagios = data.incrementoContagios > 0 ? 'han aumentado' : 'se redujeron'
 
 	return (
-		<div class='weekly-info-card-container'>
-			<h3 className='weekly-info-card__title'>Análisis semanal</h3>
-			<time dateTime={dateOne}>{date1} -</time><time dateTime={dateTwo}> {date2}</time> 
+		<div className='weekly-info-card-container'>
+			<div className='weekly-info-card__title'>Análisis semanal</div>
+			<div className='weekly-info-card__weekrange'>{formattedWeek}</div>
 			<ul>
-				<li className='weekly-info-card__li'>En la última semana, <strong> ocupación de camas UCI</strong> estuvo alrededor del 
-				<strong style={style}> {l1Uci}</strong> y la 
-				ocupación de <strong>camas hospitalarias</strong> para COVID alrededor de <strong style={style}>{l1Hospital}</strong></li>
-				<li className='weekly-info-card__li'>La <strong>tasa de positividad </strong><strong style={style}>{l2Variation}</strong> respecto a la semana anterior</li>
-				<li className='weekly-info-card__li'>La tendencia de la<strong> tasa de mortalidad</strong> es <strong style={style}>{l3Consistency}</strong> en sentido que se puede 
-				decir que está en <strong style={style}>{l3Variation}</strong></li>
-				<li className='weekly-info-card__li'>El N° de infectados ha <strong style={style}> {l4Variation} </strong> el virus se ha <strong style={style}> {l4State}</strong>
-					en la última semana </li>
+				<li className='weekly-info-card__li'>
+					De las 26 regiones, hay <strong style={style}>{data.riesgoExtremo}</strong> en <strong>riesgo extremo</strong> y <strong style={style}>{data.riesgoAlto}</strong> en <strong>riesgo alto</strong>.
+				</li>
+
+				<li className='weekly-info-card__li'>
+					En <strong style={style}>{data.capacidadCamasColapsadas}</strong> de las regiones, la <strong>capacidad de camas hospitalarias</strong> y camas UCI <strong>han colapsado</strong>.
+				</li>
+
+				<li className='weekly-info-card__li'>
+					Los nuevos contagios <strong style={style}>{cambioContagios}</strong> en <strong style={style}>{Math.abs(data.incrementoContagios).toFixed(2)}%</strong> respecto a la semana del {data.semanaPrevia}.
+				</li>
+
+				<li className='weekly-info-card__li'>
+					El n° de personas fallecidas <strong>ha aumentado</strong> en <strong style={style}>{data.incrementoFallecidos}</strong> regiones y <strong>disminuido</strong> en <strong style={style}>{data.disminucionFallecidos}</strong> regiones respecto a lo que se registró la semana del {data.semanaPrevia}.
+				</li>
+
+				<li className='weekly-info-card__li'>
+					En <strong style={style}>{data.limiteRecomendado}</strong> de las regiones el n° de personas contagiadas supera el límite recomendado. El <strong>virus multiplica con facilidad</strong>.
+				</li>
 			</ul>
 		</div>
 		);
