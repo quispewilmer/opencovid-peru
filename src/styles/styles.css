@@ -1039,6 +1039,31 @@ a:hover {
 .container-vaccination .btn-vaccinate-state {
   background: #00B092;
 }
+.container-vaccination input {
+  box-shadow: none !important;
+}
+.container-vaccination .desing-vaccinate-rows .col-1 {
+  margin-top: 0.5rem;
+  padding: 0;
+}
+.container-vaccination .missing-vaccinate {
+  width: 80%;
+  height: 2rem;
+  margin: auto;
+  background: rgba(38, 50, 56, 0.4);
+}
+.container-vaccination .first-dose {
+  width: 90%;
+  height: 2rem;
+  margin: auto;
+  background: #01ABF6;
+}
+.container-vaccination .dose-complete {
+  width: 90%;
+  height: 2rem;
+  margin: auto;
+  background: #00599D;
+}
 
 @media only screen and (min-width: 250px) and (max-width: 715px) {
   .container-vaccination h2 {

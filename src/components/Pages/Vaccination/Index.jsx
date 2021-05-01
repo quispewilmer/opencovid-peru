@@ -3,8 +3,19 @@ import mapaPeru from '../../../img/vaccination/mapa-peru.svg';
 import primeraLinea from '../../../img/vaccination/primera-linea.svg';
 import CardTop from '../../Atoms/CardTopVaccination';
 import CardBodyVaccination from '../../Atoms/CardBodyVaccination';
+import axios from 'axios';
 
 const Vaccination=()=>{
+    
+    const data=()=>{
+        axios.get(`https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/resume`).then(response=>{            
+            console.log(response);
+        }).catch(e=>{
+            console.log(e);
+        })
+    }
+
+
     return(
         <div className="container-vaccination">
             <h2>¿En cuanto tiempo estaremos vacunados?</h2>

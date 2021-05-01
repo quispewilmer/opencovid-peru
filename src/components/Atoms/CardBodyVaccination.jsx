@@ -6,11 +6,14 @@ import firstLine from '../../img/vaccination/first-line.svg';
 import groupSociety from '../../img/vaccination/group-society.png';
 import stateVaccinate from '../../img/vaccination/state-vaccinate.png';
 import SectionDoseVaccination from './SectionDoseVaccination';
-import FilterRegion from '../Pages/Vaccination/FilterRegion';
+import VaccinationMap from '../Pages/Vaccination/VaccinationMap';
 
 
 
 const CardBodyVaccination=()=>{
+    
+
+
     
     return (
         <div className="card-body">
@@ -21,13 +24,13 @@ const CardBodyVaccination=()=>{
                         highlight="612 061"
                         eText=" personas vacunadas*, ellos representan el 2% de la población total elegible para vacunarse"/>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-4">
                     <SectionDoseVaccination/>
                 </div>
                 <div className="col-lg-1">
                     <img src={arrowLeft} alt="" className="mt-5"/>
                 </div>
-                <div className="col-lg-8">
+                <div className="col-lg-7">
                     <div className="row">
                         <div className="col-lg-4 text-center">
                             <button className="btn form-control btn-success btn-fase">Fase I
@@ -67,19 +70,13 @@ const CardBodyVaccination=()=>{
             </div>
 
             <div className="card-information my-3 p-3 mx-auto row">
-                <div className="col-lg-6 pt-5">
-                    <h4>Estas vacunas se están aplicando a lo largo del territorio nacional, sin embargo se concentran principalmente en Lima</h4>
-                    <div className="mt-5 mb-5">
-                        <div className="jafeth-filters">
-                            <FilterRegion text="Busca una región" theme="container"/>
-                        </div>
-                    </div>
+                <div className="col-lg-5 pt-5">
+                    <h4>Estas vacunas se están aplicando a lo largo del territorio nacional, sin embargo se concentran principalmente en Lima</h4>                    
                     <GaugueVaccination/>
                     <span>Fuente: Gobierno del Perú 2021. Coronavirus: vacunas contra la COVID-19 en el Perú</span>
                 </div>
-                <div className="col-lg-6">
-                    <iframe id="inlineFrameExample" title="Inline Frame Example" width="100%" height="700" frameborder="0" src="https://gis.minsa.gob.pe/gisvacunas" class="mapa_s">
-                    </iframe>
+                <div className="col-lg-7">
+                    <VaccinationMap/>
                 </div>
             </div>
         </div>

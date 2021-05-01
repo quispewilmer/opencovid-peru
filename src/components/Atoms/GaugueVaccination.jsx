@@ -17,7 +17,7 @@ const GaugueVaccination=()=>{
                 maxSegmentLabels={0}
                 currentValueText="2%"
             />
-            <button className="btn btn-vaccinate-state text-white">% de la población vacunada</button>
+            <h3 className="text-center">% de la población vacunada</h3>
         </div>
     )
 }

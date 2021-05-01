@@ -37,6 +37,36 @@
     .btn-vaccinate-state{
         background: #00B092;
     }
+
+    input{
+        box-shadow: none !important;
+    }
+
+    .desing-vaccinate-rows .col-1{
+        margin-top: 0.5rem;
+        padding: 0;
+    }
+
+    .missing-vaccinate{
+        width: 80%;
+        height: 2rem;
+        margin: auto;
+        background: rgba(38, 50, 56, 0.4);
+    }
+
+    .first-dose{
+        width: 90%;
+        height: 2rem;
+        margin: auto;
+        background: #01ABF6;
+    }
+
+    .dose-complete{
+        width: 90%;
+        height: 2rem;
+        margin: auto;
+        background: #00599D;
+    }
 }
 
 @media only screen and (min-width: 250px) and (max-width: 715px){

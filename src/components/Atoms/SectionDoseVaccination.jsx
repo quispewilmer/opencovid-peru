@@ -7,77 +7,135 @@ import {Container,Row,Col} from 'react-bootstrap';
 const SectionDoseVaccination=()=>{
     return(
         <Container>
-            <div className="mt-5 row">
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>                                
-                        <div className="col-1 m-1 p-0"></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>                                
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>                                
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"></div>                                
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>                        
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>                                
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"></div>    
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={picture} alt="" className="w-100"/></div>
-                        <div className="col-1 m-1 p-0"><img src={pictureGradient} alt="" className=""/></div>
+            <div className="mt-5 desing-vaccinate-rows row">
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">                            
+                        </div>
+                        <div className="col-1">                            
+                        </div>
+
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="first-dose"></div>
+                        </div>
+                        <div className="col-1">                            
+                        </div>
+                        <div className="col-1">                            
+                        </div>
+
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
+                        </div>
+                        <div className="col-1">
+                            <div className="dose-complete"></div>
+                        </div>
+                        <div className="col-2">                           
+                            <span className="badge badge-dark mt-3">612 mill</span>     
+                        </div>
+                        {/* <div className="col-1 m-1 p-0"><img src={pictureGradient} alt="" className=""/></div>
                         <div className="col-1 m-1 p-0"><img src={pictureBlue} alt="" className=""/></div>
                         <div className="col-1 m-1 p-0">
                             <span className="badge badge-dark">612 mill</span>
-                        </div>                        
+                        </div>                         */}
                         <div className="col-lg-12 mt-4"></div>
-                        <div className="col-lg-2">
-                            <img src={picture} alt="" className="w-100"/>
+                        <div className="col-1">
+                            <div className="missing-vaccinate"></div>
                         </div>
-                        <div className="col-lg-10">
-                            <p>Sin vacunar (%)</p>
-                        </div>
-
-                        <div className="col-lg-2">
-                            <img src={pictureGradient} alt="" className="w-100"/>
-                        </div>
-                        <div className="col-lg-10">
-                            <p>Primera dosis (%)</p>
+                        <div className="col-lg-11">
+                            <p className="pt-1">Sin vacunar (%)</p>
                         </div>
 
-                        <div className="col-lg-2">
-                            <img src={pictureBlue} alt="" className="w-100"/>
+                        <div className="col-1">
+                            <div className="first-dose"></div>
                         </div>
-                        <div className="col-lg-10">
-                            <p>Segunda dosis (%)</p>
+                        <div className="col-lg-11">
+                            <p className="pt-1">Primera dosis (%)</p>
+                        </div>
+
+                        <div className="col-1">
+                            <div className="dose-complete"></div>
+                        </div>
+                        <div className="col-lg-11">
+                            <p className="pt-1">Segunda dosis (%)</p>
                         </div>
 
                     </div>
