@@ -1,14 +1,11 @@
-.jafeth-filters {
+.pandemic-state-filters {
     &__title {
         width: 100%;
+        font-size: 32px;
     }
 
     .membership-form {
         margin: 0;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
         max-width: 100%;
     }
 
@@ -22,14 +19,7 @@
         width: calc(100% - 50px);
     }
     
-    .SelectedWeekExample {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    
-    .DayPickerInput, .DayPickerInput input {
+    .DayPickerInput {
         width: 100%;
     }
     
