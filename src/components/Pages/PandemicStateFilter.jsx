@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Region from '../Organisms/Region';
 import RankingRegional from '../Molecules/RankingRegion';
 import SearchRegion from '../Molecules/SearchRegion';

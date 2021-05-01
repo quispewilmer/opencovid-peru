@@ -10,8 +10,7 @@
 
         &__region-selection {
             margin-top: 0;
-            align-items: start;
-            justify-content: end;
+            justify-content: flex-end;
             grid-column-start: 2;
             grid-column-end: 3;
             grid-row-start: 1;

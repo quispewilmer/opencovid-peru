@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import PuestoRegional from './PuestoRegion';
 
 const RankingRegional = ({ type }) => {
     return (

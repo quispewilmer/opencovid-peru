@@ -9,7 +9,7 @@ var simplemaps_countrymap_mapdata={
     
 		//State defaults
 		state_description: "",
-    state_color: "#F38620",
+    state_color: "#89a4bc",
     state_hover_color: "off",
     state_url: "",
     border_size: 1.5,
@@ -72,13 +72,11 @@ var simplemaps_countrymap_mapdata={
     PER3505: {
       name: "Callao",
       description: "default",
-      color: "#FD0600",
       hover_color: "default",
       url: "default"
     },
     PER566: {
       name: "Lambayeque",
-      color: "#FD0600"
     },
     PER567: {
       name: "Piura"
@@ -88,7 +86,6 @@ var simplemaps_countrymap_mapdata={
     },
     PER569: {
       name: "Apurímac",
-      color: "#FFE604"
     },
     PER570: {
       name: "Arequipa"
@@ -100,14 +97,13 @@ var simplemaps_countrymap_mapdata={
       name: "Madre de Dios"
     },
     PER573: {
-      name: "Callao"
+      name: "Puno"
     },
     PER574: {
       name: "Moquegua"
     },
     PER575: {
       name: "Tacna",
-      color: "#00BF46"
     },
     PER577: {
       name: "Ancash"
