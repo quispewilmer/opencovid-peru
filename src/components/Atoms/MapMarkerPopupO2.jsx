@@ -22,7 +22,7 @@ const MapMarkerPopupO2 = ({ markerData, color }) => {
 				</span>{" "}
 				{address}
 			</p>
-			{phone !== "nan" && (
+			{phone && phone !== "nan" && (
 				<p className="map-marker-popup__p">
 					<span className="map-marker-popup__span" style={colorStyle}>
 						Teléfono:
@@ -30,7 +30,7 @@ const MapMarkerPopupO2 = ({ markerData, color }) => {
 					{phone}
 				</p>
 			)}
-			{paginaweb !== "nan" && (
+			{paginaweb && paginaweb !== "nan" && (
 				<p className="map-marker-popup__p">
 					<span className="map-marker-popup__span" style={colorStyle}>
 						Pagina web:
@@ -57,12 +57,6 @@ const MapMarkerPopupO2 = ({ markerData, color }) => {
 					Alquiler:
 				</span>{" "}
 				{availability(alquiler)}
-			</p>
-			<p className="map-marker-popup__p">
-				<span className="map-marker-popup__span" style={colorStyle}>
-					Recarga:
-				</span>{" "}
-				{availability(recarga)}
 			</p>
 		</div>
 	);
