@@ -46,6 +46,13 @@ const buildChartConfiguration = ({ risk, data }) => ({
       legend: {
         display: false
       },
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            return ` Casos Positivos: ${Math.round(context.raw)}`
+          }
+        }
+      },
       datalabels: {
         color: ['extreme', 'high'].includes(risk) ? '#FFFFFF' : '#3A3838',
         font: {
