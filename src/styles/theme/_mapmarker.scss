@@ -1,0 +1,27 @@
+.map-marker {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+
+	&__holder {
+		position: absolute;
+		border-radius: 50% 50% 50% 0;
+		background-color: black;
+		transform: rotate(-45deg);
+		width: 32px;
+		height: 32px;
+		z-index: 1;
+	}
+
+	&__icon {
+		width: 32px;
+		height: 32px;
+		z-index: 2;
+	}
+}
+
+//border: 4px solid #fff;
+//border-color: black;
