@@ -12,8 +12,6 @@ const Header = ({ setCoverActive }) => {
 	const [isActive, setActive] = useState("false");
 	const [isOpenMapDropdown, setOpenMapDropdown] = useState(false);
 
-	console.log("[Header] isOpenMapDropdown ", isOpenMapDropdown);
-
 	const handleMapDropdownToggle = () => {
 		setOpenMapDropdown((prev) => !prev);
 	};

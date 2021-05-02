@@ -79,7 +79,7 @@ const EmergencyMap = () => {
 		<section className="emergency-map-container">
 			<div
 				ref={mapRef}
-				id="map"
+				id="map-emergency"
 				className="emergency-map-container__map-container"
 			></div>
 			{isMapBoxClicked || (
