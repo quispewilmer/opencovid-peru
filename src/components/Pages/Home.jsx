@@ -51,7 +51,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className="what-find py-4">
+                <section className="what-find pt-4">
                     <h1 className="what-find__title font-weight-bold text-center main-title">¿Qué vas a encontrar?</h1>
                     <HighRule />
                     <div className="what-find__articles">
@@ -62,15 +62,15 @@ const Home = () => {
                                         <img src={emergencymobile} alt=""/>
                                     </picture>
                                 </div>
-                                <div className="emergency-map__content d-flex flex-column">
+                                <div className="emergency-map__content d-flex flex-column justify-content-center">
                                     <h2>Mapa de emergencia</h2>
                                     <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
-                                    <ul>
+                                    <ul className="mt-4">
                                         <li>Camas UCI</li>
                                         <li>Camas COVID</li>
                                         <li>Puntos de recarga de oxígeno</li>
                                     </ul>
-                                    <p>También podrás identificar la ubicación de centros de salud y farmacias.</p>
+                                    <p className="mt-3">También podrás identificar la ubicación de centros de salud y farmacias.</p>
                                     <Button text="Emergencia" theme="button--white-orange align-self-center mb-4" link="/mapa-emergencia"/>
                                 </div>       
                         </article>
@@ -80,17 +80,17 @@ const Home = () => {
                                     <h2>Información en gráficos</h2>
                                     <h3>¿Cómo está afectando la pandemia al Perú?</h3>
                                     <span>Verás un análisis a partir de los siguientes datos:</span>
-                                    <ul>
+                                    <ul className="mt-4">
                                         <li>Casos totales</li>
                                         <li>Contagios nuevos</li>
                                         <li>Fallecidos</li>
                                         <li>Capacidad hospitalaria</li>
                                         <li>Capacidad UCI y más</li>
                                     </ul>
-                                    <Button text="Infórmate" theme="button--white-green mb-3" link="/estado-pandemia"/>
+                                    <Button text="Infórmate" theme="button--white-green mb-4 mt-4" link="/estado-pandemia"/>
                                 </div>
                                 <div className="graphic-information__image d-flex justify-content-end">
-                                    <picture>
+                                    <picture className="d-flex align-items-end">
                                         <img src={graphicinformation} alt=""/>
                                     </picture>
                                 </div>
@@ -98,14 +98,14 @@ const Home = () => {
                         </article>
                     </div>
                 </section>
-                <section className="about-covid py-4 main-container">
+                {/*<section className="about-covid py-4 main-container">
                     <h1 className="about-covid__title font-weight-bold text-center main-title">Sobre COVID-19</h1>
                     <HighRule />
                     <div className="about-covid__articles container-fluid mx-0 px-md-2">
                         <AboutCovidCard theme="" title="¿Cuáles son los síntomas del COVID 19?" link="/" image={headache}/>
                         <AboutCovidCard theme="" title="¿Qué prueba debo hacerme para saber si tengo COVID-19?" link="/" image={swabbing}/>
                     </div>
-                </section>
+                </section>*/}
             </main>
         </>
     )

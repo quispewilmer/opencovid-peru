@@ -107,13 +107,13 @@ const Header = ({setCoverActive}) => {
                 >
                     Vacunación
                     </Nav.Link>
-                <Nav.Link
+                {/*<Nav.Link
                     as={Link}
                     to="/sobre-covid"
                     exact="true"
                 >
                     Sobre COVID
-                    </Nav.Link>
+                </Nav.Link>*/}
                 <Nav.Link
                     as={Link}
                     to="/nosotros"

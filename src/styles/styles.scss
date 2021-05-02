@@ -44,6 +44,7 @@ $colors: (
 @import 'layout/selectpointonmapbox';
 @import 'layout/emergencymap';
 @import 'layout/informationplacebox';
+@import 'layout/aboutus';
 
 // state
 @import 'state/state';
@@ -54,3 +55,7 @@ $colors: (
 @import 'modules/footer';
 @import 'modules/filters';
 @import 'pandemicstate';
+@import 'modules/aboutus/thanks';
+@import 'modules/aboutus/the-team';
+@import 'modules/aboutus/contributions';
+@import 'modules/aboutus/teamcard';
