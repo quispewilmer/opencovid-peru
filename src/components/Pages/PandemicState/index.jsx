@@ -205,7 +205,7 @@ const PandemicState = () => {
                 {countryWide ? 
                     (
                         <>
-                            <div className="graphic-container graphic" style={{
+                            <div className="graphic-container graphic pandemic-state-graphic" style={{
                                 gridColumnStart:'3',
                                 gridColumnEnd:'5',
                                 gridRowStart:'1',
@@ -217,7 +217,7 @@ const PandemicState = () => {
                                     weekRange={filters.week}
                                 />
                             </div>
-                            <div className="graphic-container graphic" style={{
+                            <div className="graphic-container graphic pandemic-state-graphic" style={{
                                 gridColumnStart:'3',
                                 gridColumnEnd:'5',
                                 gridRowStart:'3',
@@ -230,7 +230,7 @@ const PandemicState = () => {
                 :
                     (
                         <>
-                            <div className="graphic-container graphic" style={{
+                            <div className="graphic-container graphic  pandemic-state-graphic" style={{
                                 gridColumnStart:'3',
                                 gridColumnEnd:'5',
                                 gridRowStart:'1',
@@ -248,7 +248,7 @@ const PandemicState = () => {
                                     })}
                                 />
                             </div>
-                            <div className="graphic-container graphic" style={{
+                            <div className="graphic-container graphic pandemic-state-graphic" style={{
                                 gridColumnStart:'2',
                                 gridColumnEnd:'3',
                                 gridRowStart:'4',
@@ -256,7 +256,7 @@ const PandemicState = () => {
                             }}>
                                 <UciBeds risk={risk} data={uciBedsData} totalBeds={totalUciBeds} />
                             </div>
-                            <div className="graphic-container graphic" style={{
+                            <div className="graphic-container graphic pandemic-state-graphic" style={{
                                 gridColumnStart:'3',
                                 gridColumnEnd:'4',
                                 gridRowStart:'4',
@@ -264,7 +264,7 @@ const PandemicState = () => {
                             }}>
                                 <IncidentRate risk={risk} data={incidentRateData} />
                             </div>
-                            <div className="graphic-container graphic" style={{
+                            <div className="graphic-container graphic pandemic-state-graphic" style={{
                                 gridColumnStart:'4',
                                 gridColumnEnd:'5',
                                 gridRowStart:'4',
