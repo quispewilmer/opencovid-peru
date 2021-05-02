@@ -5,13 +5,55 @@ import InformationPlaceBox from "../Templates/InformationPlaceBox";
 import useFetch from "../../hooks/useFetch";
 import useMapboxMap from "../../hooks/useMapboxMap";
 import SearchMapbox from "../Molecules/SearchMapbox";
+import { useLocation } from "react-router";
+
+const mapEndpoints = {
+	ucibed: { endpoint: "/api/uci", title: "Camas UCI" },
+	covidbed: { endpoint: "/api/cama", title: "Camas COVID" },
+	oxigen: { endpoint: "/api/o2", title: "Balones de oxígeno" },
+};
+
+const buildItemState = (name) => [
+	name === "ucibed",
+	name === "covidbed",
+	name === "oxigen",
+	name === "pharmacy",
+	name === "minsa",
+	name === "essalud",
+	name === "private",
+	name === "ffaa",
+];
+
+const useFromLinkOption = () => {
+	const { state } = useLocation();
+	if (state) {
+		return [true, state.fromOption];
+	}
+
+	return [false, undefined];
+};
 
 const EmergencyMap = () => {
-	const [isMapBoxClicked, setMapBoxClicked] = useState(false);
-	const [mapBoxState, setMapBoxState] = useState({
-		endpoint: undefined,
-		name: undefined,
-		title: undefined,
+	const [hasOption, option] = useFromLinkOption();
+	const [isMapBoxClicked, setMapBoxClicked] = useState(() => hasOption);
+	const [itemSelectedState, setItemSelectedState] = useState(() => {
+		return hasOption
+			? buildItemState(option)
+			: [false, false, false, false, false, false, false, false];
+	});
+	const [mapBoxState, setMapBoxState] = useState(() => {
+		if (hasOption) {
+			return {
+				endpoint: mapEndpoints[option].endpoint,
+				name: option,
+				title: mapEndpoints[option].title,
+			};
+		}
+		return {
+			endpoint: undefined,
+			name: undefined,
+			title: undefined,
+		};
 	});
 	const { loading, data, error } = useFetch(mapBoxState.endpoint);
 	const { mapRef, searchDistrict } = useMapboxMap(data, mapBoxState.name);
@@ -25,6 +67,7 @@ const EmergencyMap = () => {
 
 	const handlePointClicked = ({ endpoint, name, title }) => {
 		setMapBoxClicked(true);
+		setItemSelectedState(buildItemState(name));
 		setMapBoxState({ endpoint, name, title });
 	};
 
@@ -53,6 +96,7 @@ const EmergencyMap = () => {
 			<SelectPointOnMapBox
 				theme="emergency-map-container__select-point-on-map-box"
 				onPointClick={handlePointClicked}
+				itemSelectedState={itemSelectedState}
 			/>
 		</section>
 	);

@@ -10,7 +10,12 @@ import privatehealthcenter from "../../img/emergencymap/privatehealthcenter.svg"
 import ucibed from "../../img/emergencymap/ucibed.svg";
 import arrowup from "../../img/icons/arrowup.svg";
 
-const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
+const SelectPointOnMapBox = ({
+	theme,
+	visualizeData,
+	itemSelectedState,
+	onPointClick,
+}) => {
 	const selectPointOnMapBox = useRef(null);
 
 	const [state, setState] = useState({
@@ -60,6 +65,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={ucibed}
 					title="Camas UCI"
 					name="ucibed"
+					isSelected={itemSelectedState[0]}
 					endpoint="/api/uci"
 					onClick={onPointClick}
 				/>
@@ -67,6 +73,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={covidbed}
 					title="Camas COVID"
 					name="covidbed"
+					isSelected={itemSelectedState[1]}
 					endpoint="/api/cama"
 					onClick={onPointClick}
 				/>
@@ -74,6 +81,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={oxigencharge}
 					title="Balones de oxígeno"
 					name="oxigen"
+					isSelected={itemSelectedState[2]}
 					endpoint="/api/o2"
 					onClick={onPointClick}
 				/>
@@ -81,6 +89,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={pharmacy}
 					title="Farmacias"
 					name="pharmacy"
+					isSelected={itemSelectedState[3]}
 					endpoint="/api/farmacia"
 					onClick={onPointClick}
 				/>
@@ -88,6 +97,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={minsahealthcenter}
 					title="Centros de salud MINSA"
 					name="minsa"
+					isSelected={itemSelectedState[4]}
 					endpoint="/api/institution?type=MINSA"
 					onClick={onPointClick}
 				/>
@@ -95,6 +105,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={essaludhealthcenter}
 					title="Centros de salud Essalud"
 					name="essalud"
+					isSelected={itemSelectedState[5]}
 					endpoint="/api/institution?type=ESSALUD"
 					onClick={onPointClick}
 				/>
@@ -102,6 +113,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={privatehealthcenter}
 					title="Centros de salud privados"
 					name="private"
+					isSelected={itemSelectedState[6]}
 					endpoint="/api/institution?type=PRIVADO"
 					onClick={onPointClick}
 				/>
@@ -109,6 +121,7 @@ const SelectPointOnMapBox = ({ theme, visualizeData, onPointClick }) => {
 					image={ffaapnphealthcenter}
 					title="Centros de salud FF.AA. y la PNP"
 					name="ffaa"
+					isSelected={itemSelectedState[7]}
 					endpoint="/api/institution?type=FUERZA_AEREA"
 					onClick={onPointClick}
 				/>
