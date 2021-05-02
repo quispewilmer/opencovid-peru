@@ -1,0 +1,46 @@
+.thanks {
+    padding: 56px 0 41px;
+
+    &__title {
+        font-family: 'AvenirHeavy';
+        font-size: 36px;
+    }
+
+    &__description {
+        font-family: 'AvenirLight';
+        font-size: 24px;
+        text-align: justify;
+    }
+
+    &__list {
+        list-style: square;
+        max-width: 50%;
+    }
+
+    &__item {
+        list-style: circle;
+        color: black;
+        text-align: justify;
+        display: flex;
+
+        &::before {
+            content: "";
+            display: block;
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 20px;
+            transform: translateY(100%);
+        }
+    }
+
+    &__item::marker {
+        color: black;
+        background-color: red;
+    }
+
+    .team-card__social {
+        margin-left: 10px;
+    }
+}

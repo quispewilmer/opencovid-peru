@@ -1,15 +1,15 @@
 // Define a color palette
 $colors: (
-	oc-red: #fd0600,
-	oc-gray: #3a3838,
-	oc-dark-green: #0a544f,
-	oc-light-green: #00bfa6,
-	oc-dark-red: #e93e3a,
-	oc-orange: #fa6142,
-	oc-pale-pink: #f9f5f4,
-	oc-white: #ffffff,
-	oc-black: #000000,
-	oc-yellow: #ffe604,
+  oc-red: #fd0600,
+  oc-gray: #3a3838,
+  oc-dark-green: #0a544f,
+  oc-light-green: #00bfa6,
+  oc-dark-red: #e93e3a,
+  oc-orange: #fa6142,
+  oc-pale-pink: #f9f5f4,
+  oc-white: #ffffff,
+  oc-black: #000000,
+  oc-yellow: #ffe604,
 );
 
 // base
@@ -45,6 +45,7 @@ $colors: (
 @import "layout/emergencymap";
 @import "layout/informationplacebox";
 @import "layout/mapmarkerpopup";
+@import "layout/aboutus";
 
 // state
 @import "state/state";
@@ -56,3 +57,7 @@ $colors: (
 @import "modules/filters";
 @import "modules/autosuggest";
 @import "pandemicstate";
+@import "modules/aboutus/thanks";
+@import "modules/aboutus/the-team";
+@import "modules/aboutus/contributions";
+@import "modules/aboutus/teamcard";
