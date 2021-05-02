@@ -14,4 +14,18 @@
     &--white-green {
         @include button(oc-white, oc-dark-green, oc-black);
     }
+
+    &--orange {
+        @include button(oc-orange, oc-orange, oc-white);
+    }
+
+    &--white-orange {
+        @include button(oc-white, oc-orange, oc-black);
+    }
+}
+
+.select-point-on-map-box {
+    &--close {
+        transform: translateY(calc(100% - 24px));
+    }
 }

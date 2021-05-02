@@ -36,3 +36,7 @@ nav, ul, li {
 li {
     list-style: none;
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}

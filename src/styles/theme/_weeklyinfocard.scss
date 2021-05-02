@@ -1,0 +1,47 @@
+.weekly-info-card-container{
+	font-family: Avenir;
+	width: fit-content;
+	padding: 1em;
+	border-radius: 4px;
+
+	@media (max-width: 576px) {
+		max-width: 90%;		
+	}
+
+	.weekly-info-card__weekrange{
+		color: #6c757d;
+		font-size: 16px;
+	}
+
+	.weekly-info-card__title{
+		margin-bottom: 0;
+		font-size: 20px;
+		font-weight: bold;
+		color: var(--gray-dark);
+		margin-bottom: -0.4rem;
+	}
+
+	ul {
+		font-size: 1rem;
+		margin-top: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		color: #212529;
+		margin-bottom: 0;
+	}
+}
+
+.weekly-info-card__li {
+		line-height: 1.5;
+
+		&:before{
+			content: "•";
+			font-size: 20px;
+    		margin-right: 5px;
+    		padding-top: 5px;
+    	}
+
+    	strong {
+    		font-size: 1.1rem;
+    	}
+}

@@ -1,0 +1,22 @@
+.expand-info-container {
+  position: relative;
+  display: inline-block;
+}
+
+.expand-info__icon {
+	cursor: pointer;
+}
+
+.expand-info__legend {
+	background-color: rgb(0,0,0,0.7);
+	z-index: 11;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	padding: 7.3px 9.22px;
+	position: absolute;
+	margin-top: 5px;
+	width: 150px;
+	text-align: center;
+	right: 0;
+}

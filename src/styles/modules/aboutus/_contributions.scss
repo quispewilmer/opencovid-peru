@@ -1,0 +1,21 @@
+.contributions {
+    padding: 56px 0 0 0;
+
+    &__title {
+        font-family: 'AvenirHeavy';
+        font-size: 36px;
+    }
+
+    &__oxigeno-peru {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 46px;
+        margin-bottom: 26px;
+
+        img {
+            max-width: 516px;
+            width: 100%;
+        }
+    }
+}

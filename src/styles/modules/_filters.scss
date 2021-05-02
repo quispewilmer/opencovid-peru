@@ -1,0 +1,29 @@
+.pandemic-state-filters {
+    &__title {
+        width: 100%;
+        font-size: 32px;
+    }
+
+    .membership-form {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .searchregion-form {
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 100%;
+    }
+    
+    .searchregion-form__input {
+        width: calc(100% - 50px);
+    }
+    
+    .DayPickerInput {
+        width: 100%;
+    }
+    
+    .pandemicstate-input {
+        height: 40px;
+    }
+}

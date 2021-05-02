@@ -1,29 +1,24 @@
 .dashboard {
 
     &--for-graphics {
-        display: grid;
-        grid-gap: 25px;
+        
     }
 
+    
     @media screen and (min-width: 1080px) {
         display: grid;
-        grid-template-columns: 1fr 4fr;
+        // grid-template-columns: 1fr 4fr;
         
         &--for-graphics {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto auto;
-        }
-
-        .map-graphic {
-            grid-column-start: 1;
-            grid-column-end: 3;
-            grid-row-start: 1;
-            grid-row-end: 4;
+            display: grid;
+            grid-gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto auto auto;
         }
 
         .ranking-graphic--horizontal {
-            grid-column-start: 2;
-            grid-column-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 5;
             grid-row-start: 4;
             grid-row-end: 5;
         }
@@ -33,6 +28,34 @@
             grid-column-end: 4;
             grid-row-start: 2;
             grid-row-end: 4;
+        }
+
+        .covid-beds-graphic {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+
+        .pandemic-state-filters {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .positivity-rate-graphic {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+
+        .mortality-rate-graphic {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 5;
         }
     }
 

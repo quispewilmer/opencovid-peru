@@ -1,0 +1,96 @@
+.pandemicstate-filter {
+  position: relative;
+}
+
+.pandemicstate-filter__icon {
+  width: 53px;
+  height: 45px;
+  background-color: #00BFA6;
+  position: absolute;
+  border-radius: 20px 0px 0px 20px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pandemicstate-filter__icon--search {
+  background-image: url(../img/pandemiaState/glass.svg);
+}
+.pandemicstate-filter__icon--calendar {
+  background-image: url(../img/pandemiaState/white-calendar.svg);
+}
+
+.pandemicstate-filter__input {
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 70px;
+}
+
+.uci-beds {
+  .graphic__title {
+    position: relative;
+  }
+}
+
+.region-ranking {
+  padding: 1em;
+  .expand-info__legend {
+    width: 227px;
+  }
+}
+
+.region-ranking__title{
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--gray-dark);
+  margin-bottom: -0.4rem;
+}
+
+.region-ranking__list {
+  margin-top: 38px;
+  column-gap: 25px;
+  columns: 3;
+}
+
+.region-ranking__list__item {
+  margin-bottom: 23px;
+  padding-left: 38px;
+}
+
+.region-ranking__risk-icon {
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.region-ranking__list__group {
+  margin-bottom: 23px;
+}
+
+.pandemicstate-filter__input {
+  width: 100%;
+}
+
+.pandemic-state-filters__containers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pandemic-state-filters__item {
+  flex: 1;
+  &:first-child {
+    margin-right: 20px;
+  }
+}
+
+.graphic__region-information {
+  padding: 25px;
+}
+
+#map_outer, #map_access {
+  display: none !important;
+}
