@@ -79,7 +79,7 @@ textarea:focus, input:focus {
       font-size: 16px; } }
   @media (min-width: 1080px) {
     .button {
-      width: 208px;
+      width: 234px;
       height: 70.4px;
       font-size: 20px; } }
 
@@ -247,7 +247,8 @@ a:hover {
   100% {
     transform: translateY(-9px) rotate(135deg); } }
 .national-situation {
-  background-color: rgba(253, 6, 0, 0.1); }
+  background-color: rgba(253, 6, 0, 0.1);
+  padding: 50px 0; }
   .national-situation h1 {
     color: #e93e3a; }
   .national-situation__articles {
@@ -256,34 +257,40 @@ a:hover {
     grid-gap: 14px; }
   @media (min-width: 768px) {
     .national-situation h1 {
-      font-size: 36px; } }
+      font-size: 38px; } }
   @media (min-width: 1080px) {
     .national-situation__articles {
-      grid-template-columns: repeat(4, 1fr); } }
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 40px; } }
 
-.what-find h2 {
-  font-size: 20px;
-  font-weight: 800;
-  font-family: 'AvenirHeavy'; }
-.what-find span {
-  font-size: 14px;
-  font-weight: 800; }
-.what-find ul {
-  list-style: none;
-  padding-left: 0px; }
-.what-find li::before {
-  content: "•";
-  padding-right: 5px;
-  font-size: 20px; }
-.what-find img, .what-find picture {
-  width: 100%; }
-@media (min-width: 768px) {
-  .what-find h1 {
-    font-size: 36px; }
+.what-find {
+  padding: 50px 0 0; }
   .what-find h2 {
-    font-size: 30px; }
-  .what-find p, .what-find li, .what-find span {
-    font-size: 26px; } }
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'AvenirHeavy'; }
+  .what-find span {
+    font-size: 14px;
+    font-weight: 800; }
+  .what-find ul {
+    list-style: none;
+    padding-left: 0px; }
+  .what-find li::before {
+    content: "•";
+    padding-right: 5px;
+    font-size: 20px; }
+  .what-find img, .what-find picture {
+    width: 100%; }
+  @media (min-width: 768px) {
+    .what-find h1 {
+      font-size: 38px; }
+    .what-find h2 {
+      font-size: 36px; }
+    .what-find p, .what-find li, .what-find span, .what-find h3 {
+      font-size: 22px;
+      font-family: 'AvenirLight'; }
+    .what-find li {
+      line-height: 45px; } }
 
 .emergency-map {
   display: grid;
@@ -296,13 +303,11 @@ a:hover {
   @media (min-width: 768px) {
     .emergency-map {
       grid-gap: 50px; }
-      .emergency-map h2 {
-        font-size: 36px; }
       .emergency-map span {
-        font-family: 'AvenirLight';
-        font-size: 28px; } }
+        font-size: 22px; } }
 
 .graphic-information {
+  padding-top: 108px;
   background-color: rgba(0, 191, 166, 0.1); }
   .graphic-information span {
     color: #0a544f; }
@@ -310,7 +315,6 @@ a:hover {
     color: #000000;
     font-style: normal;
     font-weight: 800;
-    font-size: 16px;
     line-height: 45px; }
   .graphic-information ul {
     -moz-column-count: 2;
@@ -336,7 +340,7 @@ a:hover {
     .graphic-information__image {
       margin-top: 0;
       width: 100%; }
-    .graphic-information h3 {
+    .graphic-information li::before {
       font-size: 22px; } }
 
 .about-covid__articles {
@@ -368,16 +372,28 @@ a:hover {
     width: 35px; }
   .quantity-card__title {
     font-size: 12px;
-    line-height: 1em; }
+    line-height: 1em;
+    white-space: nowrap; }
   .quantity-card__number {
     font-size: 20px;
-    font-family: 'AvenirBlack'; }
+    font-family: 'AvenirBlack';
+    color: #fd0600; }
   .quantity-card__update {
-    font-size: 12px;
+    font-size: 14px;
     color: gray;
     line-height: 1em; }
   .quantity-card p {
     margin-bottom: 0px; }
+  @media screen and (min-width: 768px) {
+    .quantity-card {
+      padding: 18px 26px; }
+      .quantity-card__title {
+        font-size: 20px; }
+      .quantity-card__number {
+        font-size: 40px; } }
+
+.quantity-good {
+  color: #00bfa6; }
 
 .aboutcovid-card {
   background-color: #fa6142;
@@ -784,7 +800,8 @@ a:hover {
   font-size: 44px;
   color: #3A3838; }
 .container-vaccination .card-information {
-  background-color: #E6F7E9; }
+  background-color: #E6F7E9;
+  padding: 1.5rem !important; }
   .container-vaccination .card-information .img-map {
     object-fit: cover;
     object-position: top;
@@ -792,12 +809,47 @@ a:hover {
     height: 23rem; }
   .container-vaccination .card-information .img-society {
     width: 100%;
-    min-height: 13rem;
+    min-height: 12rem;
     margin-top: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem; }
+    margin-right: 2rem; }
   .container-vaccination .card-information span {
     font-size: 0.93rem; }
+  .container-vaccination .card-information .text-left-card {
+    font-weight: normal;
+    margin-top: 0 !important; }
+  .container-vaccination .card-information .type-doses-section li {
+    font-weight: normal;
+    font-size: 1.3rem; }
+  .container-vaccination .card-information .type-doses-section li:before {
+    content: "• ";
+    color: #00BFA6;
+    margin-left: -10px; }
+  .container-vaccination .card-information .put-shoulder-mt5 {
+    margin-top: 5rem !important; }
+.container-vaccination .searchregion-form__input {
+  width: 60% !important; }
+.container-vaccination .btn-vaccinate-state {
+  background: #00B092; }
+.container-vaccination input {
+  box-shadow: none !important; }
+.container-vaccination .desing-vaccinate-rows .col-1 {
+  margin-top: 0.5rem;
+  padding: 0; }
+.container-vaccination .missing-vaccinate {
+  width: 80%;
+  height: 2rem;
+  margin: auto;
+  background: rgba(38, 50, 56, 0.4); }
+.container-vaccination .first-dose {
+  width: 90%;
+  height: 2rem;
+  margin: auto;
+  background: #01ABF6; }
+.container-vaccination .dose-complete {
+  width: 90%;
+  height: 2rem;
+  margin: auto;
+  background: #00599D; }
 
 @media only screen and (min-width: 250px) and (max-width: 715px) {
   .container-vaccination h2 {
@@ -812,7 +864,9 @@ a:hover {
   .container-vaccination .card-information .img-society {
     width: 100%;
     height: 17rem;
-    margin-bottom: 0.5rem; } }
+    margin-bottom: 0.5rem; }
+  .container-vaccination .d-mobile-none {
+    display: none; } }
 @media only screen and (min-width: 551px) and (max-width: 990px) {
   .container-vaccination h2 {
     margin: 1rem;
@@ -827,18 +881,101 @@ a:hover {
     height: 20rem;
     margin: auto; } }
 .btn-fase {
-  background: #0A544F !important; }
+  background: #0A544F !important;
+  border: 1px solid #00BFA6;
+  color: #fff !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 1.5rem !important; }
 
-.btn-search.vaccinate {
-  font-family: Roboto;
+.btn-vaccinate {
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #00BFA6;
-  border: 1px solid #00BFA6; }
+  border: 1px solid #00BFA6;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem; }
 
-.btn-search.vaccinate:hover {
-  color: #00BFA6; }
+.fs-10 {
+  font-size: 10px; }
+
+.fs-12 {
+  font-size: 12px; }
+
+.fs-14 {
+  font-size: 14px; }
+
+.fs-16 {
+  font-size: 16px; }
+
+.fs-18 {
+  font-size: 18px; }
+
+.fs-20 {
+  font-size: 20px; }
+
+.h-100px {
+  height: 100px !important; }
+
+.vaccine-calendar {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  color: #00BFA6;
+  text-align: center;
+  font-size: 28px; }
+
+.vaccine-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.vaccine-progress span {
+  color: #01ABF6;
+  font-weight: bold;
+  font-size: 28px; }
+
+.graph-block {
+  background: #E6F7E9 !important;
+  width: 100%;
+  padding: 35px; }
+  .graph-block__title {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 32px;
+    color: #000; }
+  .graph-block__amount {
+    color: #00BFA6;
+    font-style: normal;
+    display: inline-block; }
+  .graph-block__source {
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+    margin-top: 10px; }
+  .graph-block__textbox {
+    background: #FFFFFF;
+    border: 1px solid #C5C4C4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    color: #00BFA6;
+    font-size: 30px;
+    line-height: 52px;
+    min-height: 50px !important;
+    width: 70%;
+    text-align: center; }
+  .graph-block__boxlabel {
+    font-size: 24px;
+    line-height: 35px; }
 
 .map-marker {
   cursor: pointer;
@@ -861,7 +998,7 @@ a:hover {
     z-index: 2; }
 
 .main-container {
-  max-width: 1130px;
+  max-width: 1349px;
   margin: auto; }
 
 @media screen and (min-width: 1080px) {
@@ -1098,18 +1235,19 @@ a:hover {
   background-image: url("/src/img/banner/banner-mob.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right bottom;
+  background-position: right 10px;
   height: 420px;
   position: relative;
   z-index: 10; }
-  .banner h1 {
+  .banner__title {
     font-size: 30px;
     font-family: 'AvenirBlack'; }
   @media (min-width: 768px) {
     .banner {
       height: 500px; }
-      .banner h1 {
-        font-size: 56px; } }
+      .banner__title {
+        font-size: 56px;
+        margin: 50px 0 41px 0; } }
   @media (min-width: 1080px) {
     .banner {
       background-image: url("/src/img/banner/banner-dek.svg");
@@ -1366,6 +1504,8 @@ a:hover {
     .contributions__oxigeno-peru img {
       max-width: 516px;
       width: 100%; }
+  .contributions__persons {
+    width: 100%; }
 
 .team-card {
   background-color: #00bfa6;
@@ -1395,7 +1535,7 @@ a:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
+    /*justify-content: space-between;*/ }
   .team-card__social {
     margin-right: 6px;
     text-decoration: underline; }

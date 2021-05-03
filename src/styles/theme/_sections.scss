@@ -1,5 +1,6 @@
 .national-situation {
     background-color: rgba(map-get($map: $colors, $key: oc-red), .1);
+    padding: 50px 0;
 
     h1 {
         color: map-get($map: $colors, $key: oc-dark-red);
@@ -13,18 +14,20 @@
 
     @media (min-width: 768px) {
         h1 {
-            font-size: 36px;
+            font-size: 38px;
         }
     }
 
     @media (min-width: 1080px) {
         &__articles {
             grid-template-columns: repeat(4, 1fr );
+            grid-gap: 40px;
         }
     }
 }
 
 .what-find {
+    padding: 50px 0 0;
     
     h2 {
         font-size: 20px;
@@ -54,15 +57,20 @@
 
     @media (min-width: 768px) {
         h1 {
-            font-size: 36px;
+            font-size: 38px;
         }
 
         h2 {
-            font-size: 30px;
+            font-size: 36px;
         }
 
-        p, li, span {
-            font-size: 26px;
+        p, li, span, h3 {
+            font-size: 22px;
+            font-family: 'AvenirLight';
+        }
+
+        li {
+            line-height: 45px;
         }
     }
 }
@@ -83,18 +91,14 @@
     @media (min-width: 768px) {
         grid-gap: 50px;
 
-        h2 {
-            font-size: 36px;
-        }
-
         span {
-            font-family: 'AvenirLight';
-            font-size: 28px;
+            font-size: 22px;
         }
     }
 }
 
 .graphic-information {
+    padding-top: 108px;
     background-color: rgba(map-get($map: $colors, $key: oc-light-green), .1);
 
     span {
@@ -105,7 +109,6 @@
         color: map-get($map: $colors, $key: oc-black);
         font-style: normal;
         font-weight: 800;
-        font-size: 16px;
         line-height: 45px;
     }
 
@@ -152,7 +155,8 @@
             margin-top: 0;
             width: 100%;
         }
-        h3 {
+
+        li::before {
             font-size: 22px;
         }
     }
