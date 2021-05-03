@@ -20,7 +20,7 @@ const useSearchMapDistrict = (mapRef) => {
 			mapRef.current.flyTo({
 				center: center,
 				essential: true,
-				zoom: 12,
+				zoom: 13.5,
 			});
 		} catch {}
 	};
