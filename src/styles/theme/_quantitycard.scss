@@ -10,15 +10,17 @@
     &__title {
         font-size: 12px;
         line-height: 1em;
+        white-space: nowrap;
     }
 
     &__number {
         font-size: 20px;
         font-family: 'AvenirBlack';
+        color: map-get($map: $colors, $key: oc-red);
     }
 
     &__update {
-        font-size: 12px;
+        font-size: 14px;
         color: darken($color: map-get($colors, oc-white), $amount: 50);
         line-height: 1em;
     }
@@ -26,4 +28,20 @@
     p {
         margin-bottom: 0px;
     }
+
+    @media screen and (min-width: 768px) {
+        padding: 18px 26px;
+
+        &__title {
+            font-size: 20px;
+        }
+
+        &__number {
+            font-size: 40px;
+        }
+    }
+}
+
+.quantity-good {
+    color: map-get($map: $colors, $key: oc-light-green);
 }

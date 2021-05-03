@@ -6,7 +6,7 @@ const Banner = () => {
         <>
             <div className="banner container-fluid pt-4">
                 <div className="main-container">
-                    <h1 className="font-weight-bold mb-3">Quédate en casa, <br />infórmate y <br /> salva vidas</h1>
+                    <h1 className="banner__title">Quédate en casa, <br />infórmate y <br /> salva vidas</h1>
                     <div className="d-flex align-items-center">
                         <Button
                             text="Quiero informarme"

@@ -26,7 +26,7 @@ const members = [
     {
         key: 2,
         photo: `${anel}`,
-        name: "Anel Vasquez",
+        name: "Anel Vásquez",
         profession: "Socióloga",
         description: "Experiencia en coordinación y ejecución de proyectos de investigación. Análisis de datos cuantitativos y cualitativos.",
         linkedin: "http://linkedin.com/in/anelrvc",

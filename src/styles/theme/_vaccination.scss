@@ -11,6 +11,7 @@
     }
     .card-information{
         background-color: #E6F7E9;
+        padding: 1.5rem !important;
         // min-height: 26rem;
         .img-map{
             object-fit: cover;
@@ -20,15 +21,78 @@
         }
         .img-society{
             width: 100%;
-            min-height: 13rem;
+            min-height: 12rem;
             margin-top: 2rem;
             margin-right: 2rem;
-            margin-bottom: 2rem;
+            
         }
         span{
             font-size: 0.93rem;
         }
+
+        .text-left-card{
+            font-weight: normal; 
+            margin-top: 0 !important;
+        }
+
+        .type-doses-section{
+        
+            li{
+                font-weight: normal; 
+                font-size: 1.3rem;
+            }
+
+            li:before {
+                content: "• ";
+                color: #00BFA6;
+                margin-left: -10px;
+            }
+        }
+
+        .put-shoulder-mt5{
+            margin-top: 5rem !important;
+        }
     }
+
+    .searchregion-form__input {
+        width: 60% !important;
+    }
+
+    .btn-vaccinate-state{
+        background: #00B092;
+    }
+
+    input{
+        box-shadow: none !important;
+    }
+
+    .desing-vaccinate-rows .col-1{
+        margin-top: 0.5rem;
+        padding: 0;
+    }
+
+    .missing-vaccinate{
+        width: 80%;
+        height: 2rem;
+        margin: auto;
+        background: rgba(38, 50, 56, 0.4);
+    }
+
+    .first-dose{
+        width: 90%;
+        height: 2rem;
+        margin: auto;
+        background: #01ABF6;
+    }
+
+    .dose-complete{
+        width: 90%;
+        height: 2rem;
+        margin: auto;
+        background: #00599D;
+    }
+
+    
 }
 
 @media only screen and (min-width: 250px) and (max-width: 715px){
@@ -50,6 +114,9 @@
                 height: 17rem;
                 margin-bottom: 0.5rem;
             }
+        }
+        .d-mobile-none{
+            display: none;
         }
     }
 }
@@ -73,6 +140,7 @@
                 margin:auto;
             }
         }
+        
     }
 }
 
@@ -80,18 +148,22 @@
 //CardBody
 .btn-fase{
     background: #0A544F !important;
+    border: 1px solid #00BFA6;
+    color: #fff !important;
+    font-style: normal !important; 
+    font-weight: normal !important; 
+    font-size: 1.5rem !important;
 }
 
 
-.btn-search.vaccinate{ 
-    font-family: Roboto;
+.btn-vaccinate{ 
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #00BFA6;
     border: 1px solid #00BFA6;
-}
-
-.btn-search.vaccinate:hover{
-    color: #00BFA6 ;
+    font-weight: 500;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem;
 }

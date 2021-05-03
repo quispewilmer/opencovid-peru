@@ -1,5 +1,5 @@
 import React from 'react';
-import HighRule from '../Atoms/HighRule'; 
+import HighRule from '../Atoms/HighRule';
 import TeamCard from '../Molecules/TeamCard';
 import members from './Team';
 import oxigenoperu from '../../img/aboutus/oxigenoperu.png';
@@ -16,7 +16,7 @@ const AboutUs = () => {
                     <HighRule />
                     <p className="the-team__description mt-4 mb-4">Somos un grupos de científicos e investigadores que se juntó en el contexto de la pandemia con el objetivo de aportar a la sociedad a través del análisis de datos de la COVID-19. Nuestra misión es facilitar el acceso a la información de la ciudadanía y poner a disposición nuestra asesoría al Perú.</p>
                     <div className="the-team__grid">
-                        {members.map((member) => 
+                        {members.map((member) =>
                             <TeamCard
                                 key={member.key}
                                 photo={member.photo}
@@ -40,13 +40,37 @@ const AboutUs = () => {
                     <ul className="thanks__list">
                         {volunteers.map(volunteer => (
                             <li className="thanks__item thanks__description" key={volunteer.key}>{volunteer.name}
-                                <span style={{marginLeft: 'auto'}}>
+                                <span style={{ marginLeft: 'auto' }}>
                                     {
-                                        volunteer.linkedin != "" ? 
+                                        volunteer.github != "" ?
+                                            <a href={volunteer.github} className="team-card__social" target="_blank">GitHub
+                                                <span className="team-card__icon">↗</span>
+                                            </a>
+                                            :
+                                            ""
+                                    }
+                                    {
+                                        volunteer.twitter != "" ?
+                                            <a href={volunteer.twitter} className="team-card__social" target="_blank">Twitter
+                                                <span className="team-card__icon">↗</span>
+                                            </a>
+                                            :
+                                            ""
+                                    }
+                                    {
+                                        volunteer.instagram != "" ?
+                                            <a href={volunteer.instagram} className="team-card__social" target="_blank">Instagram
+                                                <span className="team-card__icon">↗</span>
+                                            </a>
+                                            :
+                                            ""
+                                    }
+                                    {
+                                        volunteer.linkedin != "" ?
                                             <a href={volunteer.linkedin} className="team-card__social" target="_blank">Linkedin
                                                 <span className="team-card__icon">↗</span>
                                             </a>
-                                        :
+                                            :
                                             ""
                                     }
                                 </span>
@@ -63,7 +87,7 @@ const AboutUs = () => {
                         <img src={oxigenoperu} alt="Oxígeno Perú" />
                     </div>
                 </div>
-                <img src={team} alt="Colaboradores" className="contributions__persons"/>
+                <img src={team} alt="Colaboradores" className="contributions__persons" />
             </section>
         </main>
     )
