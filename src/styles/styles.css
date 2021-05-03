@@ -102,7 +102,7 @@ textarea:focus, input:focus {
 }
 @media (min-width: 1080px) {
   .button {
-    width: 208px;
+    width: 234px;
     height: 70.4px;
     font-size: 20px;
   }
@@ -335,6 +335,7 @@ a:hover {
 }
 .national-situation {
   background-color: rgba(253, 6, 0, 0.1);
+  padding: 50px 0;
 }
 .national-situation h1 {
   color: #e93e3a;
@@ -346,15 +347,19 @@ a:hover {
 }
 @media (min-width: 768px) {
   .national-situation h1 {
-    font-size: 36px;
+    font-size: 38px;
   }
 }
 @media (min-width: 1080px) {
   .national-situation__articles {
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
   }
 }
 
+.what-find {
+  padding: 50px 0 0;
+}
 .what-find h2 {
   font-size: 20px;
   font-weight: 800;
@@ -378,13 +383,17 @@ a:hover {
 }
 @media (min-width: 768px) {
   .what-find h1 {
-    font-size: 36px;
+    font-size: 38px;
   }
   .what-find h2 {
-    font-size: 30px;
+    font-size: 36px;
   }
-  .what-find p, .what-find li, .what-find span {
-    font-size: 26px;
+  .what-find p, .what-find li, .what-find span, .what-find h3 {
+    font-size: 22px;
+    font-family: "AvenirLight";
+  }
+  .what-find li {
+    line-height: 45px;
   }
 }
 
@@ -403,16 +412,13 @@ a:hover {
   .emergency-map {
     grid-gap: 50px;
   }
-  .emergency-map h2 {
-    font-size: 36px;
-  }
   .emergency-map span {
-    font-family: "AvenirLight";
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 
 .graphic-information {
+  padding-top: 108px;
   background-color: rgba(0, 191, 166, 0.1);
 }
 .graphic-information span {
@@ -422,7 +428,6 @@ a:hover {
   color: #000000;
   font-style: normal;
   font-weight: 800;
-  font-size: 16px;
   line-height: 45px;
 }
 .graphic-information ul {
@@ -456,7 +461,7 @@ a:hover {
     margin-top: 0;
     width: 100%;
   }
-  .graphic-information h3 {
+  .graphic-information li::before {
     font-size: 22px;
   }
 }
@@ -499,18 +504,35 @@ a:hover {
 .quantity-card__title {
   font-size: 12px;
   line-height: 1em;
+  white-space: nowrap;
 }
 .quantity-card__number {
   font-size: 20px;
   font-family: "AvenirBlack";
+  color: #fd0600;
 }
 .quantity-card__update {
-  font-size: 12px;
+  font-size: 14px;
   color: gray;
   line-height: 1em;
 }
 .quantity-card p {
   margin-bottom: 0px;
+}
+@media screen and (min-width: 768px) {
+  .quantity-card {
+    padding: 18px 26px;
+  }
+  .quantity-card__title {
+    font-size: 20px;
+  }
+  .quantity-card__number {
+    font-size: 40px;
+  }
+}
+
+.quantity-good {
+  color: #00bfa6;
 }
 
 .aboutcovid-card {
@@ -1266,7 +1288,7 @@ a:hover {
 }
 
 .main-container {
-  max-width: 1130px;
+  max-width: 1349px;
   margin: auto;
 }
 
@@ -1558,12 +1580,12 @@ a:hover {
   background-image: url("/src/img/banner/banner-mob.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right bottom;
+  background-position: right 10px;
   height: 420px;
   position: relative;
   z-index: 10;
 }
-.banner h1 {
+.banner__title {
   font-size: 30px;
   font-family: "AvenirBlack";
 }
@@ -1571,8 +1593,9 @@ a:hover {
   .banner {
     height: 500px;
   }
-  .banner h1 {
+  .banner__title {
     font-size: 56px;
+    margin: 50px 0 41px 0;
   }
 }
 @media (min-width: 1080px) {
@@ -1888,6 +1911,9 @@ a:hover {
   max-width: 516px;
   width: 100%;
 }
+.contributions__persons {
+  width: 100%;
+}
 
 .team-card {
   background-color: #00bfa6;
@@ -1921,7 +1947,7 @@ a:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 .team-card__social {
   margin-right: 6px;

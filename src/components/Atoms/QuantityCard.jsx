@@ -8,8 +8,8 @@ const QuantityCard = ({ title, image, number, type, cardMedidPerson, update }) =
                     <img src={image} alt={title} />
                 </div>
                 <div className="quantity-card__content px-1 text-center col-9">
-                    <p className={`quantity-card__title quantity-${type} mb-0`}>{title}</p>
-                    <p className="quantity-card__number text-danger mt-0 font-weight-bold">{number}</p>
+                    <p className={`quantity-card__title mb-0 d-flex justify-content-center`}>{title}</p>
+                    <p className={`quantity-card__number quantity-${type} mt-0 font-weight-bold`}>{number}</p>
                     <p className="quantity-card__update">{`Actualizado: ${update}`}</p>
                 </div>
             </div>
