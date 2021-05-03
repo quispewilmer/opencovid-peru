@@ -122,7 +122,7 @@ const SelectPointOnMapBox = ({
 					title="Centros de salud FF.AA. y la PNP"
 					name="ffaa"
 					isSelected={itemSelectedState[7]}
-					endpoint="/api/institution?type=FUERZA_AEREA"
+					endpoint="/api/institution?type=FFAA_PNP"
 					onClick={onPointClick}
 				/>
 			</div>
