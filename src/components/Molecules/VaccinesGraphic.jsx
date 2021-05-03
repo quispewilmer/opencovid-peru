@@ -106,7 +106,7 @@ const VaccinesGraphic = (props) => {
                         </div>
                         {graphData.length > 0 && (
                             <div className="graph-block__textbox pt-1 pb-1 pl-3 pr-3 mt-3 mb-3 fs-20">
-                                {Math.round(graphData[graphData.length - 1].meta)}
+                                {Math.round(graphData[graphData.length - 1].meta).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
                             </div>
                         )}
                         <div className="d-block text-center">
