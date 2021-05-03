@@ -5,6 +5,7 @@ const SelectPointOnMap = ({
 	title,
 	name,
 	endpoint,
+	isSelected = false,
 	onClick = () => {},
 }) => {
 	const handleClick = () => {
@@ -12,7 +13,14 @@ const SelectPointOnMap = ({
 	};
 
 	return (
-		<button style={{ all: "unset" }} onClick={handleClick}>
+		<button
+			style={{
+				all: "unset",
+				border: isSelected && "2px solid black",
+				borderRadius: isSelected && "4px",
+			}}
+			onClick={handleClick}
+		>
 			<article className="select-point-on-map">
 				<img src={image} alt={title} className="select-point-on-map__img" />
 				<h2 className="select-point-on-map__title">{title}</h2>
