@@ -2,7 +2,6 @@
     background-color: rgba(map-get($map: $colors, $key: oc-red), .1);
 
     h1 {
-        font-family: 'AvenirBlack';
         color: map-get($map: $colors, $key: oc-dark-red);
     }
 
@@ -26,15 +25,11 @@
 }
 
 .what-find {
-
-    h1 {
-        font-family: 'AvenirBlack';
-    }
     
     h2 {
         font-size: 20px;
         font-weight: 800;
-        font-family: 'AvenirBlack';
+        font-family: 'AvenirHeavy';
     }
     
     span {
@@ -65,11 +60,14 @@
         h2 {
             font-size: 30px;
         }
+
+        p, li, span {
+            font-size: 26px;
+        }
     }
 }
 
 .emergency-map {
-
         display: grid;
         grid-template-columns: repeat(2, 1fr );
         grid-gap: 10px;
@@ -84,6 +82,15 @@
 
     @media (min-width: 768px) {
         grid-gap: 50px;
+
+        h2 {
+            font-size: 36px;
+        }
+
+        span {
+            font-family: 'AvenirLight';
+            font-size: 28px;
+        }
     }
 }
 
@@ -154,10 +161,6 @@
 .about-covid {
     &__articles {
         display: grid;
-    }
-
-    h1 {
-        font-family: 'AvenirBlack';
     }
     
     @media (min-width: 768px) {

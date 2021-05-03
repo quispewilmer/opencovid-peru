@@ -77,6 +77,7 @@ const PandemicState = () => {
     const [bedsData, setBedsData] = useState([])
     const [weeklyAnalysis, setWeeklyAnalysis] = useState({})
     const [currentState, setCurrentState] = useState('LIMA REGION')
+    const [mapReady, setMapReady] = useState(false)
 
     const countryWide = !filters.state;
     const risk = countryWide ? 'extreme' : scoreToRisk[states[filters.state].score]
@@ -90,6 +91,13 @@ const PandemicState = () => {
     const incidentRateData = buildIncidentRateData(statesData, filters.state, weekStartDates)
     const mortalityRateData = buildMortalityRateData(statesData, filters.state, weekStartDates)
     const positivityRateData = buildPositivityRateData(statesData, filters.state, weekStartDates)
+
+    useEffect(() => {
+        document.simplemaps_countrymap.hooks.complete = function () {
+            setMapReady(true)
+        }
+        document.simplemaps_countrymap.load()
+    }, [])
 
     useEffect(() => {
         if (navigator.geolocation) {
@@ -115,15 +123,18 @@ const PandemicState = () => {
                 fechaLt: dateToParam(filters.week[1])
             }).then(response => setBedsData(response.data))
 
-            document.simplemaps_countrymap.state_zoom(mapState[filters.state])
+            if (mapReady) {
+                document.simplemaps_countrymap.state_zoom(mapState[filters.state])
+            }
         } else {
-            if (typeof document.simplemaps_countrymap.back === 'function') {
+            if (mapReady) {
                 document.simplemaps_countrymap.back()
             }
         }
     }, [filters.state])
 
     useEffect(() => {
+
         getRegionsData({ weekStart: dateToParam(filters.week[0]) }).then(response => {
             if (response.data.length === 0) {
                 alert('Todavía no hay datos para la semana seleccionada!')

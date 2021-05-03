@@ -1,57 +1,64 @@
-
 // Define a color palette
 $colors: (
-    oc-red: #FD0600,
-    oc-gray: #3A3838,
-    oc-dark-green: #0A544F,
-    oc-light-green: #00BFA6,
-    oc-dark-red: #E93E3A,
-    oc-orange: #FA6142,
-    oc-pale-pink: #F9F5F4,
-    oc-white: #FFFFFF,
-    oc-black: #000000,
-    oc-yellow: #FFE604
+  oc-red: #fd0600,
+  oc-gray: #3a3838,
+  oc-dark-green: #0a544f,
+  oc-light-green: #00bfa6,
+  oc-dark-red: #e93e3a,
+  oc-orange: #fa6142,
+  oc-pale-pink: #f9f5f4,
+  oc-white: #ffffff,
+  oc-black: #000000,
+  oc-yellow: #ffe604,
 );
 
 // base
-@import 'base/fonts';
-@import 'base/base';
+@import "base/fonts";
+@import "base/base";
 
 // mixins
-@import 'mixins/button';
-@import 'mixins/legend';
+@import "mixins/button";
+@import "mixins/legend";
 
 // themes
-@import 'theme/rrss';
-@import 'theme/button';
-@import 'theme/header';
-@import 'theme/sections';
-@import 'theme/components';
-@import 'theme/quantitycard';
-@import 'theme/aboutcovidcard';
-@import 'theme/membershipform';
-@import 'theme/graphics';
-@import 'theme/searchregionform';
-@import 'theme/statistics';
-@import 'theme/selectpointonmapbox';
-@import 'theme/informationplacebox';
-@import 'theme/vaccination';
+@import "theme/rrss";
+@import "theme/button";
+@import "theme/header";
+@import "theme/sections";
+@import "theme/components";
+@import "theme/quantitycard";
+@import "theme/aboutcovidcard";
+@import "theme/membershipform";
+@import "theme/graphics";
+@import "theme/searchregionform";
+@import "theme/statistics";
+@import "theme/selectpointonmapbox";
+@import "theme/informationplacebox";
+@import "theme/vaccination";
+@import "theme/vaccination2";
+@import "theme/mapmarker";
 
 // layout
-@import 'layout/container';
-@import 'layout/dashboard';
-@import 'layout/mapgraphic';
-@import 'layout/selectpointonmapbox';
-@import 'layout/emergencymap';
-@import 'layout/informationplacebox';
+@import "layout/container";
+@import "layout/dashboard";
+@import "layout/mapgraphic";
+@import "layout/selectpointonmapbox";
+@import "layout/emergencymap";
+@import "layout/informationplacebox";
+@import "layout/mapmarkerpopup";
+@import "layout/aboutus";
 
 // state
-@import 'state/state';
+@import "state/state";
 
 // modules
-@import 'modules/banner';
-@import 'modules/dashboard';
-@import 'modules/footer';
-@import 'modules/filters';
-@import 'modules/autosuggest';
-@import 'pandemicstate';
+@import "modules/banner";
+@import "modules/dashboard";
+@import "modules/footer";
+@import "modules/filters";
+@import "modules/autosuggest";
+@import "pandemicstate";
+@import "modules/aboutus/thanks";
+@import "modules/aboutus/the-team";
+@import "modules/aboutus/contributions";
+@import "modules/aboutus/teamcard";
