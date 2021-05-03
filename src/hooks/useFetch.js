@@ -19,18 +19,26 @@ const useFetch = (endpoint) => {
 			fetch(host + endpoint)
 				.then((res) => res.json())
 				.then((json) => {
-					setState((prevState) => ({
-						...prevState,
-						loading: false,
-						data: json,
-					}));
+					if (Array.isArray(json)) {
+						setState({
+							loading: false,
+							data: json,
+							error: undefined,
+						});
+					} else {
+						setState({
+							loading: false,
+							data: [],
+							error: new Error("data not an array"),
+						});
+					}
 				})
 				.catch((error) => {
-					setState((prevState) => ({
-						...prevState,
+					setState({
 						loading: false,
+						data: [],
 						error,
-					}));
+					});
 				});
 		}
 	}, [endpoint]);
