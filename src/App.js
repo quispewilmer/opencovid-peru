@@ -10,8 +10,8 @@ import Footer from "./components/Organisms/Footer";
 import AboutUs from "./components/Pages/AboutUs";
 import Home from "./components/Pages/Home";
 import "./styles/styles.css";
-import Vaccination from "./components/Pages/Vaccination";
 import DistricPandemicSituation from "./components/Pages/DistrictPandemicSituation";
+import Vaccination from "./components/Pages/Vaccination/Index";
 
 // Se definen las rutas
 function App() {

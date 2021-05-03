@@ -1024,6 +1024,7 @@ a:hover {
 }
 .container-vaccination .card-information {
   background-color: #E6F7E9;
+  padding: 1.5rem !important;
 }
 .container-vaccination .card-information .img-map {
   object-fit: cover;
@@ -1052,6 +1053,9 @@ a:hover {
   content: "• ";
   color: #00BFA6;
   margin-left: -10px;
+}
+.container-vaccination .card-information .put-shoulder-mt5 {
+  margin-top: 5rem !important;
 }
 .container-vaccination .searchregion-form__input {
   width: 60% !important;
@@ -1102,6 +1106,9 @@ a:hover {
     height: 17rem;
     margin-bottom: 0.5rem;
   }
+  .container-vaccination .d-mobile-none {
+    display: none;
+  }
 }
 @media only screen and (min-width: 551px) and (max-width: 990px) {
   .container-vaccination h2 {
@@ -1122,19 +1129,23 @@ a:hover {
 }
 .btn-fase {
   background: #0A544F !important;
+  border: 1px solid #00BFA6;
+  color: #fff !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 1.5rem !important;
 }
 
-.btn-search.vaccinate {
-  font-family: Roboto;
+.btn-vaccinate {
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #00BFA6;
   border: 1px solid #00BFA6;
-}
-
-.btn-search.vaccinate:hover {
-  color: #00BFA6;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .fs-10 {

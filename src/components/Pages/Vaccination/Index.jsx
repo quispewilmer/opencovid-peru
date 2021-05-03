@@ -35,7 +35,7 @@ const Vaccination=()=>{
                         theme="col-lg-4" 
                         isTopTextHighlights={true}                    
                         sText="En el Perú, somos " 
-                        highlight={`${poblation} Millones`}
+                        highlight={`${poblation.replace('.',' ')} Millones`}
                         eText=" de personas elegibles para recibir la vacuna. "
                         textLeft="Peruanos y extranjeros residentes mayores de 18 años" 
                         src_image={primeraLinea} 

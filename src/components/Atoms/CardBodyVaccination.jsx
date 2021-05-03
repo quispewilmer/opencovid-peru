@@ -15,7 +15,7 @@ const CardBodyVaccination=({data})=>{
     
     return (
         <div className="card-body">
-            <div className="card-information p-3 mx-auto row">
+            <div className="card-information mx-auto row">
                 <div className="col-lg-12">
                     <TextHighlights 
                         sText="Hasta el momento hay "
@@ -25,13 +25,13 @@ const CardBodyVaccination=({data})=>{
                 <div className="col-lg-4">
                     <SectionDoseVaccination data={data}/>
                 </div>
-                <div className="col-lg-1">
+                <div className="col-lg-1 d-mobile-none put-shoulder-mt5">
                     <img src={arrowLeft} alt="" className="mt-5"/>
                 </div>
                 <div className="col-lg-7">
-                    <div className="row">
+                    <div className="put-shoulder-mt5 row">
                         <div className="col-lg-4 text-center">
-                            <button className="btn form-control btn-success btn-fase">Fase I
+                            <button className="btn form-control btn-fase">Fase I
                             </button>
                             <img src={firstLine} alt="" className="mx-auto mt-3"/>
                             <h3 className="mt-2 mx-0 text-success">{data.vacunados}</h3>
@@ -39,7 +39,7 @@ const CardBodyVaccination=({data})=>{
                             <span>Personal de salud, policías, bomberos y personas mayores de 65 años</span>
                         </div>
                         <div className="col-lg-4 text-center">
-                            <button className="btn form-control btn-success btn-fase">Fase II
+                            <button className="btn form-control btn-fase">Fase II
                             </button>
                             <img src={stateVaccinate} alt="" className="mx-auto mt-3"/>
                             <h3 className="mt-2 mx-0 text-success">xx</h3>
@@ -47,7 +47,7 @@ const CardBodyVaccination=({data})=>{
                             <span>Por determinar*</span>
                         </div>
                         <div className="col-lg-4 text-center">
-                            <button className="btn form-control btn-success btn-fase">Fase III
+                            <button className="btn form-control  btn-fase">Fase III
                             </button>
                             <img src={groupSociety} alt="" className="mx-auto mt-3"/>
                             <h3 className="mt-2 mx-0 text-success">xx</h3>
@@ -55,7 +55,7 @@ const CardBodyVaccination=({data})=>{
                             <span>Por determinar</span>
                         </div>
                         <div className="col-lg-12 text-center mt-4">
-                            <button className="btn bg-light btn-search vaccinate">
+                            <button className="btn-vaccinate">
                                 ¿Cuando me toca vacunarme?
                             </button>
                         </div>

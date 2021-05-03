@@ -11,6 +11,7 @@
     }
     .card-information{
         background-color: #E6F7E9;
+        padding: 1.5rem !important;
         // min-height: 26rem;
         .img-map{
             object-fit: cover;
@@ -46,6 +47,10 @@
                 color: #00BFA6;
                 margin-left: -10px;
             }
+        }
+
+        .put-shoulder-mt5{
+            margin-top: 5rem !important;
         }
     }
 
@@ -110,6 +115,9 @@
                 margin-bottom: 0.5rem;
             }
         }
+        .d-mobile-none{
+            display: none;
+        }
     }
 }
 
@@ -132,6 +140,7 @@
                 margin:auto;
             }
         }
+        
     }
 }
 
@@ -139,18 +148,22 @@
 //CardBody
 .btn-fase{
     background: #0A544F !important;
+    border: 1px solid #00BFA6;
+    color: #fff !important;
+    font-style: normal !important; 
+    font-weight: normal !important; 
+    font-size: 1.5rem !important;
 }
 
 
-.btn-search.vaccinate{ 
-    font-family: Roboto;
+.btn-vaccinate{ 
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #00BFA6;
     border: 1px solid #00BFA6;
-}
-
-.btn-search.vaccinate:hover{
-    color: #00BFA6 ;
+    font-weight: 500;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem;
 }
