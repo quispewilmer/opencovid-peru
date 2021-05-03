@@ -108,7 +108,7 @@ const useMapboxMap = (markerData, name) => {
 	}, []);
 
 	useEffect(() => {
-		if (markerData && markerData.length > 0) {
+		if (markerData) {
 			clearMarkers(markersRef);
 			markerData.forEach((item) => printMarker(item, name, mapRef, markersRef));
 		}
