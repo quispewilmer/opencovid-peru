@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import QuantityCard from '../Atoms/QuantityCard';
 import emergencydesktop from '../../img/home/emergency-desk.svg';
@@ -11,7 +11,7 @@ import infected from '../../img/home/infected.svg';
 import uci from '../../img/home/uci.svg';
 import vaccine from '../../img/home/vaccine.svg';
 import AboutCovidCard from '../Atoms/AboutCovidCard';
-import HighRule from '../Atoms/HighRule'; 
+import HighRule from '../Atoms/HighRule';
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
 import Glass from '../../img/pandemiaState/glass.svg';
@@ -27,54 +27,54 @@ const Home = () => {
 
     useEffect(async () => {
         fetch(url)
-        .then(response => response.json())
-        .then(response => setState({
-            information: {
-                data: response,
-            }
-        }))
+            .then(response => response.json())
+            .then(response => setState({
+                information: {
+                    data: response,
+                }
+            }))
     }, [])
-    
+
     return (
         <>
             <Banner />
             <main className="home">
-                <section className="national-situation container-fluid py-4">
+                <section className="national-situation">
                     <div className="main-container">
                         <h1 className="national-situation__title text-center font-weight-bold main-title">Situación a nivel nacional</h1>
                         <HighRule />
                         <div className="national-situation__articles mx-0">
-                            <QuantityCard title="Nuevos infectados" image={infected} number={Math.round(state.information.data.activeCases)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
-                            <QuantityCard title="Nuevas muertes" image={dead} number={Math.round(state.information.data.fallecidosMinsa + state.information.data.fallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
-                            <QuantityCard title="Camas UCI disponibles" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
-                            <QuantityCard title="Personas vacunadas" image={vaccine} number={Math.round(state.information.data.vacunados)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""}/>
+                            <QuantityCard title="Infectados totales" image={infected} number={Math.round(state.information.data.activeCases)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Fallecidos totales" image={dead} number={Math.round(state.information.data.totalFallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Camas UCI disponibles" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Personas vacunadas" image={vaccine} number={Math.round(state.information.data.vacunados)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                         </div>
                     </div>
                 </section>
-                <section className="what-find pt-4">
+                <section className="what-find">
                     <h1 className="what-find__title font-weight-bold text-center main-title">¿Qué vas a encontrar?</h1>
                     <HighRule />
                     <div className="what-find__articles">
                         <article className="what-find__article emergency-map pt-4 main-container">
-                                <div className="emergency-map__image d-flex align-items-end">
-                                    <picture>
-                                        <source srcSet={emergencydesktop} media="(min-width: 768px)" />
-                                        <img src={emergencymobile} alt=""/>
-                                    </picture>
-                                </div>
-                                <div className="emergency-map__content d-flex flex-column justify-content-center">
-                                    <h2>Mapa de emergencia</h2>
-                                    <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
-                                    <ul className="mt-4">
-                                        <li>Camas UCI</li>
-                                        <li>Camas COVID</li>
-                                        <li>Puntos de recarga de oxígeno</li>
-                                    </ul>
-                                    <p className="mt-3">También podrás identificar la ubicación de centros de salud y farmacias.</p>
-                                    <Button text="Emergencia" theme="button--white-orange align-self-center mb-4" link="/mapa-emergencia"/>
-                                </div>       
+                            <div className="emergency-map__image d-flex align-items-end">
+                                <picture>
+                                    <source srcSet={emergencydesktop} media="(min-width: 768px)" />
+                                    <img src={emergencymobile} alt="" />
+                                </picture>
+                            </div>
+                            <div className="emergency-map__content d-flex flex-column justify-content-center">
+                                <h2>Mapa de emergencia</h2>
+                                <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
+                                <ul className="mt-4">
+                                    <li>Camas UCI</li>
+                                    <li>Camas COVID</li>
+                                    <li>Puntos de recarga de oxígeno</li>
+                                </ul>
+                                <p className="mt-3">También podrás identificar la ubicación de centros de salud y farmacias.</p>
+                                <Button text="Ver más" theme="button--white-orange align-self-center mb-4" link="/mapa-emergencia" />
+                            </div>
                         </article>
-                        <article className="what-find__article graphic-information container-fluid pt-4">
+                        <article className="what-find__article graphic-information container-fluid">
                             <div className="main-container">
                                 <div className="graphic-information__content">
                                     <h2>Información en gráficos</h2>
@@ -87,11 +87,11 @@ const Home = () => {
                                         <li>Capacidad hospitalaria</li>
                                         <li>Capacidad UCI y más</li>
                                     </ul>
-                                    <Button text="Infórmate" theme="button--white-green mb-4 mt-4" link="/estado-pandemia"/>
+                                    <Button text="Ver más" theme="button--white-green mb-4 mt-4" link="/estado-pandemia" />
                                 </div>
                                 <div className="graphic-information__image d-flex justify-content-end">
                                     <picture className="d-flex align-items-end">
-                                        <img src={graphicinformation} alt=""/>
+                                        <img src={graphicinformation} alt="" />
                                     </picture>
                                 </div>
                             </div>
