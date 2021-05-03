@@ -5,18 +5,15 @@
 }
 @font-face {
   font-family: "AvenirBlack";
-  src: local("AvenirBlack"),
-    url(../fonts/AvenirLTProBlack.otf) format("opentype");
+  src: local("AvenirBlack"), url(../fonts/AvenirLTProBlack.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirHeavy";
-  src: local("AvenirHeavy"),
-    url(../fonts/AvenirLTProHeavy.otf) format("opentype");
+  src: local("AvenirHeavy"), url(../fonts/AvenirLTProHeavy.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirLight";
-  src: local("AvenirLight"),
-    url(../fonts/AvenirLTProLight.otf) format("opentype");
+  src: local("AvenirLight"), url(../fonts/AvenirLTProLight.otf) format("opentype");
 }
 @font-face {
   font-family: "WorkSans";
@@ -47,22 +44,11 @@ a {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-a,
-div {
+h1, h2, h3, h4, h5, h6, p, span, a, div {
   font-family: Avenir;
 }
 
-nav,
-ul,
-li {
+nav, ul, li {
   margin: 0;
   padding: 0;
   margin-bottom: 0px;
@@ -72,8 +58,7 @@ li {
   list-style: none;
 }
 
-textarea:focus,
-input:focus {
+textarea:focus, input:focus {
   outline: none;
 }
 
@@ -388,8 +373,7 @@ a:hover {
   padding-right: 5px;
   font-size: 20px;
 }
-.what-find img,
-.what-find picture {
+.what-find img, .what-find picture {
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -399,9 +383,7 @@ a:hover {
   .what-find h2 {
     font-size: 30px;
   }
-  .what-find p,
-  .what-find li,
-  .what-find span {
+  .what-find p, .what-find li, .what-find span {
     font-size: 26px;
   }
 }
@@ -569,7 +551,7 @@ a:hover {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
 }
-.membership-form input[type="submit"] {
+.membership-form input[type=submit] {
   background-color: #0a544f;
   color: white;
 }
@@ -608,7 +590,7 @@ a:hover {
 .region-selection {
   display: flex;
   align-items: center;
-  color: #0a544f;
+  color: #0A544F;
   margin-top: 20px;
 }
 .region-selection p {
@@ -641,7 +623,7 @@ a:hover {
   width: 30px;
   left: 0px;
   bottom: -4px;
-  background: linear-gradient(180deg, #00bfa6 71.18%, #46bc75 100%);
+  background: linear-gradient(180deg, #00BFA6 71.18%, #46BC75 100%);
   transition: 0.4s;
   border-radius: 50%;
 }
@@ -689,7 +671,7 @@ a:hover {
   font-size: 16px;
 }
 .legend__list {
-  margin-bottom: 0px;
+  margin-bottom: 0PX;
   font-size: 12px;
 }
 .legend__item {
@@ -707,7 +689,7 @@ a:hover {
   margin-right: 10px;
 }
 .legend .high {
-  background-color: #f38620;
+  background-color: #F38620;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -719,7 +701,7 @@ a:hover {
   margin-right: 10px;
 }
 .legend .low {
-  background-color: #00bf46;
+  background-color: #00BF46;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -796,7 +778,7 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.searchregion-form input[type="submit"] {
+.searchregion-form input[type=submit] {
   background-color: #00bfa6;
 }
 .searchregion-form input {
@@ -951,16 +933,16 @@ a:hover {
   border: 3px solid #0a544f;
   background-image: linear-gradient(#00bfa6, #0a544f);
 }
-.information-place-header__range + input[type="range"][multiple] {
+.information-place-header__range + input[type=range][multiple] {
   margin-top: -20px;
 }
-.information-place-header input[type="range"]::-webkit-slider-thumb {
+.information-place-header input[type=range]::-webkit-slider-thumb {
   pointer-events: all;
 }
-.information-place-header input[type="range"]::-moz-range-thumb {
+.information-place-header input[type=range]::-moz-range-thumb {
   pointer-events: all;
 }
-.information-place-header input[type="range"]::-ms-thumb {
+.information-place-header input[type=range]::-ms-thumb {
   pointer-events: all;
 }
 
@@ -1027,8 +1009,7 @@ a:hover {
   width: 10px;
   cursor: pointer;
 }
-.information-place-content
-  span[class^="information-place-content__pagination-num"] {
+.information-place-content span[class^=information-place-content__pagination-num] {
   padding: 0px 4px;
 }
 
@@ -1039,10 +1020,10 @@ a:hover {
   font-style: normal;
   font-weight: bold;
   font-size: 44px;
-  color: #3a3838;
+  color: #3A3838;
 }
 .container-vaccination .card-information {
-  background-color: #e6f7e9;
+  background-color: #E6F7E9;
 }
 .container-vaccination .card-information .img-map {
   object-fit: cover;
@@ -1097,7 +1078,7 @@ a:hover {
   }
 }
 .btn-fase {
-  background: #0a544f !important;
+  background: #0A544F !important;
 }
 
 .btn-search.vaccinate {
@@ -1105,12 +1086,106 @@ a:hover {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  color: #00bfa6;
-  border: 1px solid #00bfa6;
+  color: #00BFA6;
+  border: 1px solid #00BFA6;
 }
 
 .btn-search.vaccinate:hover {
-  color: #00bfa6;
+  color: #00BFA6;
+}
+
+.fs-10 {
+  font-size: 10px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.h-100px {
+  height: 100px !important;
+}
+
+.vaccine-calendar {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  color: #00BFA6;
+  text-align: center;
+  font-size: 28px;
+}
+
+.vaccine-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.vaccine-progress span {
+  color: #01ABF6;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.graph-block {
+  background: #E6F7E9 !important;
+  width: 100%;
+  padding: 35px;
+}
+.graph-block__title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 32px;
+  color: #000;
+}
+.graph-block__amount {
+  color: #00BFA6;
+  font-style: normal;
+  display: inline-block;
+}
+.graph-block__source {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+  margin-top: 10px;
+}
+.graph-block__textbox {
+  background: #FFFFFF;
+  border: 1px solid #C5C4C4;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  color: #00BFA6;
+  font-size: 30px;
+  line-height: 52px;
+  min-height: 50px !important;
+  width: 70%;
+  text-align: center;
+}
+.graph-block__boxlabel {
+  font-size: 24px;
+  line-height: 35px;
 }
 
 .map-marker {
@@ -1346,6 +1421,7 @@ a:hover {
   display: inline;
   font-weight: bold;
 }
+
 .the-team__grid {
   margin-top: 50px;
   display: grid;
@@ -1594,7 +1670,7 @@ a:hover {
 .pandemicstate-filter__icon {
   width: 53px;
   height: 45px;
-  background-color: #00bfa6;
+  background-color: #00BFA6;
   position: absolute;
   border-radius: 20px 0px 0px 20px;
   background-size: 20px 20px;
@@ -1679,10 +1755,10 @@ a:hover {
   padding: 25px;
 }
 
-#map_outer,
-#map_access {
+#map_outer, #map_access {
   display: none !important;
 }
+
 .thanks {
   padding: 56px 0 41px;
 }
@@ -1725,9 +1801,7 @@ a:hover {
 
 .the-team {
   padding: 56px 0 41px;
-  background-image: url("../img/aboutus/virus.svg"),
-    url("../img/aboutus/wave.svg"),
-    linear-gradient(rgba(248, 102, 72, 0.12), rgba(248, 102, 72, 0.12));
+  background-image: url("../img/aboutus/virus.svg"), url("../img/aboutus/wave.svg"), linear-gradient(rgba(248, 102, 72, 0.12), rgba(248, 102, 72, 0.12));
   background-position: center 30px, center 100.5%, center center;
   background-size: contain, contain, contain;
   background-repeat: no-repeat;
