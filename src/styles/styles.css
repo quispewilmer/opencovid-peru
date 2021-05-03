@@ -1025,13 +1025,25 @@ a:hover {
 }
 .container-vaccination .card-information .img-society {
   width: 100%;
-  min-height: 13rem;
+  min-height: 12rem;
   margin-top: 2rem;
   margin-right: 2rem;
-  margin-bottom: 2rem;
 }
 .container-vaccination .card-information span {
   font-size: 0.93rem;
+}
+.container-vaccination .card-information .text-left-card {
+  font-weight: normal;
+  margin-top: 0 !important;
+}
+.container-vaccination .card-information .type-doses-section li {
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+.container-vaccination .card-information .type-doses-section li:before {
+  content: "• ";
+  color: #00BFA6;
+  margin-left: -10px;
 }
 .container-vaccination .searchregion-form__input {
   width: 60% !important;

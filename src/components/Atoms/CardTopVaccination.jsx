@@ -1,7 +1,10 @@
 import React from 'react';
+import TypeDoses from '../Pages/Vaccination/TypeDoses';
 import TextHighlights from './TextHighlightsVaccination';
 
-const CardTop=({theme,isTopTextHighlights,isTopLeftTextHighlights,sText,highlight,eText,textLeftTop,textLeft,text_footer,src_image,image_style,lsVaccination})=>{
+
+
+const CardTop=({theme,isTopTextHighlights,isTopLeftTextHighlights,sText,highlight,eText,textLeft,text_footer,src_image,image_style,dataTypeDoses})=>{
     return (
         <div className={`${theme} card-body`}>
             <div className="card-information card-body">
@@ -25,7 +28,9 @@ const CardTop=({theme,isTopTextHighlights,isTopLeftTextHighlights,sText,highligh
                         highlight={highlight}
                         eText={eText}/>:null}
 
-                        {textLeft!=null && textLeft!=""? <h4 className="mt-4">{textLeft}</h4>:null}
+                        {textLeft!=null && textLeft!=""? 
+                            <h4 className="mt-4 text-left-card">{textLeft}</h4>:null}
+                        {dataTypeDoses!=null? <TypeDoses data={dataTypeDoses}/>:null}
                     </div>
                 </div>
                 <span>{text_footer}</span>   

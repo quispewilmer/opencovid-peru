@@ -20,13 +20,32 @@
         }
         .img-society{
             width: 100%;
-            min-height: 13rem;
+            min-height: 12rem;
             margin-top: 2rem;
             margin-right: 2rem;
-            margin-bottom: 2rem;
+            
         }
         span{
             font-size: 0.93rem;
+        }
+
+        .text-left-card{
+            font-weight: normal; 
+            margin-top: 0 !important;
+        }
+
+        .type-doses-section{
+        
+            li{
+                font-weight: normal; 
+                font-size: 1.3rem;
+            }
+
+            li:before {
+                content: "• ";
+                color: #00BFA6;
+                margin-left: -10px;
+            }
         }
     }
 
@@ -67,6 +86,8 @@
         margin: auto;
         background: #00599D;
     }
+
+    
 }
 
 @media only screen and (min-width: 250px) and (max-width: 715px){

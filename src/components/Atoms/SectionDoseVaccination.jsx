@@ -4,7 +4,7 @@ import pictureGradient from '../../img/vaccination/picture-gradient.png';
 import picture from '../../img/vaccination/picture.png';
 import {Container,Row,Col} from 'react-bootstrap';
 
-const SectionDoseVaccination=()=>{
+const SectionDoseVaccination=({data})=>{
     return(
         <Container>
             <div className="mt-5 desing-vaccinate-rows row">
@@ -121,21 +121,21 @@ const SectionDoseVaccination=()=>{
                             <div className="missing-vaccinate"></div>
                         </div>
                         <div className="col-lg-11">
-                            <p className="pt-1">Sin vacunar (%)</p>
+                            <p className="pt-1">Sin vacunar ({`${(((data.poblacion-data.vacunados)/data.poblacion)*100)}%`})</p>
                         </div>
 
                         <div className="col-1">
                             <div className="first-dose"></div>
                         </div>
                         <div className="col-lg-11">
-                            <p className="pt-1">Primera dosis (%)</p>
+                            <p className="pt-1">Primera dosis ({`${((data.primeraDosis/data.poblacion)*100)}%`})</p>
                         </div>
 
                         <div className="col-1">
                             <div className="dose-complete"></div>
                         </div>
                         <div className="col-lg-11">
-                            <p className="pt-1">Segunda dosis (%)</p>
+                            <p className="pt-1">Segunda dosis ({`${((data.segundaDosis/data.poblacion)*100)}%`})</p>
                         </div>
 
                     </div>
