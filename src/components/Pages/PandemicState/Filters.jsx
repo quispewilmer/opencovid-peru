@@ -5,7 +5,6 @@ import moment from 'moment'
 
 const Filters = ({ onChange, initialValues, value = {} }) => {
   return <div className="pandemic-state-filters">
-    <h1 className="pandemic-state-filters__title graphic__title">Situación regional</h1>
     <div className="pandemic-state-filters__containers">
       <SearchRegion className="pandemic-state-filters__item" onChange={state => onChange({state})} value={value.state} />
       <WeekPicker
