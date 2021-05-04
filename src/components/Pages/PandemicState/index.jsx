@@ -177,6 +177,7 @@ const PandemicState = () => {
 
     return (
         <div>
+            <h1 className="pandemic-state-filters__title graphic__title">Situación regional</h1>
             <TemplateDashboard type="for-graphics">
                 <Filters
                     onChange={newFilters => {
