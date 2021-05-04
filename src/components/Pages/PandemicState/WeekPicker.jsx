@@ -3,7 +3,9 @@ import Helmet from 'react-helmet';
 import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
-import classNames from 'classnames'
+import classNames from 'classnames';
+import 'moment/locale/es';
+import MomentLocaleUtils from "react-day-picker/moment";
 
 export function getWeekDays(weekStart) {
   const days = [weekStart];
@@ -97,7 +99,9 @@ export default class WeekPicker extends React.Component {
             onDayMouseEnter: this.handleDayEnter,
             onDayMouseLeave: this.handleDayLeave,
             firstDayOfWeek: 1,
-            disabledDays: this.props.disabledDays
+            disabledDays: this.props.disabledDays,
+            localeUtils: MomentLocaleUtils,
+            locale: "es"
           }}
         />
 

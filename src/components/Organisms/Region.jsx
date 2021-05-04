@@ -22,7 +22,6 @@ const Region = ({ onSwitchClick, onStateClick, countryWide }) => {
         <>
             <div className="map-graphic graphic-container graphic" style={gridProps[countryWide]}>
                 <section className="graphic__region-selection region-selection">
-                    <p className="region-selection__one-region">Una región</p>
                     <label className="region-selection__switch" >
                         <input type="checkbox" className="region-selection__checkbox" checked={countryWide} onChange={() => {
                             onSwitchClick(!countryWide)
