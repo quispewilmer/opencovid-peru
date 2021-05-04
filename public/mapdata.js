@@ -136,7 +136,7 @@ var simplemaps_countrymap_mapdata={
       name: "Ayacucho"
     },
     PER587: {
-      name: "Lima Province"
+      name: "Lima Metropolitana"
     },
     PER588: {
       name: "Huancavelica"
