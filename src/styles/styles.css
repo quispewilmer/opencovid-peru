@@ -87,6 +87,7 @@ textarea:focus, input:focus {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   font-size: 14px;
+  font-family: "AvenirHeavy";
   text-align: center;
   line-height: 1.2em;
 }
@@ -102,8 +103,8 @@ textarea:focus, input:focus {
 }
 @media (min-width: 1080px) {
   .button {
-    width: 234px;
-    height: 70.4px;
+    width: 221px;
+    height: 56.32px;
     font-size: 20px;
   }
 }
@@ -334,19 +335,26 @@ a:hover {
   }
 }
 .national-situation {
+  padding: 18px 0;
   background-color: rgba(253, 6, 0, 0.1);
-  padding: 50px 0;
 }
-.national-situation h1 {
+.national-situation__title {
   color: #e93e3a;
+  font-family: "AvenirBlack";
+  font-weight: 900;
+  font-size: 24px;
 }
 .national-situation__articles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 14px;
+  margin-top: 34px;
 }
 @media (min-width: 768px) {
-  .national-situation h1 {
+  .national-situation {
+    padding: 50px 0;
+  }
+  .national-situation__title {
     font-size: 38px;
   }
 }
@@ -383,10 +391,11 @@ a:hover {
 }
 @media (min-width: 768px) {
   .what-find h1 {
-    font-size: 38px;
+    font-size: 35px;
+    font-weight: 800;
   }
   .what-find h2 {
-    font-size: 36px;
+    font-size: 33px;
   }
   .what-find p, .what-find li, .what-find span, .what-find h3 {
     font-size: 22px;
@@ -394,6 +403,9 @@ a:hover {
   }
   .what-find li {
     line-height: 45px;
+  }
+  .what-find .button {
+    width: 160px;
   }
 }
 
@@ -412,8 +424,12 @@ a:hover {
   .emergency-map {
     grid-gap: 50px;
   }
+  .emergency-map p {
+    padding-right: 80px;
+  }
   .emergency-map span {
     font-size: 22px;
+    padding-right: 120px;
   }
 }
 
@@ -508,7 +524,7 @@ a:hover {
 }
 .quantity-card__number {
   font-size: 20px;
-  font-family: "AvenirBlack";
+  font-family: "AvenirHeavy";
   color: #fd0600;
 }
 .quantity-card__update {
@@ -527,7 +543,7 @@ a:hover {
     font-size: 20px;
   }
   .quantity-card__number {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -1411,6 +1427,8 @@ a:hover {
 @media screen and (min-width: 768px) {
   .select-point-on-map-box {
     max-width: 460px;
+    grid-row-start: 1;
+    grid-row-end: 4;
   }
   .select-point-on-map-box__grid {
     grid-template-columns: repeat(4, 1fr);
@@ -1426,9 +1444,9 @@ a:hover {
   grid-template-rows: auto auto auto;
   grid-gap: 30px;
   overflow: hidden;
+  height: calc(100vh - 76px);
 }
 .emergency-map-container__map-container {
-  min-height: 800px;
   grid-column: 1;
   grid-row: 1/4;
 }
@@ -1580,7 +1598,7 @@ a:hover {
   background-image: url("/src/img/banner/banner-mob.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right 10px;
+  background-position: right bottom;
   height: 420px;
   position: relative;
   z-index: 10;
@@ -1596,6 +1614,7 @@ a:hover {
   .banner__title {
     font-size: 56px;
     margin: 50px 0 41px 0;
+    font-weight: 900;
   }
 }
 @media (min-width: 1080px) {
@@ -1661,9 +1680,6 @@ a:hover {
 .pandemic-state-filters__title {
   width: 100%;
   font-size: 32px;
-  padding: 30px 30px 0px;
-  margin-bottom: 0px;
-  background-color: #f9f5f4;
 }
 .pandemic-state-filters .membership-form {
   margin: 0;
@@ -1894,6 +1910,11 @@ a:hover {
   font-family: "AvenirLight";
   font-size: 24px;
   text-align: justify;
+}
+@media screen and (min-width: 1680px) {
+  .the-team {
+    background-size: cover, contain, contain;
+  }
 }
 
 .contributions {
