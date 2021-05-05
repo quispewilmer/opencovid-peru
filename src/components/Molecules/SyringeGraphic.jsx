@@ -12,7 +12,7 @@ const SyringeGraphic = (props) => {
     let graphData = [];
     graphData = (props.data !== null ) ? props.data.data || []  : null;
 
-    console.log(graphData)
+    console.log(graphData, 'holis babe')
 
 
     return (

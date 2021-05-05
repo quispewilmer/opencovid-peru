@@ -6,7 +6,7 @@ import TextHighlights from './TextHighlightsVaccination';
 
 const CardTop=({theme,isTopTextHighlights,isTopLeftTextHighlights,sText,highlight,eText,textLeft,text_footer,src_image,image_style,dataTypeDoses})=>{
     return (
-        <div className={`${theme} card-body`}>
+        <div className={`${theme} card-body`} >
             <div className="card-information card-body">
                 {/* Esto se ejecutara condicionalmente de acuerdo a si existe algun tipo de dato */}
                 {isTopTextHighlights ? 
@@ -17,7 +17,7 @@ const CardTop=({theme,isTopTextHighlights,isTopLeftTextHighlights,sText,highligh
 
             
 
-                <div className="row">
+                <div className="row" >
                     <div className="col-lg-7">
                         <img src={src_image} className={`${image_style}`} alt=""/>
                     </div>

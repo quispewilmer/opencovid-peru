@@ -10,14 +10,14 @@ const SectionDoseVaccination=({data})=>{
     let percentage=0;
 
     let no_vaccine=Math.floor(((data.poblacion-data.vacunados)/data.poblacion)*100);
-    let first_vaccine=((data.primeraDosis/data.poblacion)*100);
-    let complete_vaccine=((data.segundaDosis/data.poblacion)*100);
+    let first_vaccine=((data.primeraDosis/data.poblacion)*100).toFixed(2);
+    let complete_vaccine=((data.segundaDosis/data.poblacion)*100).toFixed(2);
 
 
     let diff_vaccine=Math.floor(first_vaccine-complete_vaccine);
     diff_vaccine+=no_vaccine;
 
-    let vacunados=Intl.NumberFormat().format(data.vacunados).replace('.',' ');
+    let vacunados=Intl.NumberFormat().format(data.vacunados).replace(/[,.]/g,' ');
 
     for (let index = 1; index <= 110; index++) {
 
@@ -32,7 +32,7 @@ const SectionDoseVaccination=({data})=>{
         }else{
             start+=11;
             end+=11;
-            items.push(<div className="col-2" key={index}>{percentage==100? <span className="badge badge-dark mt-3">{vacunados} mill</span>:null}</div>);
+            items.push(<div className="col-2" key={index}>{percentage==100? <span className="badge badge-dark mt-3">{vacunados}</span>:null}</div>);
         }
         
     }

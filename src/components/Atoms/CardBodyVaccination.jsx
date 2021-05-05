@@ -12,14 +12,14 @@ import VaccinationMap from '../Pages/Vaccination/VaccinationMap';
 
 const CardBodyVaccination=({data})=>{
 
-    
+    console.log(data, 'this is the data')   
     return (
         <div className="card-body">
             <div className="card-information mx-auto row">
                 <div className="col-lg-12">
                     <TextHighlights 
                         sText="Hasta el momento hay "
-                        highlight={Intl.NumberFormat().format(data.vacunados).replace('.',' ')}
+                        highlight={Intl.NumberFormat().format(data.vacunados).replace(/[,.]/g,' ')}
                         eText={`personas vacunadas*, ellos representan el ${data.vaccProgress}% de la población total elegible para vacunarse`}/>
                 </div>
                 <div className="col-lg-4">
@@ -34,7 +34,7 @@ const CardBodyVaccination=({data})=>{
                             <button className="btn form-control btn-fase">Fase I
                             </button>
                             <img src={firstLine} alt="" className="mx-auto mt-3"/>
-                            <h3 className="mt-2 mx-0 text-success">{data.vacunados}</h3>
+                            <h3 className="mt-2 mx-0 text-success">{Intl.NumberFormat().format(data.vacunados).replace(/[,.]/g,' ')}</h3>
                             <h3>vacunados*</h3>
                             <span>Personal de salud, policías, bomberos y personas mayores de 65 años</span>
                         </div>
