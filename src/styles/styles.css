@@ -1295,7 +1295,11 @@ a:hover {
 
 .pandemic-state-filters__title {
   width: 100%;
-  font-size: 32px; }
+  font-size: 32px;
+  padding: 30px 30px 0px;
+  margin-bottom: 0px;
+  background-color: #f9f5f4;
+}
 .pandemic-state-filters .membership-form {
   margin: 0;
   max-width: 100%; }
