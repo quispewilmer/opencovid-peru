@@ -13,6 +13,10 @@ import "./styles/styles.css";
 import DistricPandemicSituation from "./components/Pages/DistrictPandemicSituation";
 import Vaccination from "./components/Pages/Vaccination/Index";
 
+import { hotjar } from 'react-hotjar';
+
+hotjar.initialize(2382218, 6);
+
 // Se definen las rutas
 function App() {
 	return (
