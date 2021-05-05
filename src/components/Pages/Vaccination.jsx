@@ -24,7 +24,6 @@ const Vaccination=()=>{
             setLoaded(true);
             setGraphData(await axios.get(graphUrl));
             setVaccineData(await axios.get(vaccinationEndUrl));
-            console.log(vaccineData, 'vaccine data');
         }
         /*
         setState({

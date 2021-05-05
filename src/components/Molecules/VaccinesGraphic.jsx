@@ -10,7 +10,6 @@ const VaccinesGraphic = (props) => {
 
     let graphData = [];
     graphData = props.data.data || [];
-    console.log(graphData, 'graphdata')
     const data = {
         labels: graphData.map((item) => {
             return moment(item.fecha, 'DD-MM-YYYY HH:mm:ss').format('D MMM');
