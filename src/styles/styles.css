@@ -1847,12 +1847,23 @@ a:hover {
   margin-right: 20px;
 }
 
-.graphic__region-information {
-  padding: 25px;
-}
-
 #map_outer, #map_access {
   display: none !important;
+}
+
+.graphic-container.pandemic-state-graphic {
+  padding: 0;
+}
+.graphic-container.pandemic-state-graphic .graphic__title {
+  padding: 10px 20px 0 20px;
+}
+.graphic-container.pandemic-state-graphic .graphic__region-information {
+  padding: 8%;
+}
+@media screen and (max-width: 1500px) {
+  .graphic-container.pandemic-state-graphic .graphic__region-information {
+    padding: 0;
+  }
 }
 
 .thanks {

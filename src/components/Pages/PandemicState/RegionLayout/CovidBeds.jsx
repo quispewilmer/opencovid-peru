@@ -78,7 +78,7 @@ const CovidBeds = ({ risk = 'extreme', data = TEST_DATA, totalBeds }) => {
   }, [risk, data])
 
   return (
-    <section className="graphic-container graphic covid-beds-graphic">
+    <section className="graphic-container graphic covid-beds-graphic pandemic-state-graphic">
       <div className="graphic-container graphic">
         <h1 className="graphic__title">
           Camas COVID

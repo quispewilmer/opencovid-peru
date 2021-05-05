@@ -99,7 +99,7 @@ const MortalityRate = ({ risk = 'extreme', data = TEST_DATA }) => {
   }, [risk, data])
 
   return (
-    <section className="mortality-rate-graphic graphic-container graphic">
+    <section className="mortality-rate-graphic graphic-container graphic pandemic-state-graphic">
       <div className="graphic-container graphic">
         <h1 className="graphic__title">
           Tasa de Mortalidad
