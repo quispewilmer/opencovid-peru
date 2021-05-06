@@ -1,18 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
-import ucibed from '../../img/icons/ucibed.svg';
+import ucibed from '../../img/icons/informationplacebox/ucibed.svg';
+import covidbed from '../../img/icons/informationplacebox/covidbed.svg';
+import pharmacy from '../../img/icons/informationplacebox/pharmacy.svg';
+import minsahc from '../../img/icons/informationplacebox/minsahc.svg';
+import essaludhc from '../../img/icons/informationplacebox/essaludhc.svg';
+import privatehc from '../../img/icons/informationplacebox/privatehc.svg';
+import faapnphc from '../../img/icons/informationplacebox/faapnphc.svg';
+import oxygen from '../../img/icons/informationplacebox/oxygen.svg';
 import InformationPlaceContentItem from '../Molecules/InformationPlaceContentItem';
 import arrowleft from '../../img/icons/arrowleft.svg';
 import arrowright from '../../img/icons/arrowright.svg';
 
 const icons = {
     "Camas UCI": ucibed,
-    "Camas COVID": ucibed,
-    "Balones de oxígeno": ucibed,
-    "Farmacias": ucibed,
-    "Centros de salud MINSA": ucibed,
-    "Centros de salud Essalud": ucibed,
-    "Centros de salud privados": ucibed,
-    "Centros de salud FF.AA. y la PNP": ucibed,
+    "Camas COVID": covidbed,
+    "Balones de oxígeno": oxygen,
+    "Farmacias": pharmacy,
+    "Centros de salud MINSA": minsahc,
+    "Centros de salud Essalud": essaludhc,
+    "Centros de salud privados": privatehc,
+    "Centros de salud FF.AA. y la PNP": faapnphc,
 }
 
 const InformationPlaceContent = ({ title, data }) => {
@@ -56,7 +63,7 @@ const InformationPlaceContent = ({ title, data }) => {
                 {
                     data.slice(state.actualPage * 5 - 5, state.actualPage * 5).map(item => (
                         <li className="information-place-content__item" key={item.id}>
-                            <span>{item.name}</span>
+                            <span title={item.name} className={`place-box-item--${title.replace(/ /g, "-").toLowerCase()}`}>{item.name.toLowerCase()}</span>
                             <span><img src={icons[title]} alt='icon'/>{title.includes('Camas') ? item.serv_uci_left : '2 km' }</span>
                         </li>
                     ))
