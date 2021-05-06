@@ -31,7 +31,7 @@ export function buildIncidentRateData(statesData, state, weekStartDates) {
         const weekRange = getWeekRange(weekStartDates[index])
         return {
             week: moment(weekRange.from).format('DD-MM-YYYY'),
-            value: states[state].incid_100
+            value: states[state].incid_100 * states[state].poblacion / 100000
         }
     }).filter(dataPoint => !!dataPoint)
 }
@@ -42,7 +42,7 @@ export function buildMortalityRateData(statesData, state, weekStartDates) {
         const weekRange = getWeekRange(weekStartDates[index])
         return {
             week: moment(weekRange.from).format('DD-MM-YYYY'),
-            value: states[state].fall_100
+            value: states[state].fall_100 * states[state].poblacion / 100000
         }
     }).filter(dataPoint => !!dataPoint)
 }
