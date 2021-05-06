@@ -5,9 +5,9 @@
 	grid-template-rows: auto auto auto;
 	grid-gap: 30px;
 	overflow: hidden;
+	height: calc(100vh - 76px);
 
 	&__map-container {
-		min-height: 800px;
 		grid-column: 1;
 		grid-row: 1 / 4;
 	}

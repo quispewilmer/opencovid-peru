@@ -15,7 +15,7 @@
 
     &__number {
         font-size: 20px;
-        font-family: 'AvenirBlack';
+        font-family: 'AvenirHeavy';
         color: map-get($map: $colors, $key: oc-red);
     }
 
@@ -37,7 +37,7 @@
         }
 
         &__number {
-            font-size: 40px;
+            font-size: 36px;
         }
     }
 }

@@ -18,6 +18,9 @@ const SelectPointOnMap = ({
 				all: "unset",
 				border: isSelected && "2px solid black",
 				borderRadius: isSelected && "4px",
+				display: 'flex',
+				alignItems: 'flex-start',
+				justifyContent: 'center'
 			}}
 			onClick={handleClick}
 		>

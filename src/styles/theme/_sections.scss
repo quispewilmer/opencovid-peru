@@ -1,19 +1,25 @@
 .national-situation {
+    padding: 18px 0;
     background-color: rgba(map-get($map: $colors, $key: oc-red), .1);
-    padding: 50px 0;
-
-    h1 {
+    
+    &__title {
         color: map-get($map: $colors, $key: oc-dark-red);
+        font-family: 'AvenirBlack';
+        font-weight: 900;
+        font-size: 24px;
     }
-
+    
     &__articles {
         display: grid;
         grid-template-columns: repeat(2, 1fr );
         grid-gap: 14px;
+        margin-top: 34px;
     }
-
+    
     @media (min-width: 768px) {
-        h1 {
+        padding: 50px 0;
+
+        &__title {
             font-size: 38px;
         }
     }
@@ -57,11 +63,12 @@
 
     @media (min-width: 768px) {
         h1 {
-            font-size: 38px;
+            font-size: 35px;
+            font-weight: 800;
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 33px;
         }
 
         p, li, span, h3 {
@@ -71,6 +78,10 @@
 
         li {
             line-height: 45px;
+        }
+
+        .button {
+            width: 160px;
         }
     }
 }
@@ -91,8 +102,13 @@
     @media (min-width: 768px) {
         grid-gap: 50px;
 
+        p {
+            padding-right: 80px;
+        }
+
         span {
             font-size: 22px;
+            padding-right: 120px;
         }
     }
 }

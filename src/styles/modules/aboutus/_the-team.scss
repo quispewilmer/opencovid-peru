@@ -16,4 +16,8 @@
         font-size: 24px;
         text-align: justify;
     }
+
+    @media screen and (min-width: 1680px) {
+        background-size: cover, contain, contain;
+    }
 }

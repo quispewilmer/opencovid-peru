@@ -41,10 +41,10 @@ const Home = () => {
             <main className="home">
                 <section className="national-situation">
                     <div className="main-container">
-                        <h1 className="national-situation__title text-center font-weight-bold main-title">Situación a nivel nacional</h1>
+                        <h1 className="national-situation__title text-center">Situación a nivel nacional</h1>
                         <HighRule />
                         <div className="national-situation__articles mx-0">
-                            <QuantityCard title="Infectados totales" image={infected} number={Math.round(state.information.data.activeCases)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Infectados totales" image={infected} number={Math.round(state.information.data.totalInfectadosHist)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                             <QuantityCard title="Fallecidos totales" image={dead} number={Math.round(state.information.data.totalFallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                             <QuantityCard title="Camas UCI disponibles" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                             <QuantityCard title="Personas vacunadas" image={vaccine} number={Math.round(state.information.data.vacunados)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
@@ -71,7 +71,7 @@ const Home = () => {
                                     <li>Puntos de recarga de oxígeno</li>
                                 </ul>
                                 <p className="mt-3">También podrás identificar la ubicación de centros de salud y farmacias.</p>
-                                <Button text="Ver más" theme="button--white-orange align-self-center mb-4" link="/mapa-emergencia" />
+                                <Button text="Ver más" theme="button--white-orange mb-4 emergency-map__see-more" link="/mapa-emergencia" />
                             </div>
                         </article>
                         <article className="what-find__article graphic-information container-fluid">
@@ -87,7 +87,7 @@ const Home = () => {
                                         <li>Capacidad hospitalaria</li>
                                         <li>Capacidad UCI y más</li>
                                     </ul>
-                                    <Button text="Ver más" theme="button--white-green mb-4 mt-4" link="/estado-pandemia" />
+                                    <Button text="Ver más" theme="button--white-green mb-4 mt-4 graphic-information__see-more" link="/estado-pandemia" />
                                 </div>
                                 <div className="graphic-information__image d-flex justify-content-end">
                                     <picture className="d-flex align-items-end">
