@@ -25,6 +25,8 @@
 
 	@media screen and (min-width: 768px) {
 		max-width: 460px;
+		grid-row-start: 1;
+		grid-row-end: 4;
 
 		&__grid {
 			grid-template-columns: repeat(4, 1fr);
