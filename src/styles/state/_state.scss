@@ -29,3 +29,36 @@
         transform: translateY(calc(100% - 24px));
     }
 }
+
+.place-box-item {
+    &--camas-uci:nth-of-type(1)::before {
+        background-color: map-get($map: $colors, $key: oc-red);
+    }
+
+    &--camas-covid:nth-of-type(1)::before {
+        background-color: #0E2DFD;
+    }
+    &--balones-de-oxígeno:nth-of-type(1)::before {
+        background-color: #00B092;
+    }
+
+    &--farmacias:nth-of-type(1)::before {
+        background-color: #FB7529;
+    }
+
+    &--centros-de-salud-minsa:nth-of-type(1)::before {
+        background-color: #00599D;
+    }
+
+    &--centros-de-salud-essalud:nth-of-type(1)::before {
+        background-color: #016E09;
+    }
+
+    &--centros-de-salud-privados:nth-of-type(1)::before {
+        background-color: #01ABF6;
+    }
+
+    &--centros-de-salud-ffaa-y-la-pnp:nth-of-type(1)::before {
+        background-color: #AA01E9;
+    }
+}

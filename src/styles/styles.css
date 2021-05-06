@@ -984,10 +984,15 @@ a:hover {
   pointer-events: all;
 }
 
+.information-place-content__title {
+  font-size: 16px;
+}
 .information-place-content__available {
   display: flex;
   justify-content: flex-end;
   font-family: AvenirHeavy;
+  font-size: 12px;
+  margin-top: -19px;
 }
 .information-place-content__list {
   display: flex;
@@ -995,13 +1000,15 @@ a:hover {
   max-height: 200px;
   flex-wrap: wrap;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 .information-place-content__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 4px;
+  padding: 6px 8px;
   width: 100%;
+  font-size: 12px;
 }
 .information-place-content__item:hover {
   background-color: rgba(0, 0, 0, 0.028);
@@ -1009,23 +1016,38 @@ a:hover {
   cursor: pointer;
 }
 .information-place-content__item span:nth-of-type(1) {
-  padding-left: 20px;
+  padding-left: 16px;
   position: relative;
+  width: 70%;
 }
 .information-place-content__item span:nth-of-type(1)::before {
   content: "";
   display: block;
-  width: 10px;
-  height: 10px;
-  background-color: blue;
+  width: 6px;
+  height: 6px;
+  /*background-color: blue;*/
   border-radius: 50%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
 }
+.information-place-content__item span:nth-of-type(1)::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background-image: linear-gradient(transparent, white);
+}
 .information-place-content__item span {
   display: flex;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .information-place-content__item img {
   margin-right: 20px;
@@ -1497,6 +1519,7 @@ a:hover {
     grid-row-start: 1;
     grid-row-end: 3;
     margin-right: 10px;
+    min-width: 363px;
     margin-top: 10px;
     align-self: flex-start;
   }
@@ -1592,6 +1615,31 @@ a:hover {
 
 .select-point-on-map-box--close {
   transform: translateY(calc(100% - 24px));
+}
+
+.place-box-item--camas-uci:nth-of-type(1)::before {
+  background-color: #fd0600;
+}
+.place-box-item--camas-covid:nth-of-type(1)::before {
+  background-color: #0E2DFD;
+}
+.place-box-item--balones-de-oxígeno:nth-of-type(1)::before {
+  background-color: #00B092;
+}
+.place-box-item--farmacias:nth-of-type(1)::before {
+  background-color: #FB7529;
+}
+.place-box-item--centros-de-salud-minsa:nth-of-type(1)::before {
+  background-color: #00599D;
+}
+.place-box-item--centros-de-salud-essalud:nth-of-type(1)::before {
+  background-color: #016E09;
+}
+.place-box-item--centros-de-salud-privados:nth-of-type(1)::before {
+  background-color: #01ABF6;
+}
+.place-box-item--centros-de-salud-ffaa-y-la-pnp:nth-of-type(1)::before {
+  background-color: #AA01E9;
 }
 
 .banner {
