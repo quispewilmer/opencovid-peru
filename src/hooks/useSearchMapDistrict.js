@@ -22,7 +22,10 @@ const useSearchMapDistrict = (mapRef) => {
 				essential: true,
 				zoom: 13.5,
 			});
-		} catch {}
+			return center;
+		} catch {
+			return null;
+		}
 	};
 
 	return searchDistrict;
