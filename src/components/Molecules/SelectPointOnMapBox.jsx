@@ -17,21 +17,16 @@ const SelectPointOnMapBox = ({
 	onPointClick,
 }) => {
 	const selectPointOnMapBox = useRef(null);
-
-	const [state, setState] = useState({
-		mapBoxGridIsDown: false,
-	});
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 	const getDownTheArea = () => {
-		setState({
-			mapBoxGridIsDown: !state.mapBoxGridIsDown,
-		});
+    setMenuIsOpen(!menuIsOpen)
 	};
 
 	return (
 		<section
 			className={`select-point-on-map-box ${
-				state.mapBoxGridIsDown ? "select-point-on-map-box--close" : ""
+				menuIsOpen ? "select-point-on-map-box--close" : ""
 			}`}
 			ref={selectPointOnMapBox}
 		>
@@ -40,14 +35,14 @@ const SelectPointOnMapBox = ({
 				onClick={getDownTheArea.bind()}
 			>
 				<span className="select-point-on-map-box__updowntext">
-					{state.mapBoxGridIsDown ? "Ver más" : "Ocultar"}
+					{menuIsOpen ? "Ver más" : "Ocultar"}
 				</span>
 				<img
 					src={arrowup}
 					alt=""
 					className="select-point-on-map-box__updownicon"
 					style={
-						state.mapBoxGridIsDown
+						menuIsOpen
 							? {
 									transform: "rotate(180deg)",
 							  }
@@ -68,6 +63,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[0]}
 					endpoint="/api/uci"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={covidbed}
@@ -76,6 +72,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[1]}
 					endpoint="/api/cama"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={oxigencharge}
@@ -84,6 +81,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[2]}
 					endpoint="/api/o2"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={pharmacy}
@@ -92,6 +90,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[3]}
 					endpoint="/api/farmacia"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={minsahealthcenter}
@@ -100,6 +99,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[4]}
 					endpoint="/api/institution?type=MINSA"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={essaludhealthcenter}
@@ -108,6 +108,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[5]}
 					endpoint="/api/institution?type=ESSALUD"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={privatehealthcenter}
@@ -116,6 +117,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[6]}
 					endpoint="/api/institution?type=PRIVADO"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 				<SelectPointOnMap
 					image={ffaapnphealthcenter}
@@ -124,6 +126,7 @@ const SelectPointOnMapBox = ({
 					isSelected={itemSelectedState[7]}
 					endpoint="/api/institution?type=FFAA_PNP"
 					onClick={onPointClick}
+          getDownTheArea={getDownTheArea}
 				/>
 			</div>
 		</section>

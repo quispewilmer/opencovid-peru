@@ -6,9 +6,11 @@ const SelectPointOnMap = ({
 	name,
 	endpoint,
 	isSelected = false,
+	getDownTheArea,
 	onClick = () => {},
 }) => {
 	const handleClick = () => {
+		getDownTheArea()
 		onClick({ name, endpoint, title });
 	};
 
