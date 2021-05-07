@@ -61,7 +61,7 @@ const SelectPointOnMapBox = ({
 					title="Camas UCI"
 					name="ucibed"
 					isSelected={itemSelectedState[0]}
-					endpoint="/api/uci"
+					endpoint="/api/uci/near?"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -70,7 +70,7 @@ const SelectPointOnMapBox = ({
 					title="Camas COVID"
 					name="covidbed"
 					isSelected={itemSelectedState[1]}
-					endpoint="/api/cama"
+					endpoint="/api/cama?"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -79,7 +79,7 @@ const SelectPointOnMapBox = ({
 					title="Balones de oxígeno"
 					name="oxigen"
 					isSelected={itemSelectedState[2]}
-					endpoint="/api/o2"
+					endpoint="/api/o2/near?"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -88,7 +88,7 @@ const SelectPointOnMapBox = ({
 					title="Farmacias"
 					name="pharmacy"
 					isSelected={itemSelectedState[3]}
-					endpoint="/api/farmacia"
+					endpoint="/api/farmacia?"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -97,7 +97,7 @@ const SelectPointOnMapBox = ({
 					title="Centros de salud MINSA"
 					name="minsa"
 					isSelected={itemSelectedState[4]}
-					endpoint="/api/institution?type=MINSA"
+					endpoint="/api/institution?type=MINSA&"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -106,7 +106,7 @@ const SelectPointOnMapBox = ({
 					title="Centros de salud Essalud"
 					name="essalud"
 					isSelected={itemSelectedState[5]}
-					endpoint="/api/institution?type=ESSALUD"
+					endpoint="/api/institution?type=ESSALUD&"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -115,7 +115,7 @@ const SelectPointOnMapBox = ({
 					title="Centros de salud privados"
 					name="private"
 					isSelected={itemSelectedState[6]}
-					endpoint="/api/institution?type=PRIVADO"
+					endpoint="/api/institution?type=PRIVADO&"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>
@@ -124,7 +124,7 @@ const SelectPointOnMapBox = ({
 					title="Centros de salud FF.AA. y la PNP"
 					name="ffaa"
 					isSelected={itemSelectedState[7]}
-					endpoint="/api/institution?type=FFAA_PNP"
+					endpoint="/api/institution?type=FFAA_PNP&"
 					onClick={onPointClick}
           getDownTheArea={getDownTheArea}
 				/>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import SelectPointOnMapBox from "../Molecules/SelectPointOnMapBox";
 import InformationPlaceBox from "../Templates/InformationPlaceBox";
@@ -6,11 +6,15 @@ import useFetch from "../../hooks/useFetch";
 import useMapboxMap from "../../hooks/useMapboxMap";
 import SearchMapbox from "../Molecules/SearchMapbox";
 import { useLocation } from "react-router";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+import ReactDOMServer from "react-dom/server";
+import MapMarker from "../Atoms/MapMarker";
+import Marcador from '../../img/emergencymap/maps-and-flags (1).svg'
 
 const mapEndpoints = {
-	ucibed: { endpoint: "/api/uci", title: "Camas UCI" },
-	covidbed: { endpoint: "/api/cama", title: "Camas COVID" },
-	oxigen: { endpoint: "/api/o2", title: "Balones de oxígeno" },
+	ucibed: { endpoint: "/api/uci/near?", title: "Camas UCI" },
+	covidbed: { endpoint: "/api/cama/near?", title: "Camas COVID" },
+	oxigen: { endpoint: "/api/o2/near?", title: "Balones de oxígeno" },
 };
 
 const buildItemState = (name) => [
@@ -33,9 +37,50 @@ const useFromLinkOption = () => {
 	return [false, undefined];
 };
 
+const buildQueryString = object => new URLSearchParams(object).toString()
+
+const limaCoordinates = {
+	latitude: -12.0266034,
+	longitude: -77.1278636
+}
+
+const addMarker = (coordinates, mapboxInstance) => {
+	const el = document.createElement("div");
+	const htmlString = ReactDOMServer.renderToString(
+		<MapMarker icon={Marcador} />
+	);
+	el.innerHTML = htmlString;
+
+	const popupstring = ReactDOMServer.renderToString(
+		<div>
+			Posición actual
+		</div>
+	);
+	const marker = new mapboxgl.Marker({
+		element: el,
+	})
+		.setLngLat(coordinates)
+		.setPopup(
+			new mapboxgl.Popup({ offset: 25 }) // add popups
+				.setHTML(popupstring)
+		)
+		.addTo(mapboxInstance);
+	return marker
+};
+
+
 const EmergencyMap = () => {
 	const [hasOption, option] = useFromLinkOption();
 	const [isMapBoxClicked, setMapBoxClicked] = useState(() => hasOption);
+	const [referencePoint, setReferencePoint] = useState(limaCoordinates)
+	const referenceMarker = useRef(null)
+	const [radiusDistance, setRadiusDistance] = useState(1000)
+	const [radiusDistanceLimit, setRadiusDistanceLimit] = useState(1000)
+	const [distanceQueryString, setDistanceQueryString] = useState(buildQueryString({
+		lat: referencePoint.latitude,
+		lon: referencePoint.longitude,
+		radio: radiusDistance * 1000
+	}))
 	const [itemSelectedState, setItemSelectedState] = useState(() => {
 		return hasOption
 			? buildItemState(option)
@@ -55,8 +100,8 @@ const EmergencyMap = () => {
 			title: undefined,
 		};
 	});
-	const { loading, data, error } = useFetch(mapBoxState.endpoint);
-	const { mapRef, searchDistrict } = useMapboxMap(data, mapBoxState.name);
+	const { loading, data, error } = useFetch(mapBoxState.endpoint + distanceQueryString);
+	const { mapRef, mapboxInstance, searchDistrict } = useMapboxMap(data, mapBoxState.name);
 
 	const filteredData = useMemo(() => {
 		if (data) {
@@ -65,6 +110,45 @@ const EmergencyMap = () => {
 		return [];
 	}, [data]);
 
+	useEffect(() => {
+			if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(position => {
+						const { latitude, longitude } = position.coords;
+						setReferencePoint({ latitude, longitude })
+						const qs = buildQueryString({ lat: latitude, lon: longitude, radio: radiusDistance * 1000 })
+						setDistanceQueryString(qs)
+						mapboxInstance.current.flyTo({
+							center: [longitude, latitude],
+							zoom: 13,
+						})
+					})
+			}
+	}, [])
+
+	useEffect(() => {
+		if (mapboxInstance.current) {
+			mapboxInstance.current.on('zoomend', function () {
+				const zoom = mapboxInstance.current.getZoom()
+				const newLimit = Math.round(Math.pow(1.9, (22 - zoom)) * 20 / 1000)
+
+				setRadiusDistance(currentRadius => currentRadius > newLimit ? newLimit : currentRadius)	
+				setRadiusDistanceLimit(newLimit)
+			})
+		}
+	}, [])
+
+	useEffect(() => {
+		const qs = buildQueryString({ lat: referencePoint.latitude, lon: referencePoint.longitude, radio: radiusDistance * 1000 })
+		setDistanceQueryString(qs)
+	}, [radiusDistance])
+
+	useEffect(() => {
+		if (mapboxInstance.current) {
+			if (referenceMarker.current) referenceMarker.current.remove();
+			referenceMarker.current = addMarker([referencePoint.longitude, referencePoint.latitude], mapboxInstance.current)
+		}
+	}, [referencePoint])
+
 	const handlePointClicked = ({ endpoint, name, title }) => {
 		setMapBoxClicked(true);
 		setItemSelectedState(buildItemState(name));
@@ -72,7 +156,13 @@ const EmergencyMap = () => {
 	};
 
 	const handleSubmit = (value) => {
-		searchDistrict(value);
+		searchDistrict(value).then((response) => {
+			if (response) {
+				setReferencePoint({ latitude: response[1], longitude: response[0] })
+				const qs = buildQueryString({ lat: response[1], lon: response[0], radio: radiusDistance * 1000 })
+				setDistanceQueryString(qs)
+			}
+		});
 	};
 
 	return (
@@ -90,8 +180,15 @@ const EmergencyMap = () => {
 				text="Busca tu distrito"
 				onSubmit={handleSubmit}
 			/>
-			{isMapBoxClicked && filteredData.length > 0 && (
-				<InformationPlaceBox title={mapBoxState.title} data={filteredData} />
+			{isMapBoxClicked && (
+				<InformationPlaceBox
+					title={mapBoxState.title}
+					data={filteredData}
+					initialDistance={radiusDistance}
+					distanceLimit={radiusDistanceLimit}
+					distance={radiusDistance}
+					onDistanceChange={newDistance => setRadiusDistance(newDistance)}
+				/>
 			)}
 			<SelectPointOnMapBox
 				theme="emergency-map-container__select-point-on-map-box"

@@ -87,6 +87,7 @@ const printMarker = (itemData, name, mapRef, markersRef) => {
 const useMapboxMap = (markerData, name) => {
 	const mapContainerRef = useRef();
 	const mapRef = useRef();
+	const mapboxInstance = useRef()
 	const markersRef = useRef([]);
 	const [{ lng, lat, zoom }, setState] = useState({
 		lng: -74.002568,
@@ -103,6 +104,7 @@ const useMapboxMap = (markerData, name) => {
 		});
 
 		mapRef.current = map;
+		mapboxInstance.current = map;
 
 		return () => map.remove();
 	}, []);
@@ -116,7 +118,7 @@ const useMapboxMap = (markerData, name) => {
 
 	const searchDistrict = useSearchMapDistrict(mapRef);
 
-	return { mapRef: mapContainerRef, searchDistrict };
+	return { mapRef: mapContainerRef, mapboxInstance, searchDistrict };
 };
 
 export default useMapboxMap;
