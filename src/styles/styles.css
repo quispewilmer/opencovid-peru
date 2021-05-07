@@ -5,18 +5,15 @@
 }
 @font-face {
   font-family: "AvenirBlack";
-  src: local("AvenirBlack"),
-    url(../fonts/AvenirLTProBlack.otf) format("opentype");
+  src: local("AvenirBlack"), url(../fonts/AvenirLTProBlack.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirHeavy";
-  src: local("AvenirHeavy"),
-    url(../fonts/AvenirLTProHeavy.otf) format("opentype");
+  src: local("AvenirHeavy"), url(../fonts/AvenirLTProHeavy.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirLight";
-  src: local("AvenirLight"),
-    url(../fonts/AvenirLTProLight.otf) format("opentype");
+  src: local("AvenirLight"), url(../fonts/AvenirLTProLight.otf) format("opentype");
 }
 @font-face {
   font-family: "WorkSans";
@@ -47,22 +44,11 @@ a {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-a,
-div {
+h1, h2, h3, h4, h5, h6, p, span, a, div {
   font-family: Avenir;
 }
 
-nav,
-ul,
-li {
+nav, ul, li {
   margin: 0;
   padding: 0;
   margin-bottom: 0px;
@@ -72,8 +58,7 @@ li {
   list-style: none;
 }
 
-textarea:focus,
-input:focus {
+textarea:focus, input:focus {
   outline: none;
 }
 
@@ -401,8 +386,7 @@ a:hover {
   padding-right: 5px;
   font-size: 20px;
 }
-.what-find img,
-.what-find picture {
+.what-find img, .what-find picture {
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -413,10 +397,7 @@ a:hover {
   .what-find h2 {
     font-size: 33px;
   }
-  .what-find p,
-  .what-find li,
-  .what-find span,
-  .what-find h3 {
+  .what-find p, .what-find li, .what-find span, .what-find h3 {
     font-size: 22px;
     font-family: "AvenirLight";
   }
@@ -608,7 +589,7 @@ a:hover {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
 }
-.membership-form input[type="submit"] {
+.membership-form input[type=submit] {
   background-color: #0a544f;
   color: white;
 }
@@ -647,7 +628,7 @@ a:hover {
 .region-selection {
   display: flex;
   align-items: center;
-  color: #0a544f;
+  color: #0A544F;
   margin-top: 20px;
 }
 .region-selection p {
@@ -680,7 +661,7 @@ a:hover {
   width: 30px;
   left: 0px;
   bottom: -4px;
-  background: linear-gradient(180deg, #00bfa6 71.18%, #46bc75 100%);
+  background: linear-gradient(180deg, #00BFA6 71.18%, #46BC75 100%);
   transition: 0.4s;
   border-radius: 50%;
 }
@@ -728,7 +709,7 @@ a:hover {
   font-size: 16px;
 }
 .legend__list {
-  margin-bottom: 0px;
+  margin-bottom: 0PX;
   font-size: 12px;
 }
 .legend__item {
@@ -746,7 +727,7 @@ a:hover {
   margin-right: 10px;
 }
 .legend .high {
-  background-color: #f38620;
+  background-color: #F38620;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -758,7 +739,7 @@ a:hover {
   margin-right: 10px;
 }
 .legend .low {
-  background-color: #00bf46;
+  background-color: #00BF46;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -835,7 +816,7 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.searchregion-form input[type="submit"] {
+.searchregion-form input[type=submit] {
   background-color: #00bfa6;
 }
 .searchregion-form input {
@@ -990,16 +971,16 @@ a:hover {
   border: 3px solid #0a544f;
   background-image: linear-gradient(#00bfa6, #0a544f);
 }
-.information-place-header__range + input[type="range"][multiple] {
+.information-place-header__range + input[type=range][multiple] {
   margin-top: -20px;
 }
-.information-place-header input[type="range"]::-webkit-slider-thumb {
+.information-place-header input[type=range]::-webkit-slider-thumb {
   pointer-events: all;
 }
-.information-place-header input[type="range"]::-moz-range-thumb {
+.information-place-header input[type=range]::-moz-range-thumb {
   pointer-events: all;
 }
-.information-place-header input[type="range"]::-ms-thumb {
+.information-place-header input[type=range]::-ms-thumb {
   pointer-events: all;
 }
 
@@ -1088,22 +1069,20 @@ a:hover {
   width: 10px;
   cursor: pointer;
 }
-.information-place-content
-  span[class^="information-place-content__pagination-num"] {
+.information-place-content span[class^=information-place-content__pagination-num] {
   padding: 0px 4px;
 }
 
 .container-vaccination h2 {
   margin-top: 1rem;
   text-align: center;
-  font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 44px;
-  color: #3a3838;
+  color: #3A3838;
 }
 .container-vaccination .card-information {
-  background-color: #e6f7e9;
+  background-color: #E6F7E9;
   padding: 1.5rem !important;
 }
 .container-vaccination .card-information .img-map {
@@ -1125,15 +1104,6 @@ a:hover {
   font-weight: normal;
   margin-top: 0 !important;
 }
-.container-vaccination .card-information .type-doses-section li {
-  font-weight: normal;
-  font-size: 1.3rem;
-}
-.container-vaccination .card-information .type-doses-section li:before {
-  content: "• ";
-  color: #00bfa6;
-  margin-left: -10px;
-}
 .container-vaccination .card-information .put-shoulder-mt5 {
   margin-top: 5rem !important;
 }
@@ -1141,7 +1111,7 @@ a:hover {
   width: 60% !important;
 }
 .container-vaccination .btn-vaccinate-state {
-  background: #00b092;
+  background: #00B092;
 }
 .container-vaccination input {
   box-shadow: none !important;
@@ -1160,13 +1130,16 @@ a:hover {
   width: 90%;
   height: 2rem;
   margin: auto;
-  background: #01abf6;
+  background: #01ABF6;
 }
 .container-vaccination .dose-complete {
   width: 90%;
   height: 2rem;
   margin: auto;
-  background: #00599d;
+  background: #00599D;
+}
+.container-vaccination .section-vaccination-map #inlineFrameExample {
+  min-height: 600px;
 }
 
 @media only screen and (min-width: 250px) and (max-width: 715px) {
@@ -1208,10 +1181,9 @@ a:hover {
   }
 }
 .btn-fase {
-  background: #0a544f !important;
-  border: 1px solid #00bfa6;
+  background: #0A544F !important;
+  border: 1px solid #00BFA6;
   color: #fff !important;
-  font-style: normal !important;
   font-weight: normal !important;
   font-size: 1.5rem !important;
 }
@@ -1220,12 +1192,17 @@ a:hover {
   font-style: normal;
   font-weight: 500;
   font-size: 1.5rem;
-  color: #00bfa6;
-  border: 1px solid #00bfa6;
+  color: #00BFA6;
+  border: 1px solid #00BFA6;
   font-weight: 500;
   background-color: #fff;
   border-radius: 5px;
   padding: 0.5rem;
+}
+
+.btn-vaccinate:hover {
+  text-decoration: none;
+  color: #00BFA6;
 }
 
 .fs-10 {
@@ -1262,7 +1239,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 70%;
-  color: #00bfa6;
+  color: #00BFA6;
   text-align: center;
   font-size: 28px;
 }
@@ -1274,13 +1251,13 @@ a:hover {
 }
 
 .vaccine-progress span {
-  color: #01abf6;
+  color: #01ABF6;
   font-weight: bold;
   font-size: 28px;
 }
 
 .graph-block {
-  background: #e6f7e9 !important;
+  background: #E6F7E9 !important;
   width: 100%;
   padding: 35px;
 }
@@ -1291,7 +1268,7 @@ a:hover {
   color: #000;
 }
 .graph-block__amount {
-  color: #00bfa6;
+  color: #00BFA6;
   font-style: normal;
   display: inline-block;
 }
@@ -1305,12 +1282,12 @@ a:hover {
   margin-top: 10px;
 }
 .graph-block__textbox {
-  background: #ffffff;
-  border: 1px solid #c5c4c4;
+  background: #FFFFFF;
+  border: 1px solid #C5C4C4;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
-  color: #00bfa6;
+  color: #00BFA6;
   font-size: 30px;
   line-height: 52px;
   min-height: 50px !important;
@@ -1516,7 +1493,11 @@ a:hover {
     width: 300px;
   }
 }
-
+@media screen and (min-width: 1080px) {
+  .emergency-map-container .searchregion-form__input {
+    width: 450px;
+  }
+}
 
 .information-place-box {
   min-width: 333px;
@@ -1744,9 +1725,6 @@ a:hover {
 .pandemic-state-filters__title {
   width: 100%;
   font-size: 32px;
-  padding: 30px 30px 0px;
-  margin-bottom: 0px;
-  background-color: #f9f5f4;
 }
 .pandemic-state-filters .membership-form {
   margin: 0;
@@ -1833,7 +1811,7 @@ a:hover {
 .pandemicstate-filter__icon {
   width: 53px;
   height: 45px;
-  background-color: #00bfa6;
+  background-color: #00BFA6;
   position: absolute;
   border-radius: 20px 0px 0px 20px;
   background-size: 20px 20px;
@@ -1914,8 +1892,7 @@ a:hover {
   margin-right: 20px;
 }
 
-#map_outer,
-#map_access {
+#map_outer, #map_access {
   display: none !important;
 }
 
@@ -1976,9 +1953,7 @@ a:hover {
 
 .the-team {
   padding: 56px 0 41px;
-  background-image: url("../img/aboutus/virus.svg"),
-    url("../img/aboutus/wave.svg"),
-    linear-gradient(rgba(248, 102, 72, 0.12), rgba(248, 102, 72, 0.12));
+  background-image: url("../img/aboutus/virus.svg"), url("../img/aboutus/wave.svg"), linear-gradient(rgba(248, 102, 72, 0.12), rgba(248, 102, 72, 0.12));
   background-position: center 30px, center 100.5%, center center;
   background-size: contain, contain, contain;
   background-repeat: no-repeat;

@@ -61,7 +61,7 @@ const Vaccination=()=>{
                         theme="col-lg-8" 
                         isTopLeftTextHighlights={true}
                         sText="Actualmente tenemos "
-                        highlight={`${poblationMil} Millones`} 
+                        highlight={`60 millones`} 
                         eText=" de dosis de vacunas compradas"
                         textLeft="A la fecha,  han llegado a Perú:" 
                         src_image={mapaPeru} 

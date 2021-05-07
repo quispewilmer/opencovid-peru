@@ -23,11 +23,11 @@ const VaccinationMap=()=>{
         })
     }
     return(        
-        <section className="w-100">
+        <section className="w-100 section-vaccination-map">
                 <div className="jafeth-filters">
                     {/* <FilterRegion text="Busca una región" theme="container"/>             */}
                 </div>
-                    <Map
+                    {/* <Map
                             style="mapbox://styles/mapbox/streets-v9"
                             containerStyle={{
                                 height: '500px',
@@ -41,7 +41,9 @@ const VaccinationMap=()=>{
                                     <div className="container bg-white">You are here</div>
                             </Marker>
                             
-                    </Map>
+                    </Map> */}
+                    <iframe id="inlineFrameExample" width="100%" frameborder="0" src="https://gis.minsa.gob.pe/gisvacunas" class="mapa_s">
+                    </iframe>
         </section>
     )
 }

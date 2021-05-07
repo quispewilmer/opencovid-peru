@@ -12,7 +12,7 @@ import VaccinationMap from '../Pages/Vaccination/VaccinationMap';
 
 const CardBodyVaccination=({data})=>{
 
-    console.log(data, 'this is the data')   
+    
     return (
         <div className="card-body">
             <div className="card-information mx-auto row">
@@ -55,9 +55,9 @@ const CardBodyVaccination=({data})=>{
                             <span>Por determinar</span>
                         </div>
                         <div className="col-lg-12 text-center mt-4">
-                            <button className="btn-vaccinate">
+                            <a className="btn-vaccinate" href="https://consultas.pongoelhombro.gob.pe/#/">
                                 ¿Cuando me toca vacunarme?
-                            </button>
+                            </a>
                         </div>
                         <div className="col-lg-12 mt-2 text-right">
                             <span>*Considerando solo la primera dosis</span>
@@ -67,7 +67,7 @@ const CardBodyVaccination=({data})=>{
                 </div>
             </div>
 
-            <div className="card-information my-3 p-3 mx-auto row">
+            <div className="card-information my-3 p-3 mx-auto row d-none">
                 <div className="col-lg-5 pt-5">
                     <h4>Estas vacunas se están aplicando a lo largo del territorio nacional, sin embargo se concentran principalmente en Lima</h4>                    
                     <GaugueVaccination total={data.poblacion} avance={data.vacunados} label={data.vaccProgress}/>
