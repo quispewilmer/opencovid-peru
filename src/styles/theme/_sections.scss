@@ -23,7 +23,7 @@
             font-size: 38px;
         }
     }
-
+    
     @media (min-width: 1080px) {
         &__articles {
             grid-template-columns: repeat(4, 1fr );
@@ -88,7 +88,7 @@
 
 .emergency-map {
         display: grid;
-        grid-template-columns: repeat(2, 1fr );
+        grid-template-columns: 2fr 3fr;
         grid-gap: 10px;
 
     span {
@@ -100,6 +100,7 @@
     }
 
     @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
         grid-gap: 50px;
 
         p {
@@ -114,7 +115,7 @@
 }
 
 .graphic-information {
-    padding-top: 108px;
+    padding-top: 30px;
     background-color: rgba(map-get($map: $colors, $key: oc-light-green), .1);
 
     span {
@@ -125,7 +126,7 @@
         color: map-get($map: $colors, $key: oc-black);
         font-style: normal;
         font-weight: 800;
-        line-height: 45px;
+        font-size: 16px;
     }
 
     ul {
@@ -151,11 +152,17 @@
     }
 
     @media (min-width: 768px) {
+        padding-top: 108px;
 
         .main-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr );
 
+        }
+
+        h3 {
+            font-size: 22px;
+            line-height: 45px;
         }
 
         ul {
