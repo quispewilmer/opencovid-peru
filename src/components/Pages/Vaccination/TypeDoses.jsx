@@ -26,15 +26,15 @@ const TypeDoses=({data})=>{
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Pzifer</td>
-                    <td>1 519 120</td> 
+                    <td>Pfizer</td>
+                    <td>1 868 420</td> 
                 </tr>
                 <tr>
                     <td>Sinopharm</td>
                     <td>1 000 000</td> 
                 </tr>
                 <tr>
-                    <td>Aztraseneca</td>
+                    <td>AstraZeneca</td>
                     <td>276 000</td> 
                 </tr>
                 </tbody>
