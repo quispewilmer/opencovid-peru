@@ -45,7 +45,7 @@ const Vaccination=()=>{
         return(
         
             <div className="container-vaccination">
-                <h2>¿En cuanto tiempo estaremos vacunados?</h2>
+                <h2>¿En cuánto tiempo estaremos vacunados?</h2>
                 <div className="mx-auto row">
                     <CardTop 
                         theme="col-lg-4" 

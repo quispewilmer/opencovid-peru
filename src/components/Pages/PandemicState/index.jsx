@@ -177,7 +177,7 @@ const PandemicState = () => {
 
     return (
         <div>
-            <h1 className="pandemic-state-filters__title graphic__title">Situación regional</h1>
+            <h1 className="pandemic-state-filters__title graphic__title">¿Cómo ha impactado la COVID-19 al Perú?</h1>
             <TemplateDashboard type="for-graphics">
                 <Filters
                     onChange={newFilters => {
