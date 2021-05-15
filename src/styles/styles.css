@@ -411,7 +411,7 @@ a:hover {
 
 .emergency-map {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 3fr;
   grid-gap: 10px;
 }
 .emergency-map span {
@@ -422,6 +422,7 @@ a:hover {
 }
 @media (min-width: 768px) {
   .emergency-map {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
   }
   .emergency-map p {
@@ -434,7 +435,7 @@ a:hover {
 }
 
 .graphic-information {
-  padding-top: 108px;
+  padding-top: 30px;
   background-color: rgba(0, 191, 166, 0.1);
 }
 .graphic-information span {
@@ -444,7 +445,7 @@ a:hover {
   color: #000000;
   font-style: normal;
   font-weight: 800;
-  line-height: 45px;
+  font-size: 16px;
 }
 .graphic-information ul {
   -moz-column-count: 2;
@@ -462,9 +463,16 @@ a:hover {
   width: 70%;
 }
 @media (min-width: 768px) {
+  .graphic-information {
+    padding-top: 108px;
+  }
   .graphic-information .main-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .graphic-information h3 {
+    font-size: 22px;
+    line-height: 45px;
   }
   .graphic-information ul {
     column-count: 1;
@@ -917,12 +925,18 @@ a:hover {
 }
 
 .information-place-box {
+  display: none;
   border-radius: 12px;
   overflow: hidden;
   background-color: white;
 }
 .information-place-box__section {
   padding: 12px 18px;
+}
+@media screen and (min-width: 768px) {
+  .information-place-box {
+    display: block;
+  }
 }
 
 .information-place-header {
@@ -1325,6 +1339,7 @@ a:hover {
 .main-container {
   max-width: 1349px;
   margin: auto;
+  padding: 0 20px;
 }
 
 @media screen and (min-width: 1080px) {
@@ -1725,10 +1740,6 @@ a:hover {
 .pandemic-state-filters__title {
   width: 100%;
   font-size: 32px;
-  padding: 30px 30px 0px;
-  margin-bottom: 0px;
-  background-color: #f9f5f4;
-  text-align: center;
 }
 .pandemic-state-filters .membership-form {
   margin: 0;
@@ -1992,7 +2003,7 @@ a:hover {
   margin-bottom: 26px;
 }
 .contributions__oxigeno-peru img {
-  max-width: 516px;
+  max-width: 297px;
   width: 100%;
 }
 .contributions__persons {
