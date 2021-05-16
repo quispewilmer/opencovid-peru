@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import QuantityCard from '../Atoms/QuantityCard';
 import emergencydesktop from '../../img/home/emergency-desk.svg';
 import emergencymobile from '../../img/home/emergency-mob.svg';
 import graphicinformation from '../../img/home/graphic-information.svg';
-import headache from '../../img/home/headache.svg';
-import swabbing from '../../img/home/swabbing.svg';
 import dead from '../../img/home/dead.svg';
 import infected from '../../img/home/infected.svg';
 import uci from '../../img/home/uci.svg';
 import vaccine from '../../img/home/vaccine.svg';
-import AboutCovidCard from '../Atoms/AboutCovidCard';
 import HighRule from '../Atoms/HighRule';
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
