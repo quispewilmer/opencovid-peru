@@ -9,7 +9,7 @@ import Header from "./components/Organisms/Header";
 import Footer from "./components/Organisms/Footer";
 import AboutUs from "./components/Pages/AboutUs";
 import Home from "./components/Pages/Home";
-import "./styles/styles.css";
+import "./styles/styles.scss";
 import DistricPandemicSituation from "./components/Pages/DistrictPandemicSituation";
 import Vaccination from "./components/Pages/Vaccination/Index";
 
