@@ -42,7 +42,7 @@ const CardBodyVaccination=({data})=>{
                             <button className="btn form-control btn-fase">Fase II
                             </button>
                             <img src={stateVaccinate} alt="" className="mx-auto mt-3"/>
-                            <h3 className="mt-2 mx-0 text-success">xx</h3>
+                            <h3 className="mt-2 mx-0 text-success"></h3>
                             <h3>vacunados*</h3>
                             <span>Por determinar*</span>
                         </div>
@@ -50,13 +50,13 @@ const CardBodyVaccination=({data})=>{
                             <button className="btn form-control  btn-fase">Fase III
                             </button>
                             <img src={groupSociety} alt="" className="mx-auto mt-3"/>
-                            <h3 className="mt-2 mx-0 text-success">xx</h3>
+                            <h3 className="mt-2 mx-0 text-success"></h3>
                             <h3>vacunados*</h3>
                             <span>Por determinar</span>
                         </div>
                         <div className="col-lg-12 text-center mt-4">
                             <a className="btn-vaccinate" href="https://consultas.pongoelhombro.gob.pe/#/" target="_blank">
-                                ¿Cuando me toca vacunarme?
+                                ¿Cuándo me toca vacunarme?
                             </a>
                         </div>
                         <div className="col-lg-12 mt-2 text-right">

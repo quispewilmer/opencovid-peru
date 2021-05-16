@@ -14,6 +14,7 @@ import DistricPandemicSituation from "./components/Pages/DistrictPandemicSituati
 import Vaccination from "./components/Pages/Vaccination/Index";
 
 import { hotjar } from 'react-hotjar';
+import DashboardAdvanced from "./components/Pages/DashboardAdvanced";
 
 hotjar.initialize(2382218, 6);
 
@@ -32,6 +33,7 @@ function App() {
 				<Route path="/pandemia-filtro" component={PandemicStateFilter} />
 				<Route path="/informate" component={InformYourself} />
 				<Route path="/vacunacion" component={Vaccination} />
+				<Route path="/dashboard-advanced" component={DashboardAdvanced}/>
 				<Route
 					path="/situacion-distrital-pandemia"
 					component={DistricPandemicSituation}

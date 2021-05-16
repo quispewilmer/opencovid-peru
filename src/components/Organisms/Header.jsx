@@ -109,6 +109,9 @@ const Header = ({ setCoverActive }) => {
                 >
                     Sobre COVID
                 </Nav.Link>*/}
+				<Nav.Link as={Link} to="/dashboard-advanced" exact="true">
+					Dashboard avanzado
+				</Nav.Link>
 				<Nav.Link as={Link} to="/nosotros" exact="true">
 					Nosotros
 				</Nav.Link>
