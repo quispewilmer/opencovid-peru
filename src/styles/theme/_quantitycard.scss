@@ -30,11 +30,24 @@
     }
 
     @media screen and (min-width: 768px) {
-        padding: 18px 26px;
 
         &__title {
             font-size: 20px;
         }
+
+        &__number {
+            font-size: 28px;
+        }
+    }
+
+    @media screen and (min-width: 1080px) {
+
+        &__number {
+            font-size: 30px;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
 
         &__number {
             font-size: 36px;
