@@ -6,11 +6,11 @@ const Footer = () => {
     return (
         <footer className="footer mx-auto py-4">
             <div className="main-container">
-                <div className="row align-items-end mx-0">
-                    <MembershipForm theme="col-12"/>
-                    <p className="col-7 mb-0 pr-0">&copy; OpenCovid-Peru.com 2021</p>
-                    <div className="rrss row px-0 col-5 d-flex flex-column align-items-center pt-3 pt-sm-0">
-                        <p className="rrss__text mb-1">Síguenos en nuestras redes sociales</p>
+                <div className="footer__grid"/*"row align-items-end mx-0"*/>
+                    <MembershipForm theme="col-12 footer__form"/>
+                    <p className="mb-0 mt-3 pr-0 footer__copyright col-12">&copy; OpenCovid-Peru.com 2021</p>
+                    <div className="rrss flex-column align-items-center pt-3 pt-sm-0">
+                        <p className="rrss__text mb-1">Síguenos</p>
                         <RRSS theme=""/>
                     </div>
                 </div>
