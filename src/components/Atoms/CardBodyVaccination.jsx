@@ -55,7 +55,7 @@ const CardBodyVaccination=({data})=>{
                             <span>Por determinar</span>
                         </div>
                         <div className="col-lg-12 text-center mt-4">
-                            <a className="btn-vaccinate" href="https://consultas.pongoelhombro.gob.pe/#/">
+                            <a className="btn-vaccinate" href="https://consultas.pongoelhombro.gob.pe/#/" target="_blank">
                                 ¿Cuando me toca vacunarme?
                             </a>
                         </div>

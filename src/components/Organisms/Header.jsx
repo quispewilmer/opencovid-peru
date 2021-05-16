@@ -4,6 +4,7 @@ import camascovid from "../../img/header/camas-covid.svg";
 import camasuci from "../../img/header/camas-uci.svg";
 import contagiodistrital from "../../img/header/contagio-distrital.svg";
 import peru from "../../img/header/peru.svg";
+import analysis from "../../img/header/analysis.svg";
 import puntosoxigeno from "../../img/header/puntos-oxigeno.svg";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
@@ -42,7 +43,7 @@ const Header = ({ setCoverActive }) => {
 			</span>
 			<Nav className={`ml-auto ${isActive ? null : "active"}`} id="sidebar">
 				<NavDropdown
-					title="Mapa de recursos"
+					title="Mapa de emergencia"
 					show={isOpenMapDropdown}
 					onClick={handleMapDropdownToggle}
 				>
@@ -95,6 +96,12 @@ const Header = ({ setCoverActive }) => {
 							<Link to="situacion-distrital-pandemia">
 								<img src={contagiodistrital} alt="" />
 								Contagios distritales
+							</Link>
+						</div>
+						<div className="col">
+							<Link to="datos-historicos">
+								<img src={analysis} alt="" />
+								Datos historicos
 							</Link>
 						</div>
 					</div>

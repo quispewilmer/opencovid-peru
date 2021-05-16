@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import QuantityCard from '../Atoms/QuantityCard';
 import emergencydesktop from '../../img/home/emergency-desk.svg';
 import emergencymobile from '../../img/home/emergency-mob.svg';
 import graphicinformation from '../../img/home/graphic-information.svg';
-import headache from '../../img/home/headache.svg';
-import swabbing from '../../img/home/swabbing.svg';
 import dead from '../../img/home/dead.svg';
 import infected from '../../img/home/infected.svg';
 import uci from '../../img/home/uci.svg';
 import vaccine from '../../img/home/vaccine.svg';
-import AboutCovidCard from '../Atoms/AboutCovidCard';
 import HighRule from '../Atoms/HighRule';
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
@@ -65,12 +61,12 @@ const Home = () => {
                             <div className="emergency-map__content d-flex flex-column justify-content-center">
                                 <h2>Mapa de emergencia</h2>
                                 <span>Encontrarás la ubicación y disponibilidad de lo siguiente:</span>
-                                <ul className="mt-4">
+                                <ul className="mt-2 mt-lg-5">
                                     <li>Camas UCI</li>
                                     <li>Camas COVID</li>
                                     <li>Puntos de recarga de oxígeno</li>
                                 </ul>
-                                <p className="mt-3">También podrás identificar la ubicación de centros de salud y farmacias.</p>
+                                <p className="mt-1 mt-lg-3">También podrás identificar la ubicación de centros de salud y farmacias.</p>
                                 <Button text="Ver más" theme="button--white-orange mb-4 emergency-map__see-more" link="/mapa-emergencia" />
                             </div>
                         </article>
@@ -79,8 +75,8 @@ const Home = () => {
                                 <div className="graphic-information__content">
                                     <h2>Información en gráficos</h2>
                                     <h3>¿Cómo está afectando la pandemia al Perú?</h3>
-                                    <span>Verás un análisis a partir de los siguientes datos:</span>
-                                    <ul className="mt-4">
+                                    <span className="mt-3">Verás un análisis a partir de los siguientes datos:</span>
+                                    <ul className="mt-2 mt-lg-4">
                                         <li>Casos totales</li>
                                         <li>Contagios nuevos</li>
                                         <li>Fallecidos</li>
