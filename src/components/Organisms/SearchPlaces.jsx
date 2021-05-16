@@ -10,10 +10,8 @@ const SearchPlaces = ({ onSubmit, onPlaceSelected }) => {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             (async () => {
-                if (value) {
-                    const places = await searchPlaces(value)
-                    setCurrentPlaces(places)
-                }
+                const places = await searchPlaces(value)
+                setCurrentPlaces(places)
             })()
         }, 300)
 
@@ -54,8 +52,14 @@ const SearchPlaces = ({ onSubmit, onPlaceSelected }) => {
                             key={index}
                             style={{
                                 all: "unset",
+                                width: "100%",
+                                maxHeight: "300px",
+                                display: "block",
                                 cursor: "pointer",
-                                padding: "8px 0px"
+                                padding: "8px 0px",
+                                textOverflow: "ellipsis",
+                                overflow: "hidden",
+                                whiteSpace: "nowrap"
                             }}
                             onClick={() => handlePlaceSelected(place.center)}>{place.name}</button>
                      )
