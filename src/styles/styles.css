@@ -1,23 +1,23 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Avenir";
-  src: local("Avenir"), url(../fonts/AvenirLTProMedium.otf) format("opentype");
+  src: local("Avenir"), url(../../fonts/AvenirLTProMedium.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirBlack";
-  src: local("AvenirBlack"), url(../fonts/AvenirLTProBlack.otf) format("opentype");
+  src: local("AvenirBlack"), url(../../fonts/AvenirLTProBlack.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirHeavy";
-  src: local("AvenirHeavy"), url(../fonts/AvenirLTProHeavy.otf) format("opentype");
+  src: local("AvenirHeavy"), url(../../fonts/AvenirLTProHeavy.otf) format("opentype");
 }
 @font-face {
   font-family: "AvenirLight";
-  src: local("AvenirLight"), url(../fonts/AvenirLTProLight.otf) format("opentype");
+  src: local("AvenirLight"), url(../../fonts/AvenirLTProLight.otf) format("opentype");
 }
 @font-face {
   font-family: "WorkSans";
-  src: local("WorkSans"), url(../fonts/WorkSans-Regular.ttf) format("opentype");
+  src: local("WorkSans"), url(../../fonts/WorkSans-Regular.ttf) format("opentype");
 }
 *,
 *::before,
@@ -521,6 +521,7 @@ a:hover {
   background-color: #fff;
   border-radius: 12px;
   padding: 10px 8px;
+  border: none;
 }
 .quantity-card__image {
   width: 35px;
@@ -584,7 +585,7 @@ a:hover {
   border-top-left-radius: 20px;
 }
 .membership-form__submit {
-  background-image: url(../img/footer/send.svg);
+  background-image: url(../../img/footer/send.svg);
   background-repeat: no-repeat;
   background-position: 70px center;
   background-size: 25px;
@@ -819,7 +820,7 @@ a:hover {
   max-width: max-content;
 }
 .searchregion-form__submit {
-  background-image: url(../img/pandemiaState/glass.svg);
+  background-image: url(../../img/pandemiaState/glass.svg);
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -925,12 +926,18 @@ a:hover {
 }
 
 .information-place-box {
+  display: none;
   border-radius: 12px;
   overflow: hidden;
   background-color: white;
 }
 .information-place-box__section {
   padding: 12px 18px;
+}
+@media screen and (min-width: 768px) {
+  .information-place-box {
+    display: block;
+  }
 }
 
 .information-place-header {
@@ -1655,7 +1662,7 @@ a:hover {
 }
 
 .banner {
-  background-image: url("/src/img/banner/banner-mob.svg");
+  background-image: url("../../img/banner/banner-mob.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right bottom;
@@ -1679,7 +1686,7 @@ a:hover {
 }
 @media (min-width: 1080px) {
   .banner {
-    background-image: url("/src/img/banner/banner-dek.svg");
+    background-image: url("../../img/banner/banner-dek.svg");
     height: 660px;
   }
 }
@@ -1968,7 +1975,7 @@ a:hover {
 
 .the-team {
   padding: 56px 0 41px;
-  background-image: url("../img/aboutus/virus.svg"), url("../img/aboutus/wave.svg"), linear-gradient(rgba(248, 102, 72, 0.12), rgba(248, 102, 72, 0.12));
+  background-image: url("../../../img/aboutus/virus.svg"), url("../../../img/aboutus/wave.svg"), linear-gradient(rgba(248, 102, 72, 0.12), rgba(248, 102, 72, 0.12));
   background-position: center 30px, center 100.5%, center center;
   background-size: contain, contain, contain;
   background-repeat: no-repeat;

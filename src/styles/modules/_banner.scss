@@ -1,5 +1,5 @@
 .banner {
-    background-image: url('/src/img/banner/banner-mob.svg');
+    background-image: url('../../img/banner/banner-mob.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;
@@ -23,7 +23,7 @@
     }
 
     @media (min-width: 1080px) {
-        background-image: url('/src/img/banner/banner-dek.svg');
+        background-image: url('../../img/banner/banner-dek.svg');
         height: 660px;
     }
 }

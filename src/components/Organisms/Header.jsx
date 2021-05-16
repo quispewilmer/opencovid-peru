@@ -11,9 +11,16 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 const Header = ({ setCoverActive }) => {
 	const [isActive, setActive] = useState("false");
 	const [isOpenMapDropdown, setOpenMapDropdown] = useState(false);
+	const [isOpenPandemicState, setOpenPandemicState] = useState(false);
 
 	const handleMapDropdownToggle = () => {
-		setOpenMapDropdown((prev) => !prev);
+		setOpenPandemicState(false);
+		setOpenMapDropdown((prev)=>!prev);
+	};
+
+	const handlePandemicDropdownToggle = () => {
+		setOpenMapDropdown(false);
+		setOpenPandemicState((prev)=>!prev);
 	};
 
 	const handleToggle = () => {
@@ -82,7 +89,11 @@ const Header = ({ setCoverActive }) => {
 						</div>
 					</div>
 				</NavDropdown>
-				<NavDropdown title="Estado de pandemia">
+				<NavDropdown 
+					title="Estado de pandemia"
+					show={isOpenPandemicState}
+					onClick={handlePandemicDropdownToggle}
+					>
 					<div className="triangulo-equilatero-bottom"></div>
 					<div className="container-fluid mx-auto text-center  row">
 						<div className="col">
@@ -109,9 +120,6 @@ const Header = ({ setCoverActive }) => {
                 >
                     Sobre COVID
                 </Nav.Link>*/}
-				<Nav.Link as={Link} to="/dashboard-advanced" exact="true">
-					Dashboard avanzado
-				</Nav.Link>
 				<Nav.Link as={Link} to="/nosotros" exact="true">
 					Nosotros
 				</Nav.Link>
