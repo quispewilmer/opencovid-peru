@@ -23,7 +23,7 @@ const SearchMapbox = ({ theme, text, value, onChangeText, onSubmit }) => {
 			<Input
 				typeOf="text"
 				idCustomed="searchregion-form__input"
-				theme="searchregion-form__input py-2 px-1 membership-form__input--right"
+				theme="searchregion-form__input py-2 px-3 membership-form__input--right"
 				placeholderCustomed={text}
 				value={value}
 				onChange={(e) => onChangeText(e.target.value)}
