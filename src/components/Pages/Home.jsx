@@ -41,10 +41,14 @@ const Home = () => {
                         <HighRule />
                         <div className="national-situation__articles mx-0">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <QuantityCard title="Infectados totales" image={infected} number={Math.round(state.information.data.totalInfectadosHist)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
 =======
                             <QuantityCard title="Casos totales confirmados" image={infected} number={Math.round(state.information.data.totalInfectadosHist)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
 >>>>>>> 41fcaec644b45de00d3058f0801059b800816498
+=======
+                        <QuantityCard title="Infectados totales" image={infected} number={Math.round(state.information.data.totalInfectadosHist)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+>>>>>>> f76d38b9b9a1d454a769a70a6146d9870eff8b15
                             <QuantityCard title="Fallecidos totales" image={dead} number={Math.round(state.information.data.totalFallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                             <QuantityCard title="Camas UCI disponibles" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                             <QuantityCard title="Personas vacunadas" image={vaccine} number={Math.round(state.information.data.totalvacunados1)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
