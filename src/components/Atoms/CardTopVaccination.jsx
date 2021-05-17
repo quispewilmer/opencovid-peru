@@ -28,8 +28,8 @@ const CardTop=({theme,isTopTextHighlights,isTopLeftTextHighlights,sText,highligh
                         highlight={highlight}
                         eText={eText}/>:null}
 
-                        {textLeft!=null && textLeft!=""? 
-                            <h4 className="mt-4 text-left-card">{textLeft}</h4>:null}
+                        {textLeft!=null ? <h4 className={`${isTopTextHighlights? "mt-5":""} text-left-card`}>{textLeft}</h4>:null}
+
                         {dataTypeDoses!=null? <TypeDoses data={dataTypeDoses}/>:null}
                     </div>
                 </div>
