@@ -11,7 +11,7 @@
     .card-information{
         background-color: #E6F7E9;
         padding: 1.5rem !important;
-        // min-height: 26rem;
+        min-height: 26.5rem;
         .img-map{
             object-fit: cover;
             object-position:top;
@@ -20,10 +20,10 @@
         }
         .img-society{
             width: 100%;
-            min-height: 12rem;
+            min-height: 13.4rem;
             margin-top: 2rem;
             margin-right: 2rem;
-            
+            margin-bottom: 2rem;
         }
         span{
             font-size: 0.93rem;
@@ -31,7 +31,6 @@
 
         .text-left-card{
             font-weight: normal; 
-            margin-top: 0 !important;
         }
 
        
