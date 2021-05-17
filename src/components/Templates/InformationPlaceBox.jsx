@@ -12,7 +12,7 @@ const InformationPlaceBox = ({title, data, initialDistance, onDistanceChange, di
         <section className="information-place-box">
             <header className="information-place-box__section information-place-header">
                 <span className="information-place-header__title">Kilómetros de distancia</span>
-                <h6>Distancia: {maxKm} km</h6>
+                <h6>Radio de búsqueda: {maxKm} km</h6>
                 {/* <h6>Radio del Mapa: {distanceLimit} km</h6> */}
                 <input
                     type="range"
