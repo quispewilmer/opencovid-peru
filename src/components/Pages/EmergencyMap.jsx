@@ -10,6 +10,7 @@ import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 import ReactDOMServer from "react-dom/server";
 import MapMarker from "../Atoms/MapMarker";
 import Marcador from '../../img/emergencymap/maps-and-flags (1).svg'
+import SearchPlaces from "../Organisms/SearchPlaces";
 
 const mapEndpoints = {
 	ucibed: { endpoint: "/api/uci/near?", title: "Camas UCI" },
@@ -165,6 +166,14 @@ const EmergencyMap = () => {
 		});
 	};
 
+	const handlePlaceSelected = (center) => {
+		mapboxInstance.current.flyTo({
+			center,
+			essential: true,	
+			zoom: 13.5,
+		})
+	}
+
 	return (
 		<section className="emergency-map-container">
 			<div
@@ -175,11 +184,7 @@ const EmergencyMap = () => {
 			{isMapBoxClicked || (
 				<div className="emergency-map-container__map-block"></div>
 			)}
-			<SearchMapbox
-				theme="emergency-map-container__search-region"
-				text="Busca tu distrito"
-				onSubmit={handleSubmit}
-			/>
+			<SearchPlaces onSubmit={handleSubmit} onPlaceSelected={handlePlaceSelected} />
 			{isMapBoxClicked && (
 				<InformationPlaceBox
 					title={mapBoxState.title}

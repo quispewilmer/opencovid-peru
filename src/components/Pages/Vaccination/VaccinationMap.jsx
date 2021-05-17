@@ -42,7 +42,7 @@ const VaccinationMap=()=>{
                             </Marker>
                             
                     </Map> */}
-                    <iframe id="inlineFrameExample" width="100%" frameborder="0" src="https://gis.minsa.gob.pe/gisvacunas" class="mapa_s">
+                    <iframe id="inlineFrameExample" width="100%" frameborder="0" src="https://gis.minsa.gob.pe/gisvacunas" className="mapa_s">
                     </iframe>
         </section>
     )
