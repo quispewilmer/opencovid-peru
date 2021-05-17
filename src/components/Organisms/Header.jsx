@@ -90,7 +90,7 @@ const Header = ({ setCoverActive }) => {
 						</div>
 					</div>
 				</NavDropdown>
-				<NavDropdown 
+				<NavDropdown
 					title="Estado de pandemia"
 					show={isOpenPandemicState}
 					onClick={handlePandemicDropdownToggle}
@@ -100,7 +100,7 @@ const Header = ({ setCoverActive }) => {
 						<div className="col">
 							<Link to="estado-pandemia">
 								<img src={peru} alt="" />
-								Situacion regional
+								Situación regional
 							</Link>
 						</div>
 						<div className="col">
@@ -112,7 +112,7 @@ const Header = ({ setCoverActive }) => {
 						<div className="col">
 							<Link to="datos-historicos">
 								<img src={analysis} alt="" />
-								Datos historicos
+								Datos históricos
 							</Link>
 						</div>
 					</div>
