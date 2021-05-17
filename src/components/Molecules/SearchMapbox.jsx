@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import Input from "../Atoms/Input";
 
-const SearchMapbox = ({ theme, text, onSubmit }) => {
-	const [value, setValue] = useState("");
-
+const SearchMapbox = ({ theme, text, value, onChangeText, onSubmit }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		onSubmit(value);
 	};
 
+	// TODO place style into proper class
 	return (
 		<form
 			action=""
 			className={`membership-form searchregion-form ${theme}`}
 			onSubmit={handleSubmit}
+			style={{position: "relative", zIndex: "4"}}
 		>
 			<Input
 				typeOf="submit"
@@ -23,10 +23,10 @@ const SearchMapbox = ({ theme, text, onSubmit }) => {
 			<Input
 				typeOf="text"
 				idCustomed="searchregion-form__input"
-				theme="searchregion-form__input py-2 px-1 membership-form__input--right"
+				theme="searchregion-form__input py-2 px-3 membership-form__input--right"
 				placeholderCustomed={text}
 				value={value}
-				onChange={(e) => setValue(e.target.value)}
+				onChange={(e) => onChangeText(e.target.value)}
 			/>
 		</form>
 	);
