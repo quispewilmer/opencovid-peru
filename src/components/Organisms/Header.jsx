@@ -8,8 +8,9 @@ import analysis from "../../img/header/analysis.svg";
 import puntosoxigeno from "../../img/header/puntos-oxigeno.svg";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import * as ReactBootStrap from 'react-bootstrap';
 
-const Header = ({ setCoverActive }) => {
+const Header = () => {
 	const [isActive, setActive] = useState("false");
 	const [isOpenMapDropdown, setOpenMapDropdown] = useState(false);
 	const [isOpenPandemicState, setOpenPandemicState] = useState(false);
@@ -24,38 +25,26 @@ const Header = ({ setCoverActive }) => {
 		setOpenPandemicState((prev)=>!prev);
 	};
 
-	const handleToggle = () => {
-		setActive(!isActive);
-		setCoverActive();
-	};
 	return (
-		<Navbar bg="white" expand="lg" className="main-header">
-			<Navbar.Brand as={Link} to="/">
+		<ReactBootStrap.Navbar bg="white" expand="lg" className="main-header">
+			<ReactBootStrap.Navbar.Brand as={Link} to="/">
 				<img
 					src={opencovid}
 					alt="Logo de Open Covid Perú"
 					className="header__logo-img"
 					height="50"
 				/>
-			</Navbar.Brand>
-			<span
-				className={`navtoggle ${isActive ? null : "active"}`}
-				onClick={() => {
-					handleToggle();
-				}}
-			>
-				<i></i>
-				<i></i>
-				<i></i>
-			</span>
-			<Nav className={`ml-auto ${isActive ? null : "active"}`} id="sidebar">
-				<NavDropdown
+			</ReactBootStrap.Navbar.Brand>
+			<ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+			<ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+			<ReactBootStrap.Nav className={`ml-auto ${isActive ? null : "active"}`}>
+				<ReactBootStrap.NavDropdown
 					title="Mapa de emergencia"
 					show={isOpenMapDropdown}
 					onClick={handleMapDropdownToggle}
 				>
 					<div className="container-fluid mx-auto text-center  row">
-						<div className="col">
+						<div className="col-md-4">
 							<Link
 								to={{
 									pathname: "/mapa-emergencia",
@@ -66,7 +55,7 @@ const Header = ({ setCoverActive }) => {
 								Camas UCI
 							</Link>
 						</div>
-						<div className="col">
+						<div className="col-md-4">
 							<Link
 								to={{
 									pathname: "/mapa-emergencia",
@@ -77,7 +66,7 @@ const Header = ({ setCoverActive }) => {
 								Camas COVID
 							</Link>
 						</div>
-						<div className="col">
+						<div className="col-md-4">
 							<Link
 								to={{
 									pathname: "/mapa-emergencia",
@@ -89,37 +78,37 @@ const Header = ({ setCoverActive }) => {
 							</Link>
 						</div>
 					</div>
-				</NavDropdown>
-				<NavDropdown
+				</ReactBootStrap.NavDropdown>
+				<ReactBootStrap.NavDropdown
 					title="Estado de pandemia"
 					show={isOpenPandemicState}
 					onClick={handlePandemicDropdownToggle}
 					>
 					<div className="triangulo-equilatero-bottom"></div>
 					<div className="container-fluid mx-auto text-center  row">
-						<div className="col">
+						<div className="col-md-4">
 							<Link to="estado-pandemia">
 								<img src={peru} alt="" />
 								Situación regional
 							</Link>
 						</div>
-						<div className="col">
+						<div className="col-md-4">
 							<Link to="situacion-distrital-pandemia">
 								<img src={contagiodistrital} alt="" />
 								Contagios distritales
 							</Link>
 						</div>
-						<div className="col">
+						<div className="col-md-4">
 							<Link to="datos-historicos">
 								<img src={analysis} alt="" />
 								Datos históricos
 							</Link>
 						</div>
 					</div>
-				</NavDropdown>
-				<Nav.Link as={Link} to="/vacunacion" exact="true">
+				</ReactBootStrap.NavDropdown>
+				<ReactBootStrap.Nav.Link as={Link} to="/vacunacion" exact="true">
 					Vacunación
-				</Nav.Link>
+				</ReactBootStrap.Nav.Link>
 				{/*<Nav.Link
                     as={Link}
                     to="/sobre-covid"
@@ -127,11 +116,12 @@ const Header = ({ setCoverActive }) => {
                 >
                     Sobre COVID
                 </Nav.Link>*/}
-				<Nav.Link as={Link} to="/nosotros" exact="true">
+				<ReactBootStrap.Nav.Link as={Link} to="/nosotros" exact="true">
 					Nosotros
-				</Nav.Link>
-			</Nav>
-		</Navbar>
+				</ReactBootStrap.Nav.Link>
+			</ReactBootStrap.Nav>
+			</ReactBootStrap.Navbar.Collapse>
+		</ReactBootStrap.Navbar>
 	);
 };
 
