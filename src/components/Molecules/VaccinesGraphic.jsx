@@ -81,7 +81,7 @@ const VaccinesGraphic = (props) => {
                             </div>
                         )}
                         <div className="d-block text-center">
-                            <p className="graph-block__boxlabel p-0 m-0">Total vacunas que<br/>faltan aplicar</p>
+                            <p className="graph-block__boxlabel p-0 m-0">Total de vacunas que<br/>faltan aplicar</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const VaccinesGraphic = (props) => {
                             {moment('2021-12-31').diff(moment(),'days')}
                         </div>
                         <div className="d-block text-center">
-                            <p className="graph-block__boxlabel p-0 m-0">Días para el 31<br/>de diciembre</p>
+                            <p className="graph-block__boxlabel p-0 m-0">Días hasta el 31<br/>de diciembre</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ const VaccinesGraphic = (props) => {
                             </div>
                         )}
                         <div className="d-block text-center">
-                            <p className="graph-block__boxlabel p-0 m-0">Vacunas se deben<br/>aplicar por día</p>
+                            <p className="graph-block__boxlabel p-0 m-0">Vacunas que se deben<br/>aplicar por día</p>
                         </div>
                     </div>
                 </div>
