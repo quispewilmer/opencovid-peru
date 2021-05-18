@@ -12,6 +12,8 @@ import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
 import Glass from '../../img/pandemiaState/glass.svg';
 
+
+
 const Home = () => {
     const url = "https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/resume/last";
     let dateC = ""
@@ -20,6 +22,8 @@ const Home = () => {
             data: [],
         }
     })
+
+    
 
     useEffect(async () => {
         fetch(url)
