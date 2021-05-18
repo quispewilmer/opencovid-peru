@@ -102,7 +102,7 @@ const MortalityRate = ({ risk = 'extreme', data = TEST_DATA }) => {
     <section className="mortality-rate-graphic graphic-container graphic pandemic-state-graphic">
       <div className="graphic-container graphic">
         <h1 className="graphic__title">
-          Tasa de Mortalidad
+          Fallecidos Semanales
           &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de fallecidos por Covid-19 con respecto al total de la población" />
         </h1>
         <div className="graphic__region-information region-information">
