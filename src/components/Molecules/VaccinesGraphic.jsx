@@ -66,7 +66,7 @@ const VaccinesGraphic = (props) => {
         <section className="graph-block">
             {graphData.length > 0 && (
                 <h4 className={'text-center'}>
-                    Al 31 de diciembre, se deben vacunar a <i className="graph-block__amount">{(graphData[0].resta / 1000000).toFixed(2)}</i> millones de personas en el Perú.
+                    Al 31 de diciembre de 2021, se deben vacunar a <i className="graph-block__amount">{(graphData[0].resta / 1000000).toFixed(2)}</i> millones de personas en el Perú.
                 </h4>
             )}
             <div className="row">
