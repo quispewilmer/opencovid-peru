@@ -31,7 +31,7 @@ hotjar.initialize(2382218, 6);
 function App() {
 	
 	return (
-		<Router history={history}>
+		<Router>
 			<Header />
 			<Switch>
 				<Route path={[	"/",
