@@ -129,18 +129,19 @@ const EmergencyMap = () => {
 	useEffect(() => {
 		if (mapboxInstance.current) {
 			mapboxInstance.current.on('zoomend', function () {
-				const zoom = mapboxInstance.current.getZoom()
-				const newLimit = Math.round(Math.pow(1.9, (22 - zoom)) * 20 / 1000)
-
-				setRadiusDistance(currentRadius => currentRadius > newLimit ? newLimit : currentRadius)	
-				setRadiusDistanceLimit(newLimit)
+				//const zoom = mapboxInstance.current.getZoom()
+				//const newLimit = Math.round(Math.pow(1.9, (22 - zoom)) * 20 / 1000)
+				//setRadiusDistance(currentRadius => currentRadius > newLimit ? newLimit : currentRadius)	
+				//setRadiusDistanceLimit(newLimit)
+				
 			})
 		}
 	}, [])
 
 	useEffect(() => {
 		const qs = buildQueryString({ lat: referencePoint.latitude, lon: referencePoint.longitude, radio: radiusDistance * 1000 })
-		setDistanceQueryString(qs)
+		//setDistanceQueryString(qs)
+		//filteredData.splice(0,filteredData.length);
 	}, [radiusDistance])
 
 	useEffect(() => {
@@ -185,16 +186,7 @@ const EmergencyMap = () => {
 				<div className="emergency-map-container__map-block"></div>
 			)}
 			<SearchPlaces onSubmit={handleSubmit} onPlaceSelected={handlePlaceSelected} />
-			{isMapBoxClicked && (
-				<InformationPlaceBox
-					title={mapBoxState.title}
-					data={filteredData}
-					initialDistance={radiusDistance}
-					distanceLimit={radiusDistanceLimit}
-					distance={radiusDistance}
-					onDistanceChange={newDistance => setRadiusDistance(newDistance)}
-				/>
-			)}
+			
 			<SelectPointOnMapBox
 				theme="emergency-map-container__select-point-on-map-box"
 				onPointClick={handlePointClicked}
