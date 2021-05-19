@@ -9,13 +9,11 @@ import puntosoxigeno from "../../img/header/puntos-oxigeno.svg";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import * as ReactBootStrap from 'react-bootstrap';
-import ReactGA from 'react-ga';
 
 
 const Header = () => {
 
-	ReactGA.initialize('197075499');
-	ReactGA.pageview(window.location.pathname + window.location.search);
+	
 
 	const [isActive, setActive] = useState("false");
 	const [isOpenMapDropdown, setOpenMapDropdown] = useState(false);
