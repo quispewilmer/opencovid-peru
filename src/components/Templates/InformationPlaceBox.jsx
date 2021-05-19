@@ -31,7 +31,7 @@ const InformationPlaceBox = ({title, data, initialDistance, onDistanceChange, di
                     className="information-place-header__range information-place-header__range--2"
                 />
             </header>
-           
+            {data.length > 0 ? <InformationPlaceContent title={title} data={data}/> : null}
         </section>
     );
 }
