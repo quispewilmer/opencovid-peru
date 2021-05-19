@@ -16,11 +16,11 @@ const members = [
     {
         key: 1,
         photo: `${alex}`,
-        name: "Alexander Valerio",
+        name: "Alexander Valerio Cruz",
         profession: "Tec. Computación e Informática",
-        description: "",
+        description: "Experiencia en desarrollo de sistemas web",
         linkedin: "https://www.linkedin.com/in/ralexandervc/",
-        twitter: "",
+        twitter: "https://twitter.com/ralexandervc",
         instagram: ""
     },
     {
@@ -28,7 +28,7 @@ const members = [
         photo: `${anel}`,
         name: "Anel Vásquez",
         profession: "Socióloga",
-        description: "Experiencia en coordinación y ejecución de proyectos de investigación. Análisis de datos cuantitativos y cualitativos.",
+        description: "Experiencia en coordinación y ejecución de proyectos de investigación. Análisis de datos cuantitativos y cualitativos",
         linkedin: "http://linkedin.com/in/anelrvc",
         twitter: "https://twitter.com/avasquezc21",
         instagram: ""
@@ -38,7 +38,7 @@ const members = [
         photo: `${brenda}`,
         name: "Brenda Jáuregui",
         profession: "UX Strategist | Comunicadora",
-        description: "Experiencia en la creación de proyectos digitales relacionados a temas de Innovación, Ciencia, Tecnología y Marketing.",
+        description: "Experiencia en la creación de proyectos digitales relacionados a temas de Innovación, Ciencia, Tecnología y Marketing",
         linkedin: "https://www.linkedin.com/in/brendajz/",
         twitter: "https://twitter.com/brendsjz",
         instagram: "https://www.instagram.com/brendsjz/"
@@ -47,8 +47,8 @@ const members = [
         key: 4,
         photo: `${david}`,
         name: "David Castillo",
-        profession: "Ingeniero mecatrónico / Data analyst",
-        description: "Python developer en aplicaciones de análisis de datos y backend-django.",
+        profession: "Ingeniero Mecatrónico | Data Analyst",
+        description: "Python developer en aplicaciones de análisis de datos y backend-Django",
         linkedin: "https://www.linkedin.com/in/david-castillo-alvarado-44442020/",
         twitter: "https://twitter.com/David_CastiAlv",
         instagram: ""
@@ -58,7 +58,7 @@ const members = [
         photo: `${eva}`,
         name: "Eva Javel",
         profession: "Comunicadora",
-        description: "Experiencia en investigación de mercados, diseño de estrategias de comunicación y creación de contenidos.",
+        description: "Experiencia en investigación de mercados, diseño de estrategias de comunicación y creación de contenidos",
         linkedin: "https://www.linkedin.com/in/eva-javel/ ",
         twitter: "",
         instagram: "https://www.instagram.com/evajavel333/"
@@ -68,7 +68,7 @@ const members = [
         photo: `${juancarlos}`,
         name: "Juan Carlos Carbajal",
         profession: "Ingeniero Electrónico",
-        description: "Field Support Engineer at Avery Dennison Chile/Perú/Ecuador/Argentina",
+        description: "Ingeniero Electrónico con experiencia en Tecnologías de Información y Comunicación",
         linkedin: "https://www.linkedin.com/in/juan-carlos-carbajal-soto-9675699/",
         twitter: "https://twitter.com/juank23_7",
         instagram: ""
@@ -88,9 +88,9 @@ const members = [
         photo: `${nicolas}`,
         name: "Nicolas Mendoza",
         profession: "Ingeniero de Sistemas",
-        description: "Backend Developer.",
+        description: "Backend Developer",
         linkedin: "https://www.linkedin.com/in/danilo-nicolas-mendoza-ricaldi-5060b482/",
-        twitter: "",
+        twitter: "https://twitter.com/nmendozaricaldi",
         instagram: ""
     },
     {
@@ -111,7 +111,7 @@ const members = [
         description: "CEO / Geospatial Engineer at AmigoCloud Inc.",
         linkedin: "https://www.linkedin.com/in/rburhum/",
         twitter: "https://twitter.com/rburhum",
-        instagram: ""
+        instagram: "https://www.instagram.com/rburhum"
     },
     {
         key: 11,
@@ -140,7 +140,7 @@ const members = [
         profession: "Computación e Informática",
         description: "Estudiante de Programación Front End y Desarrollo de Software",
         linkedin: "https://www.linkedin.com/in/wilmer-quispe-gomez/",
-        twitter: "",
+        twitter: "https://twitter.com/quispewilmerg",
         instagram: ""
     }
 ];
