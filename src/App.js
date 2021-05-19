@@ -13,6 +13,9 @@ import "./styles/styles.scss";
 import DistricPandemicSituation from "./components/Pages/DistrictPandemicSituation";
 import Vaccination from "./components/Pages/Vaccination/Index";
 import { hotjar } from 'react-hotjar';
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-P93QG6W0GF');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 hotjar.initialize(2382218, 6);
 
