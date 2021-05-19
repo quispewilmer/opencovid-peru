@@ -127,7 +127,6 @@ const EmergencyMap = () => {
 	}, [])
 
 	useEffect(() => {
-		const that = this;
 		if (mapboxInstance.current) {
 			mapboxInstance.current.on('zoomend', function () {
 				//const zoom = mapboxInstance.current.getZoom()
