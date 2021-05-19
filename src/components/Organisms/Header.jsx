@@ -9,11 +9,12 @@ import puntosoxigeno from "../../img/header/puntos-oxigeno.svg";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import * as ReactBootStrap from 'react-bootstrap';
+import usePageTracking from "../../hooks/usePageTracking";
 
 
 const Header = () => {
-
 	
+	usePageTracking();
 
 	const [isActive, setActive] = useState("false");
 	const [isOpenMapDropdown, setOpenMapDropdown] = useState(false);
