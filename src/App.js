@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React,{useEffect} from 'react';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import PandemicStateFilter from "./components/Pages/PandemicStateFilter";
 import InformYourself from "./components/Pages/InformYourself";
 import HistoricalData from "./components/Pages/HistoricalData";
@@ -14,15 +15,23 @@ import DistricPandemicSituation from "./components/Pages/DistrictPandemicSituati
 import Vaccination from "./components/Pages/Vaccination/Index";
 import { hotjar } from 'react-hotjar';
 import ReactGA from 'react-ga';
-ReactGA.initialize('197075499');
-ReactGA.pageview(window.location.pathname + window.location.search);
+import { createBrowserHistory } from "history";
+
+
+// ReactGA.initialize('G-P93QG6W0GF');
+// const history = createBrowserHistory();
+// history.listen(location => {
+// 	ReactGA.set({ page: location.pathname }); 
+// 	ReactGA.pageview(location.pathname);
+// });
 
 hotjar.initialize(2382218, 6);
 
 // Se definen las rutas
 function App() {
+	
 	return (
-		<Router>
+		<Router history={history}>
 			<Header />
 			<Switch>
 				<Route path={[	"/",
