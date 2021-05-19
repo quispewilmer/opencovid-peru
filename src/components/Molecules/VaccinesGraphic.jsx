@@ -66,7 +66,7 @@ const VaccinesGraphic = (props) => {
         <section className="graph-block">
             {graphData.length > 0 && (
                 <h4 className={'text-center'}>
-                    Al 31 de diciembre, se deben vacunar a <i className="graph-block__amount">{(graphData[0].resta / 1000000).toFixed(2)}</i> millones de personas en el Perú.
+                    Al 31 de diciembre de 2021, se deben vacunar a <i className="graph-block__amount">{(graphData[0].resta / 1000000).toFixed(2)}</i> millones de personas en el Perú.
                 </h4>
             )}
             <div className="row">
@@ -81,7 +81,7 @@ const VaccinesGraphic = (props) => {
                             </div>
                         )}
                         <div className="d-block text-center">
-                            <p className="graph-block__boxlabel p-0 m-0">Total vacunas que<br/>faltan aplicar</p>
+                            <p className="graph-block__boxlabel p-0 m-0">Total de vacunas que<br/>faltan aplicar</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const VaccinesGraphic = (props) => {
                             {moment('2021-12-31').diff(moment(),'days')}
                         </div>
                         <div className="d-block text-center">
-                            <p className="graph-block__boxlabel p-0 m-0">Días para el 31<br/>de diciembre</p>
+                            <p className="graph-block__boxlabel p-0 m-0">Días hasta el 31<br/>de diciembre</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ const VaccinesGraphic = (props) => {
                             </div>
                         )}
                         <div className="d-block text-center">
-                            <p className="graph-block__boxlabel p-0 m-0">Vacunas se deben<br/>aplicar por día</p>
+                            <p className="graph-block__boxlabel p-0 m-0">Vacunas que se deben<br/>aplicar por día</p>
                         </div>
                     </div>
                 </div>

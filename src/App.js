@@ -18,12 +18,12 @@ import ReactGA from 'react-ga';
 import { createBrowserHistory } from "history";
 
 
-ReactGA.initialize('G-P93QG6W0GF');
-const history = createBrowserHistory();
-history.listen(location => {
-	ReactGA.set({ page: location.pathname }); 
-	ReactGA.pageview(location.pathname);
-});
+// ReactGA.initialize('G-P93QG6W0GF');
+// const history = createBrowserHistory();
+// history.listen(location => {
+// 	ReactGA.set({ page: location.pathname }); 
+// 	ReactGA.pageview(location.pathname);
+// });
 
 hotjar.initialize(2382218, 6);
 
