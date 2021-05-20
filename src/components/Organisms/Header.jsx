@@ -106,9 +106,9 @@ const Header = () => {
 							</Link>
 						</div>
 						<div className="col-md-4">
-							<Link to="datos-historicos">
+							<Link to="dashboard">
 								<img src={analysis} alt="" />
-								Datos históricos
+								Dashboard
 							</Link>
 						</div>
 					</div>
