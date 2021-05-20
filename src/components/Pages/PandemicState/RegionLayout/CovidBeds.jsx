@@ -45,8 +45,8 @@ const buildChartConfiguration = ({ data, risk, totalBeds }) => ({
       tooltip: {
         callbacks: {
           label: function (context) {
-            const count = Math.round((context.raw / 100) * totalBeds)
-            return ` ${LABELS[context.dataIndex]}: ${count}`
+            // const count = Math.round((context.raw / 100) * totalBeds)
+            return ` ${LABELS[context.dataIndex]}`
           }
         }
       },
