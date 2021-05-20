@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api',
+  baseURL: 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api',
 });
 
 export const getPositivity = ({region, fechaGt, fechaLt}) => api.get('/positivity', {

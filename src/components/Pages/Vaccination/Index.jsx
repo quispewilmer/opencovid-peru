@@ -18,10 +18,10 @@ const Vaccination=()=>{
     const [vaccineData, setVaccineData] = useState(null);
     const [graphData, setGraphData] = useState([]);
     const api = axios.create({
-        baseURL: 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api',
+        baseURL: 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api',
     });
-    const graphUrl = 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/histogram?fechaGt=01-01-2021&fechaLt=' + moment().format('DD-MM-YYYY');
-    const vaccinationEndUrl = 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/resume';
+    const graphUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/histogram?fechaGt=01-01-2021&fechaLt=' + moment().format('DD-MM-YYYY');
+    const vaccinationEndUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/resume';
     useEffect(async()=>{
         if(isResumevaccinate==null){
             api.get('/vaccine/resume').then(response=>{ 

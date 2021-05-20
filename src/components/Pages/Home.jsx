@@ -15,7 +15,7 @@ import Glass from '../../img/pandemiaState/glass.svg';
 
 
 const Home = () => {
-    const url = "https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/resume/last";
+    const url = "https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/resume/last";
     let dateC = ""
     const [state, setState] = useState({
         information: {
