@@ -55,18 +55,22 @@ const Header = () => {
 									pathname: "/mapa-emergencia",
 									state: { fromOption: "ucibed" },
 								}}
+								onClick={()=>{
+									window.location.reload();}}
 							>
 								<img src={camasuci} alt="" />
-								Camas UCI / Camas COVID / Oxígeno
+								Camas UCI 
 							</Link>
 						</div>						
-						{/* -- Commented out until we make it work
+						
 						<div className="col-md-4">
 							<Link
 								to={{
 									pathname: "/mapa-emergencia",
 									state: { fromOption: "covidbed" },
 								}}
+								onClick={()=>{
+									window.location.reload();}}
 							>
 								<img src={camascovid} alt="" />
 								Camas COVID
@@ -78,12 +82,14 @@ const Header = () => {
 									pathname: "/mapa-emergencia",
 									state: { fromOption: "oxigen" },
 								}}
+								onClick={()=>{
+									window.location.reload();}}
 							>
 								<img src={puntosoxigeno} alt="" />
 								Puntos de Oxígeno
 							</Link>
 						</div>
-						*/}
+						
 					</div>
 				</ReactBootStrap.NavDropdown>
 				<ReactBootStrap.NavDropdown

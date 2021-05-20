@@ -20,7 +20,7 @@ const SelectPointOnMapBox = ({
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 	const getDownTheArea = () => {
-    setMenuIsOpen(!menuIsOpen)
+    	setMenuIsOpen(!menuIsOpen)
 	};
 
 	return (
