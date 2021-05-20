@@ -51,12 +51,12 @@ const Vaccination=()=>{
                         theme="col-lg-4" 
                         isTopTextHighlights={true}                    
                         sText="En el Perú, somos " 
-                        highlight="22.96 millones"/*{`${poblation.replace('.',' ')} Millones`}*/
+                        highlight="23.9 millones"/*{`${poblation.replace('.',' ')} Millones`}*/
                         eText=" de personas elegibles para recibir la vacuna. "
                         textLeft="Peruanos y extranjeros residentes mayores de 18 años" 
                         src_image={primeraLinea} 
                         image_style="img-society" 
-                        text_footer="Fuente: INEI 2020. Estimaciones población 2050"/>
+                        text_footer="Fuente: MINSA - RENIEC. Padrón 2020"/>
                     <CardTop 
                         theme="col-lg-8" 
                         isTopLeftTextHighlights={true}
