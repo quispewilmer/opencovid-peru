@@ -49,7 +49,7 @@ const Header = () => {
 					onClick={handleMapDropdownToggle}
 				>
 					<div className="container-fluid mx-auto text-center  row">
-						<div className="col-md-4">
+						<div className="col">
 							<Link
 								to={{
 									pathname: "/mapa-emergencia",
@@ -57,9 +57,10 @@ const Header = () => {
 								}}
 							>
 								<img src={camasuci} alt="" />
-								Camas UCI
+								Camas UCI / Camas COVID / Oxígeno
 							</Link>
-						</div>
+						</div>						
+						{/* -- Commented out until we make it work
 						<div className="col-md-4">
 							<Link
 								to={{
@@ -82,6 +83,7 @@ const Header = () => {
 								Puntos de Oxígeno
 							</Link>
 						</div>
+						*/}
 					</div>
 				</ReactBootStrap.NavDropdown>
 				<ReactBootStrap.NavDropdown
