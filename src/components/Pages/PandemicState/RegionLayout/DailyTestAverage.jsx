@@ -101,8 +101,8 @@ const DailyTestAverage = ({ risk = 'extreme', data = TEST_DATA }) => {
   return (
     <section className="mortality-rate-graphic graphic-container graphic">
       <h1 className="graphic__title">
-        Promedio Semanales de Pruebas
-        &nbsp;<ExpandInfo style={{float: 'right'}} text="Promedio de pruebas por día con respecto al total de la población" />
+        Pruebas Semanales
+        &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de pruebas de Covid-19 realizadas durante esa semana" />
       </h1>
       <div className="graphic__region-information region-information">
         <canvas ref={chartRef} width='100%' height='110px'></canvas>

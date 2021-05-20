@@ -103,7 +103,7 @@ const MortalityRate = ({ risk = 'extreme', data = TEST_DATA }) => {
       <div className="graphic-container graphic">
         <h1 className="graphic__title">
           Fallecidos Semanales
-          &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de fallecidos por Covid-19 con respecto al total de la población" />
+          &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de personas fallecidas por Covid-19 en esa región durante esa semana" />
         </h1>
         <div className="graphic__region-information region-information">
           <canvas ref={chartRef} width='100%' height='110px'></canvas>
