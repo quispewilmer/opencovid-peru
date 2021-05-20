@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React,{useEffect} from 'react';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import PandemicStateFilter from "./components/Pages/PandemicStateFilter";
 import InformYourself from "./components/Pages/InformYourself";
 import HistoricalData from "./components/Pages/HistoricalData";
@@ -18,6 +19,7 @@ hotjar.initialize(2382218, 6);
 
 // Se definen las rutas
 function App() {
+	
 	return (
 		<Router>
 			<Header />
