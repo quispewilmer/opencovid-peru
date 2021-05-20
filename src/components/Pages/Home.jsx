@@ -15,7 +15,7 @@ import Glass from '../../img/pandemiaState/glass.svg';
 
 
 const Home = () => {
-    const url = "https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/resume/last";
+    const url = "https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/resume/last";
     let dateC = ""
     const [state, setState] = useState({
         information: {
@@ -44,9 +44,9 @@ const Home = () => {
                         <h1 className="national-situation__title text-center">Situación a nivel nacional</h1>
                         <HighRule />
                         <div className="national-situation__articles mx-0">
-                            <QuantityCard title="Infectados totales" link="/datos-historicos" image={infected} number={Math.round(state.information.data.totalInfectadosHist)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
-                            <QuantityCard title="Fallecidos totales" link="/datos-historicos" image={dead} number={Math.round(state.information.data.totalFallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
-                            <QuantityCard title="Camas UCI disponibles" link="/datos-historicos" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Infectados totales" link="/dashboard" image={infected} number={Math.round(state.information.data.totalInfectadosHist)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Fallecidos totales" link="/dashboard" image={dead} number={Math.round(state.information.data.totalFallecidosSinadef)} type="bad" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
+                            <QuantityCard title="Camas UCI disponibles" link="/dashboard" image={uci} number={Math.round(state.information.data.camasUciDisp)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                             <QuantityCard title="Personas vacunadas" image={vaccine} link="/vacunacion" number={Math.round(state.information.data.totalvacunados1)} type="good" update={state.information.data.fechaCreacion ? state.information.data.fechaCreacion.split(" ")[0] : ""} />
                         </div>
                     </div>
@@ -88,6 +88,7 @@ const Home = () => {
                                         <li>Capacidad UCI y más</li>
                                     </ul>
                                     <Button text="Ver más" theme="button--white-green mb-4 mt-4 graphic-information__see-more" link="/estado-pandemia" />
+                                    <Button text="Dashboard" theme="button--white-green mb-4 mt-4 graphic-information__see-more" link="/dashboard" />
                                 </div>
                                 <div className="graphic-information__image d-flex justify-content-end">
                                     <picture className="d-flex align-items-end">

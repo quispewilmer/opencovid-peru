@@ -45,8 +45,8 @@ const buildChartConfiguration = ({ data, risk, totalBeds }) => ({
       tooltip: {
         callbacks: {
           label: function (context) {
-            const count = Math.round((context.raw / 100) * totalBeds)
-            return ` ${LABELS[context.dataIndex]}: ${count}`
+            // const count = Math.round((context.raw / 100) * totalBeds)
+            return ` ${LABELS[context.dataIndex]}`
           }
         }
       },
@@ -82,7 +82,7 @@ const CovidBeds = ({ risk = 'extreme', data = TEST_DATA, totalBeds }) => {
       <div className="graphic-container graphic">
         <h1 className="graphic__title">
           Camas COVID
-          &nbsp;<ExpandInfo style={{float: 'right'}} text=" % de camas COVID hospitalarias ocupadas. Promedio semanal" />
+          &nbsp;<ExpandInfo style={{float: 'right'}} text="% de camas COVID hospitalarias ocupadas el domingo de esa semana" />
         </h1>
         <div className="graphic__region-information region-information">
           <canvas ref={chartRef} width='100%' height='80px'></canvas>

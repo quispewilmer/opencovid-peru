@@ -18,10 +18,10 @@ const Vaccination=()=>{
     const [vaccineData, setVaccineData] = useState(null);
     const [graphData, setGraphData] = useState([]);
     const api = axios.create({
-        baseURL: 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api',
+        baseURL: 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api',
     });
-    const graphUrl = 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/histogram?fechaGt=01-01-2021&fechaLt=' + moment().format('DD-MM-YYYY');
-    const vaccinationEndUrl = 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/resume';
+    const graphUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/histogram?fechaGt=01-01-2021&fechaLt=' + moment().format('DD-MM-YYYY');
+    const vaccinationEndUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/resume';
     useEffect(async()=>{
         if(isResumevaccinate==null){
             api.get('/vaccine/resume').then(response=>{ 
@@ -51,12 +51,12 @@ const Vaccination=()=>{
                         theme="col-lg-4" 
                         isTopTextHighlights={true}                    
                         sText="En el Perú, somos " 
-                        highlight="22.96 millones"/*{`${poblation.replace('.',' ')} Millones`}*/
+                        highlight="24.07 millones"/*{`${poblation.replace('.',' ')} Millones`}*/
                         eText=" de personas elegibles para recibir la vacuna. "
                         textLeft="Peruanos y extranjeros residentes mayores de 18 años" 
                         src_image={primeraLinea} 
                         image_style="img-society" 
-                        text_footer="Fuente: INEI 2020. Estimaciones población 2050"/>
+                        text_footer="Fuente: MINSA - RENIEC. Padrón 2020"/>
                     <CardTop 
                         theme="col-lg-8" 
                         isTopLeftTextHighlights={true}

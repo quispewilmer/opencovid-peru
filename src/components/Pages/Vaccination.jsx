@@ -16,8 +16,8 @@ const Vaccination=()=>{
     const [graphData, setGraphData] = useState([]);
     const [vaccineData, setVaccineData] = useState(null);
 
-    const graphUrl = 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/histogram?fechaGt=01-01-2021&fechaLt=' + moment().format('DD-MM-YYYY');
-    const vaccinationEndUrl = 'https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine/resume';
+    const graphUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/histogram?fechaGt=01-01-2021&fechaLt=' + moment().format('DD-MM-YYYY');
+    const vaccinationEndUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/resume';
 
     useEffect(async () => {
         if (!loaded) {
