@@ -49,7 +49,7 @@ const buildChartConfiguration = ({ risk, data }) => ({
       tooltip: {
         callbacks: {
           label: function (context) {
-            return ` Tasa de Mortalidad: ${Math.round(context.raw)}`
+            return ` Fallecidos semanales: ${Math.round(context.raw)}`
           }
         }
       },
