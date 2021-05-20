@@ -101,8 +101,8 @@ const IncidentRate = ({ risk = 'extreme', data = TEST_DATA }) => {
   return (
     <section className="mortality-rate-graphic graphic-container graphic">
       <h1 className="graphic__title">
-        Tasa de Incidencia
-        &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de infectados con respecto al total de la población " />
+        Casos Confirmados Semanales
+        &nbsp;<ExpandInfo style={{float: 'right'}} text="N° de personas que dieron positivo por Covid-19 en esa región durante esa semana" />
       </h1>
       <div className="graphic__region-information region-information">
         <canvas ref={chartRef} width='100%' height='110px'></canvas>
