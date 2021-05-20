@@ -17,7 +17,7 @@ const VaccinationMap=()=>{
     });
 
     const data=()=>{
-        axios.get(`https://open-covid-2-api-6b3whmne6q-uk.a.run.app/api/vaccine`)
+        axios.get(`https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine`)
         .then(({ data }) => {
             return data;
         })
