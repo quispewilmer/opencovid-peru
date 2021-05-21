@@ -151,6 +151,14 @@ const EmergencyMap = () => {
 		}
 	}, [referencePoint])
 
+  useEffect(() => {
+    handlePointClicked({
+      endpoint: mapEndpoints[option].endpoint,
+      name: option,
+      title: mapEndpoints[option].title,
+    });
+  }, [option]);
+
 	const handlePointClicked = ({ endpoint, name, title }) => {
 		setMapBoxClicked(true);
 		setItemSelectedState(buildItemState(name));
