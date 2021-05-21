@@ -55,8 +55,6 @@ const Header = () => {
 									pathname: "/mapa-emergencia",
 									state: { fromOption: "ucibed" },
 								}}
-								onClick={()=>{
-									window.location.reload();}}
 							>
 								<img src={camasuci} alt="" />
 								Camas UCI 
@@ -69,8 +67,6 @@ const Header = () => {
 									pathname: "/mapa-emergencia",
 									state: { fromOption: "covidbed" },
 								}}
-								onClick={()=>{
-									window.location.reload();}}
 							>
 								<img src={camascovid} alt="" />
 								Camas COVID
@@ -82,8 +78,6 @@ const Header = () => {
 									pathname: "/mapa-emergencia",
 									state: { fromOption: "oxigen" },
 								}}
-								onClick={()=>{
-									window.location.reload();}}
 							>
 								<img src={puntosoxigeno} alt="" />
 								Puntos de Oxígeno
