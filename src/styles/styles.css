@@ -1377,9 +1377,6 @@ a:hover {
   padding: 0 20px;
 }
 
-.dashboard--for-graphics {
-  background-color: red;
-}
 @media screen and (min-width: 1080px) {
   .dashboard--for-graphics {
     display: grid !important;
@@ -1589,8 +1586,14 @@ a:hover {
 .the-team__grid {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 82px;
+}
+@media screen and (max-width: 768px) {
+  .the-team__grid {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .footer__grid {
