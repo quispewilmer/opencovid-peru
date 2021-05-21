@@ -34,8 +34,8 @@ const useFromLinkOption = () => {
 	if (state) {
 		return [true, state.fromOption];
 	}
-
-	return [false, undefined];
+	//default option
+	return [true, 'ucibed'];
 };
 
 const buildQueryString = object => new URLSearchParams(object).toString()
