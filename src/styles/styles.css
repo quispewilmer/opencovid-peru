@@ -529,7 +529,6 @@ a:hover {
 .quantity-card__title {
   font-size: 12px;
   line-height: 1em;
-  white-space: nowrap;
 }
 .quantity-card__number {
   font-size: 20px;
@@ -550,6 +549,7 @@ a:hover {
   }
   .quantity-card__title {
     font-size: 20px;
+    white-space: nowrap;
   }
   .quantity-card__number {
     font-size: 36px;
