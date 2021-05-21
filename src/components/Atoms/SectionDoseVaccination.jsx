@@ -9,9 +9,9 @@ const SectionDoseVaccination=({data})=>{
     let end=10;
     let percentage=0;
 
-    let no_vaccine=Math.floor(((data.poblacion-data.vacunados)/data.poblacion)*100);
-    let first_vaccine=((data.primeraDosis/data.poblacion)*100).toFixed(2);
-    let complete_vaccine=((data.segundaDosis/data.poblacion)*100).toFixed(2);
+    let no_vaccine=Math.floor(((24070572-data.vacunados)/24070572)*100);
+    let first_vaccine=((data.primeraDosis/24070572)*100).toFixed(2);
+    let complete_vaccine=((data.segundaDosis/24070572)*100).toFixed(2);
 
 
     let diff_vaccine=Math.floor(first_vaccine-complete_vaccine);
