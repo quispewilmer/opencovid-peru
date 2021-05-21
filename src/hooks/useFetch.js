@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const host = "https://open-covid-2-api-6b3whmne6q-uk.a.run.app";
+const host = "https://open-covid-api-vwgk4ckqbq-uk.a.run.app";
 
 const useFetch = (endpoint) => {
 	const [state, setState] = useState({

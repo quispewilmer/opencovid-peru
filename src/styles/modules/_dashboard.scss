@@ -9,6 +9,9 @@
     &__content {
         background-color: map-get($map: $colors, $key: oc-pale-pink);
         padding: 21px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 25px;
     }
 
     @media screen and (min-width: 768px) {

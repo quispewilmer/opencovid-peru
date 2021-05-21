@@ -136,8 +136,8 @@ const PositivityRate = ({ risk = 'extreme', data = TEST_DATA }) => {
     <section className="positivity-rate-graphic graphic-container graphic pandemic-state-graphic">
       <div className="graphic-container graphic">
         <h1 className="graphic__title">
-          Tasa de Positividad
-          &nbsp;<ExpandInfo style={{float: 'right'}} text="% de pruebas que salen positivas" />
+          Positividad
+          &nbsp;<ExpandInfo style={{float: 'right'}} text="% de pruebas que salen positivas y negativas" />
         </h1>
         <div className="graphic__region-information region-information">
           <canvas ref={chartRef} width='100%' height='110px'></canvas>

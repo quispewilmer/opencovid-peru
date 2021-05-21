@@ -25,34 +25,40 @@ function App() {
 			<Header />
 			<Switch>
 				<Route path={[	"/",
-								"/reportes/sinadef",
-								"/reportes/desfase",
-								"/reportes/minsa-nacional"
+									"/reportes/sinadef",
+									"/reportes/desfase",
+									"/reportes/minsa-nacional"
 								]} exact component={Home} />
 				<Route path={[	"/mapa-emergencia",
-								"/reportes/movilidad",
-								"/reportes/sistema-hospitalario",
-								"/camas-covid"
+									"/reportes/movilidad",
+									"/reportes/sistema-hospitalario",
+									"/camas-covid"
 								]} component={EmergencyMap} />
 				<Route path={[	"/estado-pandemia",
-								"/reportes/cdc",
-								"/reportes/pruebas",
-								"/reportes/minsa-region",
-								"/nacional"
+									"/reportes/cdc",
+									"/reportes/pruebas",
+									"/reportes/minsa-region",
+									"/nacional"
 								]} component={PandemicState} />
-				<Route path={[	"/sobre-covid"]} component={AboutCovid} />
+				<Route path={[	"/sobre-covid"
+								]} component={AboutCovid} />
 				<Route path={[	"/nosotros",
-								"/team"
+									"/team"
 								]} component={AboutUs} />
-				<Route path={[	"/pandemia-filtro"]} component={PandemicStateFilter} />
-				<Route path={[	"/datos-historicos",
-								"/uci-disponible",
-								"/reportes/R"
+				<Route path={[	"/pandemia-filtro"
+								]} component={PandemicStateFilter} />
+				<Route path={[	"/dashboard",
+									"/datos-historicos",
+									"/uci-disponible",
+									"/reportes/R"
 								]} component={HistoricalData}/>
-				<Route path={[	"/informate"]} component={InformYourself} />
-				<Route path={[	"/vacunacion"]} component={Vaccination} />
+				<Route path={[	"/informate"
+								]} component={InformYourself} />
+				<Route path={[	"/vacunacion"
+								]} component={Vaccination} />
 				<Route path={[	"/situacion-distrital-pandemia",
-								"/reportes/mapa-semaforo-epidemiologico"]} component={DistricPandemicSituation}
+									"/reportes/mapa-semaforo-epidemiologico"
+								]} component={DistricPandemicSituation}
 				/>
 				<Route component={() => <h1>Error 404</h1>} />
 			</Switch>
