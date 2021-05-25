@@ -26,6 +26,7 @@ import {
     buildCovidBedsData,
     buildRegionalWeeklyAnalysisData
 } from './chartDataCalculation'
+import CenteredModal from '../../Atoms/CenteredModal';
 
 const scoreToRisk = {
     1.0: 'low',
@@ -66,6 +67,7 @@ function mapGMapsState(name) {
 }
 
 const PandemicState = () => {
+    document.title = "OpenCovid-Perú - Situación regional"
     const initialWeek = getWeekRange(moment().subtract(7, 'days'))
     const [filters, setFilters] = useState({
         week: [initialWeek.from, initialWeek.to],
@@ -136,11 +138,6 @@ const PandemicState = () => {
     useEffect(() => {
 
         getRegionsData({ weekStart: dateToParam(filters.week[0]) }).then(response => {
-            if (response.data.length === 0) {
-                alert('Todavía no hay datos para la semana seleccionada!')
-                return
-            }
-
             const responseRegions = response.data[0].regions;
             responseRegions.forEach(region => {
                 const color = colorsByRisk[scoreToRisk[region.score]];
@@ -149,30 +146,43 @@ const PandemicState = () => {
                 document.simplemaps_countrymap.refresh()
             })
             setStates(indexBy(responseRegions, 'region'))
-        })
+        }).catch(()=>{
+            setStates({});
+            
+        });
         
         getRegionsData({ weekStart: dateToParam(prevWeekStart) }).then(response => {
             setPrevWeekStates(
                 response.data.length > 0 ? indexBy(response.data[0].regions, 'region') : null
             )
-        })
+        }).catch(()=>{
+            setPrevWeekStates(null);
+        });
+
         getRegionsData({ weekStart: dateToParam(prevPrevWeekStart) }).then(response => {
             setPrevPrevWeekStates(
                 response.data.length > 0 ? indexBy(response.data[0].regions, 'region') : null
             )
-        })
+        }).catch(()=>{
+            setPrevPrevWeekStates(null);
+        });
 
         getBedsData({
             region: filters.state,
             fechaGt: dateToParam(filters.week[0]),
             fechaLt: dateToParam(filters.week[1])
-        }).then(response => setBedsData(response.data))
+        }).then(response => setBedsData(response.data)).catch(()=>{
+            setBedsData([]);
+        });
 
+        
         getWeeklyAnalysis({
             weekStart: dateToParam(filters.week[0])
         }).then(response => {
-            setWeeklyAnalysis(response.data)
-        })
+            setWeeklyAnalysis(response.data);
+        }).catch(()=>{
+            setWeeklyAnalysis({});
+        });
     }, [filters.week])
 
     return (
@@ -191,16 +201,24 @@ const PandemicState = () => {
                 <Region
                     countryWide={countryWide}
                     onSwitchClick={(newValue) => {
-                        if (newValue) {
-                            document.simplemaps_countrymap.back()
-                            setFilters(currentValue => ({...currentValue, state: ""}))
-                        } else {
-                            setFilters(currentValue => ({...currentValue, state: currentState}))
+                        if(JSON.stringify(states)!='{}'){
+                            if (newValue) {
+                                document.simplemaps_countrymap.back()
+                                setFilters(currentValue => ({...currentValue, state: ""}))
+                            } else {
+                                setFilters(currentValue => ({...currentValue, state: currentState}))
+                            }
+                        }else{
+                            <CenteredModal titulo="¡Oh no!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior."/>
                         }
                     }}
                     onStateClick={state => {
-                        const stateName = mapState[state]
-                        setFilters(currentValue => ({ ...currentValue, state: stateName }))
+                        if(JSON.stringify(states)!='{}'){
+                            const stateName = mapState[state]
+                            setFilters(currentValue => ({ ...currentValue, state: stateName }))
+                        }else{
+                            <CenteredModal titulo="¡¡Oh no!!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior."/>
+                        }
                     }}
                 />
                 {countryWide ? 
@@ -217,6 +235,7 @@ const PandemicState = () => {
                                     data={weeklyAnalysis}
                                     weekRange={filters.week}
                                 />
+                                
                             </div>
                             <div className="graphic-container graphic pandemic-state-graphic" style={{
                                 gridColumnStart:'3',
@@ -283,6 +302,7 @@ const PandemicState = () => {
                     )
                 }
             </TemplateDashboard>
+            {JSON.stringify(states)=='{}'? <CenteredModal titulo="¡Oh no!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior."/>:null}
         </div>
     )
 }

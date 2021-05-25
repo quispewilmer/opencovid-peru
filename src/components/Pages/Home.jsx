@@ -15,6 +15,8 @@ import Glass from '../../img/pandemiaState/glass.svg';
 
 
 const Home = () => {
+    document.title = "OpenCovid-Perú"
+    
     const url = "https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/resume/last";
     let dateC = ""
     const [state, setState] = useState({
@@ -22,8 +24,6 @@ const Home = () => {
             data: [],
         }
     })
-
-    
 
     useEffect(async () => {
         fetch(url)

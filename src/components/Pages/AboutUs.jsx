@@ -7,7 +7,7 @@ import team from '../../img/aboutus/team.svg';
 import volunteers from './Volunteers';
 
 const AboutUs = () => {
-
+    document.title = "OpenCovid-Perú - Nosotros"
     return (
         <main className="about-us">
             <section className="the-team">

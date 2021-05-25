@@ -1,15 +1,11 @@
 import React from 'react';
-import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
+import ReactMapboxGl from 'react-mapbox-gl';
 import axios from 'axios';
 
 
 const VaccinationMap=()=>{
 
-    const navStyle = {
-        top: 72,
-        left: 0,
-        padding: '10px'
-      };
+    
 
     const Map = ReactMapboxGl({
         accessToken:

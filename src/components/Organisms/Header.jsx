@@ -30,6 +30,7 @@ const Header = () => {
 		setOpenPandemicState((prev)=>!prev);
 	};
 
+
 	return (
 		<ReactBootStrap.Navbar bg="white" expand="lg" className="main-header">
 			<ReactBootStrap.Navbar.Brand as={Link} to="/">
@@ -123,7 +124,7 @@ const Header = () => {
                 >
                     Sobre COVID
                 </Nav.Link>*/}
-				<ReactBootStrap.Nav.Link as={Link} to="/nosotros" exact="true">
+				<ReactBootStrap.Nav.Link as={Link} to="/nosotros" exact="true" >
 					Nosotros
 				</ReactBootStrap.Nav.Link>
 			</ReactBootStrap.Nav>

@@ -18,6 +18,7 @@ const gridProps = {
 }
 
 const Region = ({ onSwitchClick, onStateClick, countryWide }) => {
+    
     return (
         <>
             <div className="map-graphic graphic-container graphic" style={gridProps[countryWide]}>

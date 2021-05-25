@@ -1,6 +1,7 @@
 import React from 'react';
 
 const HistoricalData = () => {
+    document.title = "OpenCovid-Perú - Dashboard"
     return (
         <iframe
             width="100%"

@@ -7,6 +7,7 @@ import PuestoRegion from '../Molecules/PuestoRegion';
 import TemplateDashboard from '../Templates/TemplateDashboard';
 
 const PandemicStateFilter = () =>{
+    
     return(
         <TemplateDashboard type="for-graphics">
             <SearchRegion text="Busca tu región"/>

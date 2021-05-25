@@ -12,7 +12,7 @@ var moment = require('moment/min/moment-with-locales');
 moment.locale('es');
 
 const Vaccination=()=>{
-
+    document.title = "OpenCovid-Perú - Vacunación"
     const [loaded, setLoaded] = useState(false);
     const[isResumevaccinate,setResumeVaccinate]=useState(null);
     const [vaccineData, setVaccineData] = useState(null);
@@ -24,6 +24,7 @@ const Vaccination=()=>{
     const vaccinationEndUrl = 'https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/vaccine/resume';
     useEffect(async()=>{
         if(isResumevaccinate==null){
+            
             api.get('/vaccine/resume').then(response=>{ 
                 setResumeVaccinate(response.data); 
                 

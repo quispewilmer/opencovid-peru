@@ -20,7 +20,10 @@ const WeeklyInfoCard = ({ risk, data, weekRange }) => {
 		<div className='weekly-info-card-container'>
 			<div className='weekly-info-card__title'>Análisis semanal</div>
 			<div className='weekly-info-card__weekrange'>{formattedWeek}</div>
-			<ul>
+
+			{JSON.stringify(data)=='{}'? <ul>
+				<li>Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior.</li>
+			</ul>:<ul>
 				<li className='weekly-info-card__li'>
 					De las 26 regiones, hay <strong style={style}>{data.riesgoExtremo}</strong> en <strong>riesgo extremo</strong> y <strong style={style}>{data.riesgoAlto}</strong> en <strong>riesgo alto</strong>.
 				</li>
@@ -40,7 +43,8 @@ const WeeklyInfoCard = ({ risk, data, weekRange }) => {
 				<li className='weekly-info-card__li'>
 					En <strong style={style}>{data.limiteRecomendado}</strong> de las regiones el n° de personas contagiadas supera el límite recomendado. El <strong>virus multiplica con facilidad</strong>.
 				</li>
-			</ul>
+			</ul>}
+			
 		</div>
 		);
 };

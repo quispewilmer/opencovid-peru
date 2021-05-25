@@ -71,6 +71,9 @@ const addMarker = (coordinates, mapboxInstance) => {
 
 
 const EmergencyMap = () => {
+
+	document.title = "OpenCovid-Perú - Mapa de emergencia"
+
 	const [hasOption, option] = useFromLinkOption();
 	const [isMapBoxClicked, setMapBoxClicked] = useState(() => hasOption);
 	const [referencePoint, setReferencePoint] = useState(limaCoordinates)
