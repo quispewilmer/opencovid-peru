@@ -27,6 +27,13 @@ import {
     buildRegionalWeeklyAnalysisData
 } from './chartDataCalculation'
 import CenteredModal from '../../Atoms/CenteredModal';
+import Helmet from 'react-helmet';
+import metaimage from '../../../img/metaimages/regionalsituation.png';
+
+const title = "OpenCovid-Perú - Estado de la Pandemia";
+const image = { metaimage };
+const description = "Encontrarás la ubicación y disponibilidad de: Camas UCI, Camas COVID, Puntos de recarga de oxígeno y podrás identificar la ubicación de centros de salud y farmacias.";
+const locale = "es_PE";
 
 const scoreToRisk = {
     1.0: 'low',
@@ -146,16 +153,16 @@ const PandemicState = () => {
                 document.simplemaps_countrymap.refresh()
             })
             setStates(indexBy(responseRegions, 'region'))
-        }).catch(()=>{
+        }).catch(() => {
             setStates({});
-            
+
         });
-        
+
         getRegionsData({ weekStart: dateToParam(prevWeekStart) }).then(response => {
             setPrevWeekStates(
                 response.data.length > 0 ? indexBy(response.data[0].regions, 'region') : null
             )
-        }).catch(()=>{
+        }).catch(() => {
             setPrevWeekStates(null);
         });
 
@@ -163,7 +170,7 @@ const PandemicState = () => {
             setPrevPrevWeekStates(
                 response.data.length > 0 ? indexBy(response.data[0].regions, 'region') : null
             )
-        }).catch(()=>{
+        }).catch(() => {
             setPrevPrevWeekStates(null);
         });
 
@@ -171,139 +178,157 @@ const PandemicState = () => {
             region: filters.state,
             fechaGt: dateToParam(filters.week[0]),
             fechaLt: dateToParam(filters.week[1])
-        }).then(response => setBedsData(response.data)).catch(()=>{
+        }).then(response => setBedsData(response.data)).catch(() => {
             setBedsData([]);
         });
 
-        
+
         getWeeklyAnalysis({
             weekStart: dateToParam(filters.week[0])
         }).then(response => {
             setWeeklyAnalysis(response.data);
-        }).catch(()=>{
+        }).catch(() => {
             setWeeklyAnalysis({});
         });
     }, [filters.week])
 
     return (
-        <div>
-            <h1 className="pandemic-state-filters__title graphic__title">¿Cómo ha impactado la COVID-19 al Perú?</h1>
-            <TemplateDashboard type="for-graphics">
-                <Filters
-                    onChange={newFilters => {
-                        setFilters(currFilters => ({ ...currFilters, ...newFilters }))
-                    }}
-                    initialValues={{
-                        initialDate: initialWeek.from
-                    }}
-                    value={filters}
-                />
-                <Region
-                    countryWide={countryWide}
-                    onSwitchClick={(newValue) => {
-                        if(JSON.stringify(states)!='{}'){
-                            if (newValue) {
-                                document.simplemaps_countrymap.back()
-                                setFilters(currentValue => ({...currentValue, state: ""}))
+        <>
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+
+                <meta property="og:site_name" content={title} />
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content={image} />
+                <meta property="og:description" content={description} />
+                <meta property="og:locale" content={locale} />
+                <meta property="og:type" content="website" data-react-helmet="true" />
+
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
+                <meta name="twitter:title" content={title} data-react-helmet="true" />
+                <meta name="twitter:site" content="@opencovidperu" data-react-helmet="true" />
+            </Helmet>
+            <div>
+                <h1 className="pandemic-state-filters__title graphic__title">¿Cómo ha impactado la COVID-19 al Perú?</h1>
+                <TemplateDashboard type="for-graphics">
+                    <Filters
+                        onChange={newFilters => {
+                            setFilters(currFilters => ({ ...currFilters, ...newFilters }))
+                        }}
+                        initialValues={{
+                            initialDate: initialWeek.from
+                        }}
+                        value={filters}
+                    />
+                    <Region
+                        countryWide={countryWide}
+                        onSwitchClick={(newValue) => {
+                            if (JSON.stringify(states) != '{}') {
+                                if (newValue) {
+                                    document.simplemaps_countrymap.back()
+                                    setFilters(currentValue => ({ ...currentValue, state: "" }))
+                                } else {
+                                    setFilters(currentValue => ({ ...currentValue, state: currentState }))
+                                }
                             } else {
-                                setFilters(currentValue => ({...currentValue, state: currentState}))
+                                <CenteredModal titulo="¡Oh no!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior." />
                             }
-                        }else{
-                            <CenteredModal titulo="¡Oh no!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior."/>
-                        }
-                    }}
-                    onStateClick={state => {
-                        if(JSON.stringify(states)!='{}'){
-                            const stateName = mapState[state]
-                            setFilters(currentValue => ({ ...currentValue, state: stateName }))
-                        }else{
-                            <CenteredModal titulo="¡¡Oh no!!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior."/>
-                        }
-                    }}
-                />
-                {countryWide ? 
-                    (
-                        <>
-                            <div className="graphic-container graphic pandemic-state-graphic" style={{
-                                gridColumnStart:'3',
-                                gridColumnEnd:'5',
-                                gridRowStart:'1',
-                                gridRowEnd:'3'
-                            }}>
-                                <WeeklyInfoCard 
-                                    risk={risk}
-                                    data={weeklyAnalysis}
-                                    weekRange={filters.week}
-                                />
-                                
-                            </div>
-                            <div className="graphic-container graphic pandemic-state-graphic" style={{
-                                gridColumnStart:'3',
-                                gridColumnEnd:'5',
-                                gridRowStart:'3',
-                                gridRowEnd:'5'
-                            }}>
-                                <RegionRanking statesData={states} />
-                            </div>
-                        </>
-                    )
-                :
-                    (
-                        <>
-                            <div className="graphic-container graphic  pandemic-state-graphic" style={{
-                                gridColumnStart:'3',
-                                gridColumnEnd:'5',
-                                gridRowStart:'1',
-                                gridRowEnd:'3'
-                            }}>
-                                <RegionalWeeklyAnalysis
-                                    risk={risk}
-                                    weekRange={filters.week}
-                                    data={buildRegionalWeeklyAnalysisData({
-                                        uciBedsData,
-                                        covidBedsData,
-                                        incidentRateData,
-                                        mortalityRateData,
-                                        positivityRateData,
-                                    })}
-                                />
-                            </div>
-                            <div className="graphic-container graphic pandemic-state-graphic" style={{
-                                gridColumnStart:'2',
-                                gridColumnEnd:'3',
-                                gridRowStart:'4',
-                                gridRowEnd:'5'
-                            }}>
-                                <UciBeds risk={risk} data={uciBedsData} totalBeds={totalUciBeds} />
-                            </div>
-                            <div className="graphic-container graphic pandemic-state-graphic" style={{
-                                gridColumnStart:'3',
-                                gridColumnEnd:'4',
-                                gridRowStart:'4',
-                                gridRowEnd:'5'
-                            }}>
-                                <IncidentRate risk={risk} data={incidentRateData} />
-                            </div>
-                            <div className="graphic-container graphic pandemic-state-graphic" style={{
-                                gridColumnStart:'4',
-                                gridColumnEnd:'5',
-                                gridRowStart:'4',
-                                gridRowEnd:'5'
-                            }}>
-                                <DailyTestAverage
-                                    risk={risk}
-                                    data={buildAverageDailyTestsData(statesData, filters.state, weekStartDates)}
-                                />
-                            </div>
-                            <CovidBeds risk={risk} data={covidBedsData} totalBeds={totalCovidBeds} />
-                            <MortalityRate risk={risk} data={mortalityRateData} />
-                            <PositivityRate risk={risk} data={positivityRateData} />
-                        </>
-                    )
-                }
-            </TemplateDashboard>
-            {JSON.stringify(states)=='{}'? <CenteredModal titulo="¡Oh no!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior."/>:null}
-        </div>
+                        }}
+                        onStateClick={state => {
+                            if (JSON.stringify(states) != '{}') {
+                                const stateName = mapState[state]
+                                setFilters(currentValue => ({ ...currentValue, state: stateName }))
+                            } else {
+                                <CenteredModal titulo="¡¡Oh no!!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior." />
+                            }
+                        }}
+                    />
+                    {countryWide ?
+                        (
+                            <>
+                                <div className="graphic-container graphic pandemic-state-graphic" style={{
+                                    gridColumnStart: '3',
+                                    gridColumnEnd: '5',
+                                    gridRowStart: '1',
+                                    gridRowEnd: '3'
+                                }}>
+                                    <WeeklyInfoCard
+                                        risk={risk}
+                                        data={weeklyAnalysis}
+                                        weekRange={filters.week}
+                                    />
+
+                                </div>
+                                <div className="graphic-container graphic pandemic-state-graphic" style={{
+                                    gridColumnStart: '3',
+                                    gridColumnEnd: '5',
+                                    gridRowStart: '3',
+                                    gridRowEnd: '5'
+                                }}>
+                                    <RegionRanking statesData={states} />
+                                </div>
+                            </>
+                        )
+                        :
+                        (
+                            <>
+                                <div className="graphic-container graphic  pandemic-state-graphic" style={{
+                                    gridColumnStart: '3',
+                                    gridColumnEnd: '5',
+                                    gridRowStart: '1',
+                                    gridRowEnd: '3'
+                                }}>
+                                    <RegionalWeeklyAnalysis
+                                        risk={risk}
+                                        weekRange={filters.week}
+                                        data={buildRegionalWeeklyAnalysisData({
+                                            uciBedsData,
+                                            covidBedsData,
+                                            incidentRateData,
+                                            mortalityRateData,
+                                            positivityRateData,
+                                        })}
+                                    />
+                                </div>
+                                <div className="graphic-container graphic pandemic-state-graphic" style={{
+                                    gridColumnStart: '2',
+                                    gridColumnEnd: '3',
+                                    gridRowStart: '4',
+                                    gridRowEnd: '5'
+                                }}>
+                                    <UciBeds risk={risk} data={uciBedsData} totalBeds={totalUciBeds} />
+                                </div>
+                                <div className="graphic-container graphic pandemic-state-graphic" style={{
+                                    gridColumnStart: '3',
+                                    gridColumnEnd: '4',
+                                    gridRowStart: '4',
+                                    gridRowEnd: '5'
+                                }}>
+                                    <IncidentRate risk={risk} data={incidentRateData} />
+                                </div>
+                                <div className="graphic-container graphic pandemic-state-graphic" style={{
+                                    gridColumnStart: '4',
+                                    gridColumnEnd: '5',
+                                    gridRowStart: '4',
+                                    gridRowEnd: '5'
+                                }}>
+                                    <DailyTestAverage
+                                        risk={risk}
+                                        data={buildAverageDailyTestsData(statesData, filters.state, weekStartDates)}
+                                    />
+                                </div>
+                                <CovidBeds risk={risk} data={covidBedsData} totalBeds={totalCovidBeds} />
+                                <MortalityRate risk={risk} data={mortalityRateData} />
+                                <PositivityRate risk={risk} data={positivityRateData} />
+                            </>
+                        )
+                    }
+                </TemplateDashboard>
+                {JSON.stringify(states) == '{}' ? <CenteredModal titulo="¡Oh no!" mensaje="Lo sentimos, aún no hay información disponible para esta semana, por favor seleccione una fecha anterior." /> : null}
+            </div>
+        </>
     )
 }
 

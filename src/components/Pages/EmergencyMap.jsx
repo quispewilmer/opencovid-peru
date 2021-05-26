@@ -11,6 +11,13 @@ import ReactDOMServer from "react-dom/server";
 import MapMarker from "../Atoms/MapMarker";
 import Marcador from '../../img/emergencymap/maps-and-flags (1).svg'
 import SearchPlaces from "../Organisms/SearchPlaces";
+import Helmet from 'react-helmet';
+import metaimage from '../../img/metaimages/emergencymap.png';
+
+const title = "OpenCovid-Perú - Mapa de Emergencia";
+const image = { metaimage };
+const description = "Encontrarás la ubicación y disponibilidad de: Camas UCI, Camas COVID, Puntos de recarga de oxígeno y podrás identificar la ubicación de centros de salud y farmacias.";
+const locale = "es_PE";
 
 const mapEndpoints = {
 	ucibed: { endpoint: "/api/uci/near?", title: "Camas UCI" },
@@ -115,18 +122,18 @@ const EmergencyMap = () => {
 	}, [data]);
 
 	useEffect(() => {
-			if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(position => {
-						const { latitude, longitude } = position.coords;
-						setReferencePoint({ latitude, longitude })
-						const qs = buildQueryString({ lat: latitude, lon: longitude, radio: radiusDistance * 1000 })
-						setDistanceQueryString(qs)
-						mapboxInstance.current.flyTo({
-							center: [longitude, latitude],
-							zoom: 13,
-						})
-					})
-			}
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(position => {
+				const { latitude, longitude } = position.coords;
+				setReferencePoint({ latitude, longitude })
+				const qs = buildQueryString({ lat: latitude, lon: longitude, radio: radiusDistance * 1000 })
+				setDistanceQueryString(qs)
+				mapboxInstance.current.flyTo({
+					center: [longitude, latitude],
+					zoom: 13,
+				})
+			})
+		}
 	}, [])
 
 	useEffect(() => {
@@ -136,7 +143,7 @@ const EmergencyMap = () => {
 				//const newLimit = Math.round(Math.pow(1.9, (22 - zoom)) * 20 / 1000)
 				//setRadiusDistance(currentRadius => currentRadius > newLimit ? newLimit : currentRadius)	
 				//setRadiusDistanceLimit(newLimit)
-				
+
 			})
 		}
 	}, [])
@@ -154,13 +161,13 @@ const EmergencyMap = () => {
 		}
 	}, [referencePoint])
 
-  useEffect(() => {
-    handlePointClicked({
-      endpoint: mapEndpoints[option].endpoint,
-      name: option,
-      title: mapEndpoints[option].title,
-    });
-  }, [option]);
+	useEffect(() => {
+		handlePointClicked({
+			endpoint: mapEndpoints[option].endpoint,
+			name: option,
+			title: mapEndpoints[option].title,
+		});
+	}, [option]);
 
 	const handlePointClicked = ({ endpoint, name, title }) => {
 		setMapBoxClicked(true);
@@ -181,29 +188,47 @@ const EmergencyMap = () => {
 	const handlePlaceSelected = (center) => {
 		mapboxInstance.current.flyTo({
 			center,
-			essential: true,	
+			essential: true,
 			zoom: 13.5,
 		})
 	}
 
 	return (
-		<section className="emergency-map-container">
-			<div
-				ref={mapRef}
-				id="map-emergency"
-				className="emergency-map-container__map-container"
-			></div>
-			{isMapBoxClicked || (
-				<div className="emergency-map-container__map-block"></div>
-			)}
-			<SearchPlaces onSubmit={handleSubmit} onPlaceSelected={handlePlaceSelected} />
-			
-			<SelectPointOnMapBox
-				theme="emergency-map-container__select-point-on-map-box"
-				onPointClick={handlePointClicked}
-				itemSelectedState={itemSelectedState}
-			/>
-		</section>
+		<>
+			<Helmet>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+
+				<meta property="og:site_name" content={title} />
+				<meta property="og:title" content={title} />
+				<meta property="og:image" content={image} />
+				<meta property="og:description" content={description} />
+				<meta property="og:locale" content={locale} />
+				<meta property="og:type" content="website" data-react-helmet="true" />
+
+				<meta name="twitter:description" content={description} />
+				<meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
+				<meta name="twitter:title" content={title} data-react-helmet="true" />
+				<meta name="twitter:site" content="@opencovidperu" data-react-helmet="true" />
+			</Helmet>
+			<section className="emergency-map-container">
+				<div
+					ref={mapRef}
+					id="map-emergency"
+					className="emergency-map-container__map-container"
+				></div>
+				{isMapBoxClicked || (
+					<div className="emergency-map-container__map-block"></div>
+				)}
+				<SearchPlaces onSubmit={handleSubmit} onPlaceSelected={handlePlaceSelected} />
+
+				<SelectPointOnMapBox
+					theme="emergency-map-container__select-point-on-map-box"
+					onPointClick={handlePointClicked}
+					itemSelectedState={itemSelectedState}
+				/>
+			</section>
+		</>
 	);
 };
 

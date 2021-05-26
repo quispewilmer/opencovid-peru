@@ -10,13 +10,17 @@ import vaccine from '../../img/home/vaccine.svg';
 import HighRule from '../Atoms/HighRule';
 import Button from '../Atoms/Button';
 import Banner from '../Organisms/Banner';
-import Glass from '../../img/pandemiaState/glass.svg';
+import metaimage from '../../img/metaimages/home.png';
+import Helmet from 'react-helmet';
 
-
+const title = "OpenCovid-Perú";
+const description = "Reportes independientes de COVID-19 en el Perú (subregistro de muertes, camas UCIs, etc)";
+const image = { metaimage };
+const locale = "es_PE";
 
 const Home = () => {
     document.title = "OpenCovid-Perú"
-    
+
     const url = "https://open-covid-api-vwgk4ckqbq-uk.a.run.app/api/resume/last";
     let dateC = ""
     const [state, setState] = useState({
@@ -37,7 +41,22 @@ const Home = () => {
 
     return (
         <>
-            <Banner />
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+
+                <meta property="og:site_name" content={title} />
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content={image} />
+                <meta property="og:description" content={description} />
+                <meta property="og:locale" content={locale} />
+                <meta property="og:type" content="website" data-react-helmet="true" />
+
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:card" content="summary_large_image" data-react-helmet="true" />
+                <meta name="twitter:title" content={title} data-react-helmet="true" />
+                <meta name="twitter:site" content="@opencovidperu" data-react-helmet="true" />
+            </Helmet>           <Banner />
             <main className="home">
                 <section className="national-situation">
                     <div className="main-container">
